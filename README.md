@@ -73,7 +73,6 @@ This repository stores all documentation related to the Kaizen Web Application p
 | Date | Version | Updated By | Description |
 |------|----------|-------------|--------------|
 | 2025-10-30 | v1.0 | Fahfon | Initial document structure created |
-| 2025-11-05 | v1.1 | Kaizen Team | Added UAT and Test Reports |
 
 ---
 
