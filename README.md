@@ -22,6 +22,7 @@ This repository stores all documentation related to the Kaizen Web Application p
 | [2.3_Interactive_Prototype_Link](documentation/02_DESIGN/2.3_Interactive_Prototype_Link.md) | Clickable prototype for UAT | Markdown |
 | [2.4_Technical_Stack](documentation/02_DESIGN/2.4_Technical_Stack.md) | Technical stack documentation | Markdown |
 | [2.5_Wireframe_with_Figma_Make](documentation/02_DESIGN/2.5_Wireframe_with_Figma_Make.md) | Wireframe creation with Figma Make | Markdown |
+| [2.6_UI_Design_with_Figma_Make](documentation/02_DESIGN/2.6_UI_Design_with_Figma_Make.md) | UI Design creation and Export to GitHub | Markdown |
 
 ---
 
