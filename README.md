@@ -64,6 +64,7 @@ This repository stores all documentation related to the **Kaizen Web Application
 |:---------|:------------|
 | 📊 [ERD Diagram](documentation/03_DATABASE/3.1_ERD_Diagram.md) | Entity Relationship Diagram |
 | 📑 [Database Schema](documentation/03_DATABASE/3.2_Database_Schema_Document.md) | Detailed schema (tables, relations, enums, indexes) |
+| 🔄 [Database Migration from Figma](documentation/03_DATABASE/3.3_Database_Migration_from_Figma_DataContext.md) | Migration from Figma DataContext to Supabase |
 
 <br>
 
