@@ -11,12 +11,14 @@
 
 ---
 
+[Onboarding](#-0-onboarding) •
 [Requirements](#-1-requirements-phase) •
 [Design](#-2-design-phase) •
 [Database](#%EF%B8%8F-3-database-design) •
 [Development](#-4-development-phase) •
 [Deploy](#-5-deploy-phase) •
-[Testing](#-6-testing-phase)
+[Testing](#-6-testing-phase) •
+[Git Workflow](#-7-git-workflow)
 
 ---
 
@@ -25,6 +27,18 @@
 ## 📖 Overview
 
 This repository stores all documentation related to the **Kaizen Web Application** project, covering the full SDLC lifecycle — from requirements gathering to production delivery.
+
+<br>
+
+## 👋 0. ONBOARDING
+
+> *คู่มือสำหรับสมาชิกใหม่ในทีม — เริ่มต้นที่นี่!*
+
+| Document | Description |
+|:---------|:------------|
+| 🎉 [Welcome Guide](documentation/00_ONBOARDING/0.1_Welcome_Guide.md) | ภาพรวมทีม วัฒนธรรม และสิ่งที่ควรรู้ |
+| 💻 [Development Setup](documentation/00_ONBOARDING/0.2_Development_Setup.md) | วิธีติดตั้ง Tools และ Environment |
+| 🔑 [Access Request Checklist](documentation/00_ONBOARDING/0.3_Access_Request_Checklist.md) | รายการ Access ที่ต้องขอ |
 
 <br>
 
@@ -112,6 +126,19 @@ This repository stores all documentation related to the **Kaizen Web Application
 
 <br>
 
+## 🔀 7. GIT WORKFLOW
+
+> *มาตรฐานการใช้ Git และกระบวนการทำงานร่วมกัน*
+
+| Document | Description |
+|:---------|:------------|
+| 🌿 [Branching Strategy](documentation/07_GIT_WORKFLOW/7.1_Branching_Strategy.md) | กลยุทธ์การจัดการ Branch |
+| 💬 [Commit Message Convention](documentation/07_GIT_WORKFLOW/7.2_Commit_Message_Convention.md) | มาตรฐานการเขียน Commit Message |
+| 🔃 [Pull Request Process](documentation/07_GIT_WORKFLOW/7.3_Pull_Request_Process.md) | กระบวนการ Pull Request |
+| 👀 [Code Review Guidelines](documentation/07_GIT_WORKFLOW/7.4_Code_Review_Guidelines.md) | แนวทางการ Review Code |
+
+<br>
+
 ---
 
 ## 📁 Project Structure
@@ -119,12 +146,14 @@ This repository stores all documentation related to the **Kaizen Web Application
 ```
 📦 SOP-SDLC-PLAN
  ┣ 📂 documentation
+ ┃ ┣ 📂 00_ONBOARDING      → Onboarding documents for new members
  ┃ ┣ 📂 01_REQUIREMENTS    → Requirements phase documents
  ┃ ┣ 📂 02_DESIGN          → Design phase documents & images
  ┃ ┣ 📂 03_DATABASE        → Database design documents
  ┃ ┣ 📂 04_DEVELOPMENT     → Development phase documents
  ┃ ┣ 📂 05_DEPLOY          → Deployment documents
- ┃ ┗ 📂 06_TESTING         → Testing documents
+ ┃ ┣ 📂 06_TESTING         → Testing documents
+ ┃ ┗ 📂 07_GIT_WORKFLOW    → Git workflow standards & guidelines
  ┗ 📄 README.md
 ```
 
@@ -151,6 +180,8 @@ This repository stores all documentation related to the **Kaizen Web Application
 
 | Date | Version | Author | Changes |
 |:-----|:--------|:-------|:--------|
+| 2026-01-29 | v1.2 | - | เพิ่มหมวด 07_GIT_WORKFLOW สำหรับมาตรฐาน Git |
+| 2026-01-29 | v1.1 | - | เพิ่มหมวด 00_ONBOARDING สำหรับสมาชิกใหม่ |
 | 2025-12-16 | v1.0 | Fahfon | Initial document structure created |
 
 <br>
