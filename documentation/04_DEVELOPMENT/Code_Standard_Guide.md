@@ -1,56 +1,122 @@
-# Code Standard Guide
+# Code Standard Guide - มาตรฐานการเขียนโค้ด
 
-## วัตถุประสงค์
+## ข้อมูลเอกสาร
 
-Code Standard คือมาตรฐานการเขียนโค้ดที่ทีมตกลงใช้ร่วมกัน เพื่อให้:
+| รายการ | รายละเอียด |
+|--------|------------|
+| **รหัสเอกสาร** | SOP-DEV-001 |
+| **ชื่อเอกสาร** | Code Standard Guide - มาตรฐานการเขียนโค้ด |
+| **เวอร์ชัน** | 2.0.0 |
+| **ประเภท** | Standard Operating Procedure (SOP) |
+| **ผู้จัดทำ** | Development Team |
+| **วันที่มีผล** | 30 มกราคม 2026 |
+| **ทบทวนครั้งถัดไป** | 30 กรกฎาคม 2026 |
+| **สถานะ** | บังคับใช้ (Enforced) |
+
+---
+
+## ภาพรวม
+
+เอกสารฉบับนี้เป็น **Standard Operating Procedure (SOP)** สำหรับมาตรฐานการเขียนโค้ดของทีมพัฒนา จัดทำขึ้นเพื่อให้นักพัฒนาทุกคน โดยเฉพาะ **สมาชิกใหม่ที่เข้ามาร่วมทีม** สามารถเข้าใจและปฏิบัติตามแนวทางการเขียนโค้ดที่ทีมตกลงร่วมกันได้อย่างถูกต้อง
+
+### วัตถุประสงค์
+
 1. **อ่านโค้ดง่าย** - ทุกคนเข้าใจโค้ดของกันและกัน
 2. **Maintain ง่าย** - แก้ไข debug และเพิ่มฟีเจอร์ได้รวดเร็ว
 3. **ลด Bugs** - ป้องกันข้อผิดพลาดที่พบบ่อย
 4. **ทำงานร่วมกันได้ดี** - Code review และ collaboration ราบรื่น
 5. **Onboard Developer ใหม่ง่าย** - มีมาตรฐานที่ชัดเจนให้ทำตาม
 
----
+### ขอบเขตการบังคับใช้
 
-## Tech Stack
+| หัวข้อ | รายละเอียด |
+|--------|------------|
+| **ใครต้องปฏิบัติตาม** | นักพัฒนาทุกคนในทีม (Frontend, Backend, Full-stack) |
+| **บังคับใช้กับ** | โค้ดทุกบรรทัดที่ commit เข้า repository |
+| **ตรวจสอบโดย** | Code Review process ก่อน merge เข้า branch หลัก |
 
-โปรเจกต์นี้ใช้:
-- **Frontend**: React + TypeScript + Tailwind CSS
-- **Backend**: Node.js + TypeScript + Express
-- **Database**: PostgreSQL (via Supabase)
-- **Deployment**: Railway
-- **Version Control**: Git + GitHub
+### Tech Stack ของโปรเจกต์
 
----
-
-## Table of Contents
-
-1. [Naming Conventions](#naming-conventions)
-2. [File & Folder Structure](#file--folder-structure)
-3. [TypeScript Guidelines](#typescript-guidelines)
-4. [React Best Practices](#react-best-practices)
-5. [Backend (Node.js) Guidelines](#backend-nodejs-guidelines)
-6. [CSS & Tailwind Standards](#css--tailwind-standards)
-7. [Git Workflow](#git-workflow)
-8. [Code Comments & Documentation](#code-comments--documentation)
-9. [Error Handling](#error-handling)
-10. [Testing Standards](#testing-standards)
-11. [Performance Optimization](#performance-optimization)
-12. [Security Best Practices](#security-best-practices)
-13. [Code Review Checklist](#code-review-checklist)
+| เทคโนโลยี | ใช้งาน |
+|-----------|--------|
+| **Frontend** | React + TypeScript + Tailwind CSS |
+| **Backend** | Node.js + TypeScript + Express |
+| **Database** | PostgreSQL (via Supabase) |
+| **Deployment** | Railway |
+| **Version Control** | Git + GitHub |
 
 ---
 
-## 1. Naming Conventions
+## 📋 สารบัญ
 
-### General Rules
-- ใช้ชื่อที่สื่อความหมาย (descriptive names)
-- หลีกเลี่ยงชื่อแบบย่อที่ไม่ชัดเจน (เว้นแต่เป็นที่รู้จักกันทั่วไป เช่น `id`, `url`)
-- ใช้ภาษาอังกฤษ (ห้ามใช้ Pinglish หรือภาษาไทย)
+1. [Naming Conventions - หลักการตั้งชื่อ](#1-naming-conventions---หลักการตั้งชื่อ)
+2. [File & Folder Structure - โครงสร้างไฟล์และโฟลเดอร์](#2-file--folder-structure---โครงสร้างไฟล์และโฟลเดอร์)
+3. [TypeScript Guidelines - แนวทางการใช้ TypeScript](#3-typescript-guidelines---แนวทางการใช้-typescript)
+4. [React Best Practices - แนวปฏิบัติ React](#4-react-best-practices---แนวปฏิบัติ-react)
+5. [Backend (Node.js) Guidelines - แนวทาง Backend](#5-backend-nodejs-guidelines---แนวทาง-backend)
+6. [CSS & Tailwind Standards - มาตรฐาน CSS](#6-css--tailwind-standards---มาตรฐาน-css)
+7. [Git Workflow - ขั้นตอนการใช้ Git](#7-git-workflow---ขั้นตอนการใช้-git)
+8. [Code Comments & Documentation - การเขียน Comment](#8-code-comments--documentation---การเขียน-comment)
+9. [Error Handling - การจัดการข้อผิดพลาด](#9-error-handling---การจัดการข้อผิดพลาด)
+10. [Testing Standards - มาตรฐานการทดสอบ](#10-testing-standards---มาตรฐานการทดสอบ)
+11. [Performance Optimization - การปรับปรุงประสิทธิภาพ](#11-performance-optimization---การปรับปรุงประสิทธิภาพ)
+12. [Security Best Practices - แนวปฏิบัติด้านความปลอดภัย](#12-security-best-practices---แนวปฏิบัติด้านความปลอดภัย)
+13. [Code Review Checklist - รายการตรวจสอบ](#13-code-review-checklist---รายการตรวจสอบ)
+14. [Tools & Extensions - เครื่องมือที่ต้องติดตั้ง](#14-tools--extensions---เครื่องมือที่ต้องติดตั้ง)
+15. [Quick Reference - ตารางอ้างอิงด่วน](#15-quick-reference---ตารางอ้างอิงด่วน)
 
-### Variables & Functions
+---
+
+## 15. Quick Reference - ตารางอ้างอิงด่วน
+
+> 💡 **สำหรับนักพัฒนาใหม่:** เริ่มจากตารางสรุปนี้ก่อน แล้วค่อยอ่านรายละเอียดในแต่ละหัวข้อ
+
+### ตารางสรุป Naming Conventions
+
+| ประเภท | รูปแบบ | ตัวอย่าง |
+|--------|--------|----------|
+| Variables & Functions | `camelCase` | `userName`, `calculateTotal()` |
+| Constants | `UPPER_SNAKE_CASE` | `MAX_LOGIN_ATTEMPTS`, `API_BASE_URL` |
+| Classes & Interfaces | `PascalCase` | `UserService`, `ProductCard` |
+| React Components | `PascalCase` | `UserProfile.tsx`, `LoginForm.tsx` |
+| Utility Files | `camelCase` | `formatDate.ts`, `authService.ts` |
+| Custom Hooks | `camelCase` (prefix `use`) | `useAuth.ts`, `useCart.ts` |
+| Folders | `kebab-case` | `user-management/`, `product-list/` |
+| Database Tables/Columns | `snake_case` | `users`, `first_name`, `created_at` |
+| Branch Names | `type/description` | `feature/add-login`, `bugfix/fix-cart` |
+| Commit Messages | `type(scope): subject` | `feat(auth): add Google OAuth` |
+
+### ข้อห้ามที่ต้องจำ
+
+| ❌ ห้ามทำ | ✅ ทำแทน |
+|-----------|----------|
+| ใช้ `any` type ใน TypeScript | ใช้ type/interface ที่เฉพาะเจาะจง หรือ `unknown` |
+| ใช้ชื่อตัวแปรแบบย่อ (`x`, `tp`, `arr`) | ใช้ชื่อที่สื่อความหมาย (`userName`, `totalPrice`) |
+| ใช้ภาษาไทยในโค้ด | ใช้ภาษาอังกฤษเท่านั้น |
+| Hardcode secrets/credentials | ใช้ Environment Variables |
+| ใช้ String interpolation ใน SQL | ใช้ Parameterized queries (`$1`, `$2`) |
+| Commit ไฟล์ `.env` ลง Git | เพิ่มใน `.gitignore` และใช้ `.env.example` |
+| เขียน inline styles ใน React | ใช้ Tailwind utility classes |
+| ใช้ Class components | ใช้ Functional components + Hooks |
+| Commit ด้วย message "fix" หรือ "update" | เขียน commit message ตามรูปแบบ Conventional Commits |
+| Push ตรงไปที่ `main` branch | สร้าง feature branch และเปิด Pull Request |
+
+---
+
+## 1. Naming Conventions - หลักการตั้งชื่อ
+
+### ขั้นตอนปฏิบัติ
+
+**ขั้นตอนที่ 1:** ใช้ชื่อที่สื่อความหมาย (descriptive names) เสมอ
+
+**ขั้นตอนที่ 2:** ใช้ภาษาอังกฤษเท่านั้น (ห้ามใช้ภาษาไทยหรือ Pinglish)
+
+**ขั้นตอนที่ 3:** เลือกรูปแบบการตั้งชื่อตามประเภท ดังนี้:
+
+### 1.1 Variables & Functions - ใช้ `camelCase`
 
 ```typescript
-// ✅ ดี: camelCase สำหรับ variables และ functions
+// ✅ ถูกต้อง
 const userName = "John Doe";
 const totalPrice = 1000;
 const isActive = true;
@@ -59,7 +125,7 @@ function calculateTotalPrice(items: CartItem[]): number {
   return items.reduce((sum, item) => sum + item.price, 0);
 }
 
-// ❌ ไม่ดี: ชื่อไม่สื่อความหมาย
+// ❌ ผิด: ชื่อไม่สื่อความหมาย
 const x = "John Doe";
 const tp = 1000;
 const flag = true;
@@ -69,10 +135,10 @@ function calc(arr: any[]): number {
 }
 ```
 
-### Constants
+### 1.2 Constants - ใช้ `UPPER_SNAKE_CASE`
 
 ```typescript
-// ✅ ดี: UPPER_SNAKE_CASE สำหรับ constants
+// ✅ ถูกต้อง
 const MAX_LOGIN_ATTEMPTS = 5;
 const API_BASE_URL = "https://api.example.com";
 const DEFAULT_PAGE_SIZE = 20;
@@ -81,15 +147,15 @@ const DEFAULT_PAGE_SIZE = 20;
 const DATABASE_URL = process.env.DATABASE_URL;
 const JWT_SECRET = process.env.JWT_SECRET;
 
-// ❌ ไม่ดี
+// ❌ ผิด
 const maxLoginAttempts = 5;
 const apiBaseUrl = "https://api.example.com";
 ```
 
-### Classes & Interfaces (TypeScript)
+### 1.3 Classes & Interfaces - ใช้ `PascalCase`
 
 ```typescript
-// ✅ ดี: PascalCase สำหรับ Classes, Interfaces, Types
+// ✅ ถูกต้อง
 class UserService {
   private userRepository: UserRepository;
 
@@ -107,16 +173,16 @@ interface User {
 
 type UserRole = 'admin' | 'customer' | 'vendor';
 
-// ❌ ไม่ดี
+// ❌ ผิด
 class userService { }
 interface user { }
 type userRole = 'admin' | 'customer';
 ```
 
-### React Components
+### 1.4 React Components - ใช้ `PascalCase`
 
 ```typescript
-// ✅ ดี: PascalCase สำหรับ component names
+// ✅ ถูกต้อง
 function UserProfile({ user }: UserProfileProps) {
   return <div>{user.name}</div>;
 }
@@ -127,38 +193,38 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
 // ไฟล์: UserProfile.tsx, ProductCard.tsx
 
-// ❌ ไม่ดี
+// ❌ ผิด
 function userProfile() { }
 const product_card = () => { };
 ```
 
-### Files & Folders
+### 1.5 Files & Folders
 
 ```bash
-# ✅ ดี: PascalCase สำหรับ component files
+# ✅ ถูกต้อง: PascalCase สำหรับ component files
 src/components/UserProfile.tsx
 src/components/ProductCard.tsx
 src/pages/HomePage.tsx
 
-# ✅ ดี: camelCase สำหรับ utility/service files
+# ✅ ถูกต้อง: camelCase สำหรับ utility/service files
 src/utils/formatDate.ts
 src/services/authService.ts
 src/hooks/useAuth.ts
 
-# ✅ ดี: kebab-case สำหรับ folder names (optional)
+# ✅ ถูกต้อง: kebab-case สำหรับ folder names
 src/components/product-list/
 src/features/user-management/
 
-# ❌ ไม่ดี
+# ❌ ผิด
 src/components/user_profile.tsx
 src/components/PRODUCTCARD.tsx
 src/utils/FormatDate.ts
 ```
 
-### Database (SQL)
+### 1.6 Database (SQL) - ใช้ `snake_case`
 
 ```sql
--- ✅ ดี: snake_case สำหรับ tables และ columns
+-- ✅ ถูกต้อง
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255),
@@ -167,7 +233,7 @@ CREATE TABLE users (
     created_at TIMESTAMP
 );
 
--- ❌ ไม่ดี
+-- ❌ ผิด
 CREATE TABLE Users (
     Id SERIAL PRIMARY KEY,
     Email VARCHAR(255),
@@ -177,13 +243,15 @@ CREATE TABLE Users (
 
 ---
 
-## 2. File & Folder Structure
+## 2. File & Folder Structure - โครงสร้างไฟล์และโฟลเดอร์
 
-### Frontend (React + TypeScript)
+> 💡 **สำหรับนักพัฒนาใหม่:** ให้ศึกษาโครงสร้างโฟลเดอร์ด้านล่างก่อนเริ่มเขียนโค้ด เมื่อสร้างไฟล์ใหม่ต้องวางไว้ในโฟลเดอร์ที่ถูกต้องตาม convention
+
+### 2.1 Frontend (React + TypeScript)
 
 ```
 src/
-├── assets/              # Images, fonts, static files
+├── assets/              # รูปภาพ, fonts, static files
 │   ├── images/
 │   ├── fonts/
 │   └── icons/
@@ -203,7 +271,7 @@ src/
 │       └── products/
 │           ├── ProductCard.tsx
 │           └── ProductList.tsx
-├── pages/              # Page components
+├── pages/              # Page components (1 ไฟล์ = 1 หน้า)
 │   ├── HomePage.tsx
 │   ├── ProductPage.tsx
 │   ├── CartPage.tsx
@@ -212,7 +280,7 @@ src/
 │   ├── useAuth.ts
 │   ├── useCart.ts
 │   └── useDebounce.ts
-├── services/           # API services
+├── services/           # API services (เรียก API)
 │   ├── api.ts          # Axios instance
 │   ├── authService.ts
 │   ├── productService.ts
@@ -238,7 +306,7 @@ src/
 └── main.tsx            # Entry point
 ```
 
-### Backend (Node.js + TypeScript)
+### 2.2 Backend (Node.js + TypeScript)
 
 ```
 src/
@@ -246,23 +314,23 @@ src/
 │   ├── database.ts
 │   ├── env.ts
 │   └── logger.ts
-├── controllers/        # Route controllers
+├── controllers/        # Route controllers (รับ request, ส่ง response)
 │   ├── authController.ts
 │   ├── productController.ts
 │   └── orderController.ts
-├── services/           # Business logic
+├── services/           # Business logic (ตัวประมวลผลหลัก)
 │   ├── authService.ts
 │   ├── productService.ts
 │   └── orderService.ts
-├── models/             # Database models (if using ORM)
+├── models/             # Database models (ถ้าใช้ ORM)
 │   ├── User.ts
 │   ├── Product.ts
 │   └── Order.ts
-├── repositories/       # Database queries
+├── repositories/       # Database queries (ติดต่อฐานข้อมูล)
 │   ├── userRepository.ts
 │   ├── productRepository.ts
 │   └── orderRepository.ts
-├── routes/             # API routes
+├── routes/             # API routes (กำหนด URL path)
 │   ├── index.ts
 │   ├── authRoutes.ts
 │   ├── productRoutes.ts
@@ -286,11 +354,15 @@ src/
 └── server.ts           # Server entry point
 ```
 
+> ⚠️ **ข้อควรระวัง:** อย่าเขียน business logic ใน controller หรือ route — ให้เขียนใน service เสมอ
+
 ---
 
-## 3. TypeScript Guidelines
+## 3. TypeScript Guidelines - แนวทางการใช้ TypeScript
 
-### Use Strict Type Checking
+### ขั้นตอนปฏิบัติ
+
+**ขั้นตอนที่ 1:** ตั้งค่า strict mode ใน `tsconfig.json`
 
 ```typescript
 // tsconfig.json
@@ -305,10 +377,10 @@ src/
 }
 ```
 
-### Define Types & Interfaces
+**ขั้นตอนที่ 2:** กำหนด type/interface สำหรับทุก object
 
 ```typescript
-// ✅ ดี: Define interfaces สำหรับ objects
+// ✅ ถูกต้อง: กำหนด interface สำหรับ objects
 interface User {
   id: number;
   email: string;
@@ -320,21 +392,21 @@ interface User {
 
 type UserRole = 'admin' | 'customer' | 'vendor';
 
-// ✅ ดี: Use types สำหรับ function parameters และ return types
+// ✅ ถูกต้อง: กำหนด type สำหรับ function parameters และ return types
 function createUser(userData: CreateUserDto): Promise<User> {
   // ...
 }
 
-// ❌ ไม่ดี: ใช้ any
+// ❌ ผิด: ใช้ any
 function createUser(userData: any): any {
   // ...
 }
 ```
 
-### Use Enums for Fixed Values
+**ขั้นตอนที่ 3:** ใช้ Enum หรือ Union Types สำหรับค่าคงที่
 
 ```typescript
-// ✅ ดี: Use const enum
+// ✅ ถูกต้อง: ใช้ const enum
 const enum OrderStatus {
   PENDING = 'pending',
   CONFIRMED = 'confirmed',
@@ -344,70 +416,70 @@ const enum OrderStatus {
   CANCELLED = 'cancelled',
 }
 
-// ✅ ดี: หรือใช้ Union Types
+// ✅ ถูกต้อง: หรือใช้ Union Types
 type OrderStatus = 'pending' | 'confirmed' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
 
-// ❌ ไม่ดี: ใช้ string literals ซ้ำๆ
+// ❌ ผิด: ใช้ string ที่ไม่จำกัดค่า
 function updateOrderStatus(orderId: number, status: string) {
-  // status อาจเป็นอะไรก็ได้
+  // status อาจเป็นอะไรก็ได้ — ไม่ปลอดภัย
 }
 ```
 
-### Avoid `any` Type
+**ขั้นตอนที่ 4:** ห้ามใช้ `any` — ใช้ Generic หรือ `unknown` แทน
 
 ```typescript
-// ✅ ดี: ใช้ Generic หรือ unknown
+// ✅ ถูกต้อง: ใช้ Generic
 function parseJSON<T>(jsonString: string): T {
   return JSON.parse(jsonString);
 }
 
+// ✅ ถูกต้อง: ใช้ unknown แล้วตรวจสอบ type
 function handleError(error: unknown) {
   if (error instanceof Error) {
     console.error(error.message);
   }
 }
 
-// ❌ ไม่ดี
+// ❌ ผิด
 function parseJSON(jsonString: string): any {
   return JSON.parse(jsonString);
 }
 ```
 
-### Use Optional Chaining & Nullish Coalescing
+**ขั้นตอนที่ 5:** ใช้ Optional Chaining (`?.`) และ Nullish Coalescing (`??`)
 
 ```typescript
-// ✅ ดี: Optional chaining
+// ✅ ถูกต้อง
 const userName = user?.profile?.firstName ?? 'Guest';
-
-// ✅ ดี: Nullish coalescing
 const pageSize = config.pageSize ?? 20;
 
-// ❌ ไม่ดี
+// ❌ ผิด
 const userName = user && user.profile && user.profile.firstName || 'Guest';
 const pageSize = config.pageSize || 20; // ⚠️ pageSize = 0 จะถูกแทนที่ด้วย 20
 ```
 
 ---
 
-## 4. React Best Practices
+## 4. React Best Practices - แนวปฏิบัติ React
 
-### Component Structure
+### ขั้นตอนปฏิบัติ
+
+**ขั้นตอนที่ 1:** เขียน Component ตามโครงสร้างมาตรฐาน
 
 ```typescript
-// ✅ ดี: Component structure
 import React, { useState, useEffect } from 'react';
 import { User } from '@/types/user.types';
 import { useAuth } from '@/hooks/useAuth';
 
-// 1. Props Interface
+// 1. Props Interface — กำหนดก่อนเสมอ
 interface UserProfileProps {
   userId: number;
   onUpdate?: (user: User) => void;
 }
 
-// 2. Component
+// 2. Component — ใช้ Functional Component เท่านั้น
 export function UserProfile({ userId, onUpdate }: UserProfileProps) {
-  // 3. Hooks (useState, useEffect, custom hooks)
+  // 3. Hooks — เรียกที่ด้านบนสุดของ component
   const { user, loading, error } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
 
@@ -422,12 +494,11 @@ export function UserProfile({ userId, onUpdate }: UserProfileProps) {
   };
 
   const handleSave = async () => {
-    // Save user data
     onUpdate?.(user);
     setIsEditing(false);
   };
 
-  // 6. Conditional rendering
+  // 6. Conditional rendering (Early return)
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
   if (!user) return null;
@@ -447,10 +518,12 @@ export function UserProfile({ userId, onUpdate }: UserProfileProps) {
 }
 ```
 
-### Use Functional Components with Hooks
+> 💡 **Tip:** ลำดับภายใน Component เสมอ: Props Interface → Hooks → Effects → Handlers → Early Returns → JSX
+
+**ขั้นตอนที่ 2:** ใช้ Functional Components + Hooks เท่านั้น (ห้ามใช้ Class Components)
 
 ```typescript
-// ✅ ดี: Functional component with hooks
+// ✅ ถูกต้อง: Functional component with hooks
 function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
 
@@ -461,16 +534,15 @@ function ProductList() {
   return <div>{/* ... */}</div>;
 }
 
-// ❌ ไม่ดี: Class component (ใช้แค่ในกรณีจำเป็น)
+// ❌ ผิด: Class component (ใช้แค่ในกรณีที่มี legacy code เท่านั้น)
 class ProductList extends React.Component {
   // ...
 }
 ```
 
-### Extract Custom Hooks
+**ขั้นตอนที่ 3:** แยก logic ที่ใช้ซ้ำเป็น Custom Hooks
 
 ```typescript
-// ✅ ดี: Custom hook สำหรับ logic ที่ใช้ซ้ำ
 // hooks/useProducts.ts
 export function useProducts() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -495,7 +567,7 @@ export function useProducts() {
   return { products, loading, error };
 }
 
-// ใช้งาน
+// นำไปใช้
 function ProductList() {
   const { products, loading, error } = useProducts();
 
@@ -512,29 +584,29 @@ function ProductList() {
 }
 ```
 
-### Use Key Prop Correctly
+**ขั้นตอนที่ 4:** ใช้ `key` prop อย่างถูกต้องใน list rendering
 
 ```typescript
-// ✅ ดี: ใช้ unique id เป็น key
+// ✅ ถูกต้อง: ใช้ unique id เป็น key
 {products.map(product => (
   <ProductCard key={product.id} product={product} />
 ))}
 
-// ⚠️ ใช้ได้แต่ไม่ดี: ใช้ index (ถ้า list ไม่เปลี่ยน)
+// ⚠️ หลีกเลี่ยง: ใช้ index เป็น key (ยอมรับได้เฉพาะ list ที่ไม่เปลี่ยน)
 {products.map((product, index) => (
   <ProductCard key={index} product={product} />
 ))}
 
-// ❌ ไม่ดี: ไม่ใส่ key
+// ❌ ผิด: ไม่ใส่ key
 {products.map(product => (
   <ProductCard product={product} />
 ))}
 ```
 
-### Avoid Inline Functions in JSX
+**ขั้นตอนที่ 5:** หลีกเลี่ยง inline functions ใน JSX
 
 ```typescript
-// ✅ ดี: Define function outside JSX
+// ✅ ถูกต้อง: กำหนด function ก่อน JSX
 function ProductCard({ product }: ProductCardProps) {
   const handleAddToCart = () => {
     cartStore.addItem(product);
@@ -545,34 +617,23 @@ function ProductCard({ product }: ProductCardProps) {
   );
 }
 
-// ❌ ไม่ดี: Inline function (re-render ทุกครั้ง)
+// ❌ ผิด: Inline function (สร้าง function ใหม่ทุกครั้งที่ re-render)
 function ProductCard({ product }: ProductCardProps) {
   return (
     <button onClick={() => cartStore.addItem(product)}>Add to Cart</button>
   );
 }
-
-// ✅ ดี: ใช้ useCallback ถ้าต้อง pass parameters
-function ProductCard({ product }: ProductCardProps) {
-  const handleAddToCart = useCallback(() => {
-    cartStore.addItem(product);
-  }, [product]);
-
-  return (
-    <button onClick={handleAddToCart}>Add to Cart</button>
-  );
-}
 ```
 
-### Memoization (React.memo, useMemo, useCallback)
+**ขั้นตอนที่ 6:** ใช้ Memoization เมื่อจำเป็น
 
 ```typescript
-// ✅ ดี: React.memo สำหรับ component ที่ไม่ต้อง re-render บ่อย
+// React.memo — สำหรับ component ที่ไม่ต้อง re-render บ่อย
 export const ProductCard = React.memo(({ product }: ProductCardProps) => {
   return <div>{product.name}</div>;
 });
 
-// ✅ ดี: useMemo สำหรับ expensive calculations
+// useMemo — สำหรับ expensive calculations
 function ProductList({ products }: ProductListProps) {
   const totalPrice = useMemo(() => {
     return products.reduce((sum, p) => sum + p.price, 0);
@@ -581,7 +642,7 @@ function ProductList({ products }: ProductListProps) {
   return <div>Total: {totalPrice}</div>;
 }
 
-// ✅ ดี: useCallback สำหรับ function ที่ pass ไปให้ child component
+// useCallback — สำหรับ function ที่ส่งต่อไปยัง child component
 function ParentComponent() {
   const [count, setCount] = useState(0);
 
@@ -595,18 +656,30 @@ function ParentComponent() {
 
 ---
 
-## 5. Backend (Node.js) Guidelines
+## 5. Backend (Node.js) Guidelines - แนวทาง Backend
 
-### Use MVC Pattern
+### สถาปัตยกรรม: MVC Pattern
+
+> 💡 **สำหรับนักพัฒนาใหม่:** Backend ใช้ MVC pattern แบ่งโค้ดเป็น 3 ชั้น (layers) ดังนี้
 
 ```
-Controllers → Services → Repositories → Database
+Request → Controller → Service → Repository → Database
+                ↓            ↓           ↓
+         รับ/ส่ง HTTP    Business     SQL Queries
+                        Logic
 ```
 
-### Controller Layer (Handle HTTP)
+| Layer | หน้าที่ | ตัวอย่างไฟล์ |
+|-------|---------|-------------|
+| **Controller** | รับ HTTP request, ส่งต่อให้ service, return response | `productController.ts` |
+| **Service** | ประมวลผล business logic | `productService.ts` |
+| **Repository** | จัดการ SQL queries ติดต่อ database | `productRepository.ts` |
+
+### ขั้นตอนปฏิบัติ
+
+**ขั้นตอนที่ 1:** เขียน Controller - รับ request และส่ง response เท่านั้น
 
 ```typescript
-// ✅ ดี: Controller รับ request, ส่งต่อให้ service, return response
 // controllers/productController.ts
 import { Request, Response, NextFunction } from 'express';
 import { productService } from '../services/productService';
@@ -653,10 +726,9 @@ export class ProductController {
 export const productController = new ProductController();
 ```
 
-### Service Layer (Business Logic)
+**ขั้นตอนที่ 2:** เขียน Service - ใส่ business logic ทั้งหมดที่นี่
 
 ```typescript
-// ✅ ดี: Service มี business logic
 // services/productService.ts
 import { productRepository } from '../repositories/productRepository';
 import { Product, CreateProductDto } from '../types/product.types';
@@ -671,12 +743,12 @@ export class ProductService {
   }
 
   async create(data: CreateProductDto): Promise<Product> {
-    // Business logic: Validate data
+    // Business logic: ตรวจสอบข้อมูล
     if (data.price < 0) {
       throw new Error('Price cannot be negative');
     }
 
-    // Generate slug
+    // สร้าง slug จากชื่อ
     const slug = this.generateSlug(data.name);
 
     return productRepository.create({ ...data, slug });
@@ -704,10 +776,9 @@ export class ProductService {
 export const productService = new ProductService();
 ```
 
-### Repository Layer (Database Queries)
+**ขั้นตอนที่ 3:** เขียน Repository - จัดการ database queries เท่านั้น
 
 ```typescript
-// ✅ ดี: Repository จัดการ database queries
 // repositories/productRepository.ts
 import { pool } from '../config/database';
 import { Product, CreateProductDto } from '../types/product.types';
@@ -749,10 +820,9 @@ export class ProductRepository {
 export const productRepository = new ProductRepository();
 ```
 
-### Use Middleware for Common Logic
+**ขั้นตอนที่ 4:** เขียน Middleware สำหรับ logic ที่ใช้ร่วมกัน
 
 ```typescript
-// ✅ ดี: Authentication middleware
 // middlewares/authMiddleware.ts
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
@@ -796,10 +866,9 @@ export function authorize(...roles: string[]) {
 }
 ```
 
-### Error Handling Middleware
+**ขั้นตอนที่ 5:** ใช้ Global Error Handler
 
 ```typescript
-// ✅ ดี: Global error handler
 // middlewares/errorHandler.ts
 import { Request, Response, NextFunction } from 'express';
 
@@ -838,12 +907,14 @@ export function errorHandler(
 
 ---
 
-## 6. CSS & Tailwind Standards
+## 6. CSS & Tailwind Standards - มาตรฐาน CSS
 
-### Use Tailwind Utility Classes
+### ขั้นตอนปฏิบัติ
+
+**ขั้นตอนที่ 1:** ใช้ Tailwind utility classes แทน inline styles
 
 ```tsx
-// ✅ ดี: ใช้ Tailwind utilities
+// ✅ ถูกต้อง: Tailwind utilities
 function Button({ children }: ButtonProps) {
   return (
     <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
@@ -852,7 +923,7 @@ function Button({ children }: ButtonProps) {
   );
 }
 
-// ❌ ไม่ดี: Inline styles
+// ❌ ผิด: Inline styles
 function Button({ children }: ButtonProps) {
   return (
     <button style={{ padding: '8px 16px', backgroundColor: '#2563eb' }}>
@@ -862,20 +933,20 @@ function Button({ children }: ButtonProps) {
 }
 ```
 
-### Group Related Classes
+**ขั้นตอนที่ 2:** จัดกลุ่ม Tailwind classes ให้อ่านง่าย
 
 ```tsx
-// ✅ ดี: จัดกลุ่ม classes ให้อ่านง่าย
+// ✅ ถูกต้อง: จัดกลุ่ม classes ตามหมวดหมู่
 <div className={`
-  flex items-center justify-between
-  px-4 py-2
-  bg-white border border-gray-200 rounded-lg
-  hover:shadow-md transition
+  flex items-center justify-between       /* Layout */
+  px-4 py-2                               /* Spacing */
+  bg-white border border-gray-200 rounded-lg  /* Appearance */
+  hover:shadow-md transition               /* Interaction */
 `}>
   Content
 </div>
 
-// หรือใช้ clsx/classnames
+// ใช้ clsx สำหรับ conditional classes
 import clsx from 'clsx';
 
 <button className={clsx(
@@ -888,10 +959,9 @@ import clsx from 'clsx';
 </button>
 ```
 
-### Extract Reusable Components
+**ขั้นตอนที่ 3:** สร้าง Reusable Component สำหรับ UI ที่ใช้ซ้ำ
 
 ```tsx
-// ✅ ดี: สร้าง reusable component
 // components/common/Button.tsx
 interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'danger';
@@ -930,15 +1000,15 @@ export function Button({
   );
 }
 
-// ใช้งาน
+// นำไปใช้
 <Button variant="primary" size="lg">Save</Button>
 <Button variant="danger">Delete</Button>
 ```
 
-### Responsive Design
+**ขั้นตอนที่ 4:** ออกแบบ Mobile-first Responsive
 
 ```tsx
-// ✅ ดี: Mobile-first responsive design
+// ✅ ถูกต้อง: เริ่มจาก mobile แล้วขยายไปหน้าจอใหญ่
 <div className={`
   grid grid-cols-1           /* Mobile: 1 column */
   md:grid-cols-2             /* Tablet: 2 columns */
@@ -949,75 +1019,108 @@ export function Button({
     <ProductCard key={product.id} product={product} />
   ))}
 </div>
-
-// ตัวอย่าง breakpoints
-// sm: 640px
-// md: 768px
-// lg: 1024px
-// xl: 1280px
-// 2xl: 1536px
 ```
+
+**Tailwind Breakpoints Reference:**
+
+| Breakpoint | Minimum Width | ใช้สำหรับ |
+|-----------|---------------|----------|
+| `sm:` | 640px | โทรศัพท์แนวนอน |
+| `md:` | 768px | Tablet |
+| `lg:` | 1024px | Desktop |
+| `xl:` | 1280px | Desktop ใหญ่ |
+| `2xl:` | 1536px | หน้าจอกว้างพิเศษ |
 
 ---
 
-## 7. Git Workflow
+## 7. Git Workflow - ขั้นตอนการใช้ Git
 
-### Branch Naming
+> 💡 **สำหรับนักพัฒนาใหม่:** อ่านรายละเอียดเพิ่มเติมได้ที่เอกสาร [07_GIT_WORKFLOW](../07_GIT_WORKFLOW/7.1_Branching_Strategy.md)
+
+### ขั้นตอนปฏิบัติ: การทำงานประจำวัน
+
+**ขั้นตอนที่ 1:** Pull code ล่าสุดก่อนเริ่มงาน
 
 ```bash
-# Format: <type>/<description>
+git checkout develop
+git pull origin develop
+```
 
-# ✅ ดี
+**ขั้นตอนที่ 2:** สร้าง branch ใหม่ตามรูปแบบ `<type>/<description>`
+
+```bash
+# ✅ ถูกต้อง
 git checkout -b feature/add-user-authentication
 git checkout -b bugfix/fix-cart-calculation
 git checkout -b hotfix/security-patch
 git checkout -b refactor/improve-product-service
 
-# ❌ ไม่ดี
+# ❌ ผิด
 git checkout -b new-feature
 git checkout -b fix
 git checkout -b my-branch
 ```
 
-### Branch Types
+**ประเภท Branch:**
+
+| Type | ใช้สำหรับ | ตัวอย่าง |
+|------|----------|----------|
+| `main` | Production branch (ห้าม push ตรง) | — |
+| `develop` | Development branch | — |
+| `feature/*` | ฟีเจอร์ใหม่ | `feature/add-payment` |
+| `bugfix/*` | แก้ bug | `bugfix/fix-login-error` |
+| `hotfix/*` | แก้ไขเร่งด่วนบน production | `hotfix/security-patch` |
+| `refactor/*` | ปรับโครงสร้างโค้ด | `refactor/cleanup-api` |
+| `chore/*` | งาน maintenance | `chore/update-deps` |
+
+**ขั้นตอนที่ 3:** Commit ด้วยรูปแบบ Conventional Commits
 
 ```bash
-main              # Production branch (protected)
-develop           # Development branch
-feature/*         # New features
-bugfix/*          # Bug fixes
-hotfix/*          # Urgent production fixes
-refactor/*        # Code refactoring
-chore/*           # Maintenance tasks
-```
+# รูปแบบ: <type>(<scope>): <subject>
 
-### Commit Messages
-
-```bash
-# Format: <type>(<scope>): <subject>
-
-# ✅ ดี
+# ✅ ถูกต้อง
 git commit -m "feat(auth): add login with Google OAuth"
 git commit -m "fix(cart): fix total price calculation error"
 git commit -m "refactor(product): extract product service logic"
 git commit -m "docs(readme): update installation instructions"
 git commit -m "chore(deps): update dependencies to latest version"
 
-# Commit types:
-# feat:     New feature
-# fix:      Bug fix
-# refactor: Code refactoring
-# docs:     Documentation changes
-# style:    Code style changes (formatting, semicolons, etc.)
-# test:     Adding or updating tests
-# chore:    Maintenance tasks (dependencies, configs, etc.)
-# perf:     Performance improvements
-
-# ❌ ไม่ดี
+# ❌ ผิด
 git commit -m "update"
 git commit -m "fix bug"
 git commit -m "asdfasdf"
 git commit -m "WIP"
+```
+
+**Commit Types Reference:**
+
+| Type | ใช้เมื่อ |
+|------|---------|
+| `feat` | เพิ่มฟีเจอร์ใหม่ |
+| `fix` | แก้ bug |
+| `refactor` | ปรับโครงสร้างโค้ด (ไม่เปลี่ยนพฤติกรรม) |
+| `docs` | เปลี่ยนเอกสาร |
+| `style` | แก้ formatting, semicolons ฯลฯ |
+| `test` | เพิ่มหรือแก้ tests |
+| `chore` | งาน maintenance (dependencies, configs) |
+| `perf` | ปรับปรุง performance |
+
+**ขั้นตอนที่ 4:** Push และสร้าง Pull Request
+
+```bash
+# Push ไปที่ remote
+git push origin feature/add-payment-integration
+
+# สร้าง Pull Request บน GitHub
+# จากนั้นรอ code review
+```
+
+**ขั้นตอนที่ 5:** หลัง PR ถูก merge แล้ว ลบ branch เก่า
+
+```bash
+git checkout develop
+git pull origin develop
+git branch -d feature/add-payment-integration
 ```
 
 ### Pull Request (PR) Template
@@ -1054,42 +1157,23 @@ Brief description of changes
 - [ ] Tests pass locally
 ```
 
-### Git Commands Best Practices
-
-```bash
-# 1. Pull latest changes before starting work
-git checkout develop
-git pull origin develop
-
-# 2. Create feature branch
-git checkout -b feature/add-payment-integration
-
-# 3. Make small, focused commits
-git add src/services/paymentService.ts
-git commit -m "feat(payment): add payment service"
-
-git add src/controllers/paymentController.ts
-git commit -m "feat(payment): add payment controller"
-
-# 4. Push to remote
-git push origin feature/add-payment-integration
-
-# 5. Create Pull Request on GitHub
-
-# 6. After PR approved and merged, delete local branch
-git checkout develop
-git pull origin develop
-git branch -d feature/add-payment-integration
-```
-
 ---
 
-## 8. Code Comments & Documentation
+## 8. Code Comments & Documentation - การเขียน Comment
 
-### When to Comment
+### ขั้นตอนปฏิบัติ
+
+**ขั้นตอนที่ 1:** เขียน comment เฉพาะเมื่อจำเป็น
+
+| เขียน Comment เมื่อ | ไม่ต้องเขียน Comment เมื่อ |
+|---------------------|--------------------------|
+| Logic ซับซ้อนที่อ่านแล้วไม่เข้าใจทันที | โค้ดอธิบายตัวเองอยู่แล้ว (self-explanatory) |
+| Business rules ที่ต้องรู้ context | Function ที่ชื่อบอกชัดเจน เช่น `getUserById()` |
+| TODO/FIXME/HACK ที่ต้องกลับมาแก้ | Loop หรือ condition ทั่วไป |
+| Workaround ที่มีเหตุผลเฉพาะ | Import statements |
 
 ```typescript
-// ✅ ดี: Comment สำหรับ complex logic
+// ✅ ถูกต้อง: Comment สำหรับ complex logic
 /**
  * Calculate discount based on user loyalty tier
  * Bronze: 5%, Silver: 10%, Gold: 15%, Platinum: 20%
@@ -1106,12 +1190,12 @@ function calculateDiscount(user: User, totalPrice: number): number {
   return totalPrice * rate;
 }
 
-// ✅ ดี: Comment สำหรับ TODO/FIXME/HACK
+// ✅ ถูกต้อง: TODO/FIXME/HACK tags
 // TODO: Add caching for frequently accessed products
 // FIXME: Handle edge case when product is out of stock
 // HACK: Temporary workaround until API v2 is ready
 
-// ❌ ไม่ดี: Comment ที่ไม่จำเป็น (self-explanatory code)
+// ❌ ผิด: Comment ที่ไม่จำเป็น
 // Get user by id
 function getUserById(id: number) { }
 
@@ -1119,10 +1203,9 @@ function getUserById(id: number) { }
 products.forEach(product => { });
 ```
 
-### JSDoc for Functions
+**ขั้นตอนที่ 2:** ใช้ JSDoc สำหรับ public functions/APIs
 
 ```typescript
-// ✅ ดี: JSDoc comments
 /**
  * Registers a new user in the system
  * @param userData - User registration data
@@ -1145,88 +1228,15 @@ async function registerUser(userData: CreateUserDto): Promise<User> {
 }
 ```
 
-### README.md
-
-```markdown
-# Project Name
-
-## Description
-Brief description of the project
-
-## Tech Stack
-- Frontend: React + TypeScript + Tailwind CSS
-- Backend: Node.js + TypeScript + Express
-- Database: PostgreSQL (Supabase)
-- Deployment: Railway
-
-## Prerequisites
-- Node.js >= 18.0.0
-- npm >= 9.0.0
-- PostgreSQL >= 14.0
-
-## Installation
-
-1. Clone repository
-```bash
-git clone https://github.com/username/project.git
-cd project
-```
-
-2. Install dependencies
-```bash
-npm install
-```
-
-3. Setup environment variables
-```bash
-cp .env.example .env
-# Edit .env with your credentials
-```
-
-4. Run database migrations
-```bash
-npm run migrate
-```
-
-5. Start development server
-```bash
-npm run dev
-```
-
-## Available Scripts
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run test` - Run tests
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
-
-## Project Structure
-```
-src/
-├── components/
-├── pages/
-├── services/
-└── ...
-```
-
-## API Documentation
-See [API.md](./docs/API.md)
-
-## Contributing
-See [CONTRIBUTING.md](./CONTRIBUTING.md)
-
-## License
-MIT
-```
-
 ---
 
-## 9. Error Handling
+## 9. Error Handling - การจัดการข้อผิดพลาด
 
-### Frontend Error Handling
+### ขั้นตอนปฏิบัติ
+
+**ขั้นตอนที่ 1:** Frontend — ใช้ try-catch พร้อม error type ที่เฉพาะเจาะจง
 
 ```typescript
-// ✅ ดี: Try-catch with specific error handling
 async function fetchProducts() {
   try {
     setLoading(true);
@@ -1251,8 +1261,11 @@ async function fetchProducts() {
     setLoading(false);
   }
 }
+```
 
-// ✅ ดี: Error Boundary สำหรับ React
+**ขั้นตอนที่ 2:** Frontend — ใช้ Error Boundary ครอบ component tree
+
+```typescript
 class ErrorBoundary extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
@@ -1277,10 +1290,9 @@ class ErrorBoundary extends React.Component<Props, State> {
 }
 ```
 
-### Backend Error Handling
+**ขั้นตอนที่ 3:** Backend — สร้าง Custom Error Classes
 
 ```typescript
-// ✅ ดี: Custom error classes
 export class AppError extends Error {
   constructor(
     public statusCode: number,
@@ -1308,8 +1320,11 @@ export class UnauthorizedError extends AppError {
     super(401, message);
   }
 }
+```
 
-// ใช้งาน
+**ขั้นตอนที่ 4:** Backend — ใช้ Custom Error Classes ใน Service Layer
+
+```typescript
 async function getProductById(id: number): Promise<Product> {
   const product = await productRepository.findById(id);
 
@@ -1331,14 +1346,18 @@ async function createProduct(data: CreateProductDto): Promise<Product> {
 
 ---
 
-## 10. Testing Standards
+## 10. Testing Standards - มาตรฐานการทดสอบ
 
-### Unit Tests (Jest + Testing Library)
+### ขั้นตอนปฏิบัติ
+
+> 💡 **สำหรับนักพัฒนาใหม่:** ทุก feature ที่เขียนต้องมี test ครอบคลุม ตั้งเป้า test coverage >= 80%
+
+**ขั้นตอนที่ 1:** ตั้งชื่อไฟล์ test ด้วย pattern `<filename>.test.ts`
+
+**ขั้นตอนที่ 2:** เขียน Unit Tests สำหรับ utility functions และ business logic
 
 ```typescript
-// ✅ ดี: Test file naming: <filename>.test.ts
 // utils/formatCurrency.test.ts
-
 import { formatCurrency } from './formatCurrency';
 
 describe('formatCurrency', () => {
@@ -1360,12 +1379,10 @@ describe('formatCurrency', () => {
 });
 ```
 
-### React Component Tests
+**ขั้นตอนที่ 3:** เขียน Component Tests สำหรับ React components
 
 ```typescript
-// ✅ ดี: Component tests
 // components/Button.test.tsx
-
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Button } from './Button';
 
@@ -1390,12 +1407,10 @@ describe('Button', () => {
 });
 ```
 
-### API Tests (Supertest)
+**ขั้นตอนที่ 4:** เขียน API Integration Tests
 
 ```typescript
-// ✅ ดี: API integration tests
 // routes/products.test.ts
-
 import request from 'supertest';
 import app from '../app';
 
@@ -1439,12 +1454,13 @@ describe('POST /api/products', () => {
 
 ---
 
-## 11. Performance Optimization
+## 11. Performance Optimization - การปรับปรุงประสิทธิภาพ
 
-### Frontend Optimization
+### ขั้นตอนปฏิบัติ: Frontend
+
+**ขั้นตอนที่ 1:** ใช้ Lazy Loading สำหรับ page components
 
 ```typescript
-// ✅ ดี: Lazy loading components
 const ProductPage = lazy(() => import('./pages/ProductPage'));
 const CartPage = lazy(() => import('./pages/CartPage'));
 
@@ -1458,8 +1474,11 @@ function App() {
     </Suspense>
   );
 }
+```
 
-// ✅ ดี: Debounce search input
+**ขั้นตอนที่ 2:** ใช้ Debounce สำหรับ search input
+
+```typescript
 import { useDebounce } from '@/hooks/useDebounce';
 
 function SearchBar() {
@@ -1480,8 +1499,11 @@ function SearchBar() {
     />
   );
 }
+```
 
-// ✅ ดี: Virtualization สำหรับ long lists
+**ขั้นตอนที่ 3:** ใช้ Virtualization สำหรับ list ที่มีข้อมูลมาก
+
+```typescript
 import { FixedSizeList } from 'react-window';
 
 function ProductList({ products }: ProductListProps) {
@@ -1502,41 +1524,48 @@ function ProductList({ products }: ProductListProps) {
 }
 ```
 
-### Backend Optimization
+### ขั้นตอนปฏิบัติ: Backend
+
+**ขั้นตอนที่ 4:** ตั้งค่า Database Connection Pooling
 
 ```typescript
-// ✅ ดี: Database connection pooling
 import { Pool } from 'pg';
 
 export const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  max: 20,               // Maximum connections
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
+  max: 20,                        // จำนวน connection สูงสุด
+  idleTimeoutMillis: 30000,       // ปิด connection ที่ไม่ใช้หลัง 30 วินาที
+  connectionTimeoutMillis: 2000,  // Timeout ถ้าเชื่อมต่อไม่ได้ใน 2 วินาที
 });
+```
 
-// ✅ ดี: Caching with Redis
+**ขั้นตอนที่ 5:** ใช้ Caching สำหรับข้อมูลที่เรียกบ่อย
+
+```typescript
 import Redis from 'ioredis';
 
 const redis = new Redis(process.env.REDIS_URL);
 
 async function getProducts(): Promise<Product[]> {
-  // Check cache first
+  // ตรวจสอบ cache ก่อน
   const cached = await redis.get('products:all');
   if (cached) {
     return JSON.parse(cached);
   }
 
-  // Fetch from database
+  // ถ้าไม่มี cache ดึงจาก database
   const products = await productRepository.findAll();
 
-  // Cache for 5 minutes
+  // เก็บ cache ไว้ 5 นาที
   await redis.setex('products:all', 300, JSON.stringify(products));
 
   return products;
 }
+```
 
-// ✅ ดี: Pagination
+**ขั้นตอนที่ 6:** ใช้ Pagination สำหรับข้อมูลจำนวนมาก
+
+```typescript
 async function getProducts(page = 1, pageSize = 20): Promise<PaginatedResponse<Product>> {
   const offset = (page - 1) * pageSize;
 
@@ -1559,12 +1588,15 @@ async function getProducts(page = 1, pageSize = 20): Promise<PaginatedResponse<P
 
 ---
 
-## 12. Security Best Practices
+## 12. Security Best Practices - แนวปฏิบัติด้านความปลอดภัย
 
-### Input Validation
+> ⚠️ **ข้อควรระวัง:** หัวข้อนี้เป็นข้อบังคับเคร่งครัด การละเมิดอาจทำให้เกิดช่องโหว่ด้านความปลอดภัย
+
+### ขั้นตอนปฏิบัติ
+
+**ขั้นตอนที่ 1:** Validate input ทุกครั้ง — ใช้ Zod
 
 ```typescript
-// ✅ ดี: Use Zod for validation
 import { z } from 'zod';
 
 const createUserSchema = z.object({
@@ -1574,7 +1606,7 @@ const createUserSchema = z.object({
   lastName: z.string().min(1, 'Last name is required'),
 });
 
-// Middleware
+// Middleware สำหรับ validate request body
 export function validateRequest(schema: z.ZodSchema) {
   return (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -1592,14 +1624,13 @@ export function validateRequest(schema: z.ZodSchema) {
   };
 }
 
-// ใช้งาน
+// นำไปใช้ใน route
 router.post('/users', validateRequest(createUserSchema), createUser);
 ```
 
-### Password Hashing
+**ขั้นตอนที่ 2:** Hash passwords ด้วย bcrypt — ห้าม store plaintext password
 
 ```typescript
-// ✅ ดี: Hash passwords with bcrypt
 import bcrypt from 'bcrypt';
 
 const SALT_ROUNDS = 10;
@@ -1616,10 +1647,9 @@ export async function comparePassword(
 }
 ```
 
-### JWT Authentication
+**ขั้นตอนที่ 3:** ใช้ JWT พร้อม expiration สำหรับ authentication
 
 ```typescript
-// ✅ ดี: JWT with expiration
 import jwt from 'jsonwebtoken';
 
 export function generateToken(user: User): string {
@@ -1639,10 +1669,10 @@ export function verifyToken(token: string) {
 }
 ```
 
-### Prevent SQL Injection
+**ขั้นตอนที่ 4:** ใช้ Parameterized Queries เท่านั้น — ห้ามใช้ String Interpolation
 
 ```typescript
-// ✅ ดี: Parameterized queries
+// ✅ ถูกต้อง: Parameterized queries (ป้องกัน SQL Injection)
 async function getUserByEmail(email: string): Promise<User | null> {
   const result = await pool.query(
     'SELECT * FROM users WHERE email = $1',
@@ -1651,7 +1681,7 @@ async function getUserByEmail(email: string): Promise<User | null> {
   return result.rows[0] || null;
 }
 
-// ❌ ไม่ดี: String interpolation (SQL Injection!)
+// ❌ ผิดอย่างร้ายแรง: String interpolation (เสี่ยง SQL Injection!)
 async function getUserByEmail(email: string) {
   const result = await pool.query(
     `SELECT * FROM users WHERE email = '${email}'`
@@ -1660,11 +1690,10 @@ async function getUserByEmail(email: string) {
 }
 ```
 
-### Environment Variables
+**ขั้นตอนที่ 5:** ใช้ Environment Variables สำหรับ secrets ทั้งหมด
 
 ```typescript
-// ✅ ดี: Use environment variables
-// .env
+// .env (อยู่ใน .gitignore — ห้าม commit)
 DATABASE_URL=postgresql://user:pass@localhost:5432/db
 JWT_SECRET=your-secret-key-here
 API_KEY=your-api-key
@@ -1680,26 +1709,28 @@ export const config = {
   nodeEnv: process.env.NODE_ENV || 'development',
 };
 
-// ❌ ไม่ดี: Hardcoded secrets
+// ❌ ผิดอย่างร้ายแรง: Hardcoded secrets
 const JWT_SECRET = 'my-secret-key-123';
 ```
 
 ---
 
-## 13. Code Review Checklist
+## 13. Code Review Checklist - รายการตรวจสอบ
 
-### Before Submitting PR
+> 💡 **สำหรับนักพัฒนาใหม่:** ใช้ checklist นี้ตรวจสอบโค้ดของตัวเองก่อนสร้าง Pull Request ทุกครั้ง
+
+### ก่อนสร้าง PR (ตรวจสอบด้วยตนเอง)
 
 - [ ] โค้ดทำงานได้ตามที่ต้องการ
 - [ ] ไม่มี `console.log()` หรือ debug code เหลือ
 - [ ] ไม่มี commented code เหลือ
-- [ ] ไม่มี TODO/FIXME ที่ควรแก้ในทันที
+- [ ] ไม่มี TODO/FIXME ที่ควรแก้ก่อน submit
 - [ ] Tests ผ่านทั้งหมด (`npm test`)
 - [ ] Linting ผ่าน (`npm run lint`)
 - [ ] Build ผ่าน (`npm run build`)
-- [ ] ตรวจสอบ git diff ทั้งหมด
-- [ ] Commit messages ชัดเจน
-- [ ] อัพเดท documentation (ถ้าจำเป็น)
+- [ ] ตรวจสอบ `git diff` ทั้งหมดแล้ว
+- [ ] Commit messages เป็นไปตามรูปแบบ Conventional Commits
+- [ ] อัปเดต documentation (ถ้าจำเป็น)
 
 ### Code Quality
 
@@ -1707,8 +1738,7 @@ const JWT_SECRET = 'my-secret-key-123';
 - [ ] ฟังก์ชันทำงานเพียงอย่างเดียว (Single Responsibility)
 - [ ] ไม่มี code duplication
 - [ ] Error handling ครบถ้วน
-- [ ] Type safety (TypeScript types ครบ)
-- [ ] ไม่มี `any` type (ยกเว้นกรณีจำเป็น)
+- [ ] TypeScript types ครบ — ไม่มี `any` type (ยกเว้นกรณีจำเป็น)
 
 ### Performance
 
@@ -1736,9 +1766,11 @@ const JWT_SECRET = 'my-secret-key-123';
 
 ---
 
-## Tools & Extensions
+## 14. Tools & Extensions - เครื่องมือที่ต้องติดตั้ง
 
-### VS Code Extensions
+> 💡 **สำหรับนักพัฒนาใหม่:** ติดตั้ง extensions ด้านล่างนี้ก่อนเริ่มเขียนโค้ด — ดูรายละเอียดเพิ่มเติมที่ [0.2 Development Setup](../00_ONBOARDING/0.2_Development_Setup.md)
+
+### VS Code Extensions (จำเป็น)
 
 ```json
 {
@@ -1753,6 +1785,16 @@ const JWT_SECRET = 'my-secret-key-123';
   ]
 }
 ```
+
+| Extension | หน้าที่ |
+|-----------|---------|
+| **ESLint** | ตรวจสอบ code quality อัตโนมัติ |
+| **Prettier** | Format code อัตโนมัติ |
+| **Tailwind CSS IntelliSense** | Autocomplete สำหรับ Tailwind classes |
+| **TypeScript Next** | รองรับ TypeScript เวอร์ชันล่าสุด |
+| **GitLens** | ดูประวัติ Git ในไฟล์ |
+| **Path Intellisense** | Autocomplete file paths |
+| **ES7+ React Snippets** | Snippets สำหรับ React |
 
 ### ESLint Configuration
 
@@ -1791,66 +1833,42 @@ module.exports = {
 
 ---
 
-## Summary Checklist
+## เอกสารอ้างอิง
 
-### Daily Development
+### เอกสารภายใน (Internal)
 
-- [ ] Pull latest code ก่อนเริ่มงาน
-- [ ] สร้าง branch ใหม่สำหรับแต่ละ feature/bugfix
-- [ ] Commit บ่อยๆ ด้วย meaningful messages
-- [ ] Run tests ก่อน push
-- [ ] Review โค้ดของตัวเอง ก่อนสร้าง PR
-- [ ] ตอบ code review comments ทันที
+- [0.2 Development Setup - การติดตั้งเครื่องมือพัฒนา](../00_ONBOARDING/0.2_Development_Setup.md)
+- [7.1 Branching Strategy](../07_GIT_WORKFLOW/7.1_Branching_Strategy.md)
+- [7.2 Commit Message Convention](../07_GIT_WORKFLOW/7.2_Commit_Message_Convention.md)
+- [7.3 Pull Request Process](../07_GIT_WORKFLOW/7.3_Pull_Request_Process.md)
+- [7.4 Code Review Guidelines](../07_GIT_WORKFLOW/7.4_Code_Review_Guidelines.md)
 
-### Code Quality
+### เอกสารภายนอก (External)
 
-- [ ] ใช้ TypeScript อย่างเต็มที่ (ไม่ใช้ `any`)
-- [ ] ตั้งชื่อตัวแปร/ฟังก์ชัน ให้สื่อความหมาย
-- [ ] เขียน comments สำหรับ complex logic
-- [ ] Extract reusable components/functions
-- [ ] Handle errors properly
-- [ ] Write tests
-
-### Performance
-
-- [ ] Optimize re-renders (React.memo, useMemo, useCallback)
-- [ ] Use lazy loading สำหรับ large components
-- [ ] Implement pagination สำหรับ large lists
-- [ ] Use database indexes
-- [ ] Implement caching เมื่อเหมาะสม
-
-### Security
-
-- [ ] Validate all user inputs
-- [ ] Use parameterized queries
-- [ ] Hash passwords
-- [ ] Use HTTPS
-- [ ] Never commit secrets/credentials
-- [ ] Keep dependencies updated
+| แหล่งข้อมูล | ลิงก์ |
+|-------------|------|
+| React Documentation | https://react.dev |
+| TypeScript Documentation | https://www.typescriptlang.org/docs |
+| Tailwind CSS Documentation | https://tailwindcss.com/docs |
+| Node.js Documentation | https://nodejs.org/docs |
+| Express Documentation | https://expressjs.com |
+| PostgreSQL Documentation | https://www.postgresql.org/docs |
+| Airbnb JavaScript Style Guide | https://github.com/airbnb/javascript |
+| Google TypeScript Style Guide | https://google.github.io/styleguide/tsguide.html |
+| ESLint | https://eslint.org |
+| Prettier | https://prettier.io |
+| Jest | https://jestjs.io |
+| Testing Library | https://testing-library.com |
 
 ---
 
-## Resources
+## ประวัติการเปลี่ยนแปลง
 
-### Documentation
-- [React Docs](https://react.dev)
-- [TypeScript Docs](https://www.typescriptlang.org/docs)
-- [Tailwind CSS Docs](https://tailwindcss.com/docs)
-- [Node.js Docs](https://nodejs.org/docs)
-- [Express Docs](https://expressjs.com)
-- [PostgreSQL Docs](https://www.postgresql.org/docs)
-
-### Style Guides
-- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
-- [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)
-
-### Tools
-- [ESLint](https://eslint.org)
-- [Prettier](https://prettier.io)
-- [Jest](https://jestjs.io)
-- [Testing Library](https://testing-library.com)
+| เวอร์ชัน | วันที่ | ผู้แก้ไข | รายละเอียด |
+|---------|--------|---------|------------|
+| 1.0.0 | 15 มกราคม 2025 | Development Team | จัดทำเอกสารฉบับแรก |
+| 2.0.0 | 30 มกราคม 2026 | Development Team | ปรับรูปแบบเป็น SOP, เพิ่ม Quick Reference, เพิ่มคำอธิบายสำหรับนักพัฒนาใหม่, เพิ่มตาราง error classes, ปรับ cross-references ให้เชื่อมกับเอกสารอื่น |
 
 ---
 
-**อัพเดทล่าสุด**: 2025-01-15
-**Version**: 1.0.0
+*อัปเดตล่าสุด: 30 มกราคม 2026*
