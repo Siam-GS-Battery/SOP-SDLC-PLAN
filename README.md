@@ -148,6 +148,11 @@ graph LR
 
 | Document | Description |
 |:---------|:------------|
+| 📊 [Testing Strategy Overview](documentation/06_TESTING/6.1_Testing_Strategy_Overview.md) | ภาพรวมกลยุทธ์การทดสอบ, Testing Pyramid |
+| 🧩 [Unit Test Guide](documentation/06_TESTING/6.2_Unit_Test_Guide.md) | Unit Test สำหรับ React + Node.js ด้วย Vitest |
+| 🔗 [Integration Test Guide](documentation/06_TESTING/6.3_Integration_Test_Guide.md) | API Integration Test ด้วย Supertest |
+| ⚡ [Performance Test Guide](documentation/06_TESTING/6.4_Performance_Test_Guide.md) | Load / Stress / Spike Test ด้วย k6 |
+| 🔒 [Security Test Guide](documentation/06_TESTING/6.5_Security_Test_Guide.md) | Security Test ตาม OWASP Top 10 |
 | 📝 [UAT Scenario Template](documentation/06_TESTING/UAT_Scenario_Template.md) | UAT scenario template |
 | 📄 UAT_scenario.docx | UAT scenario document (Word format) |
 
@@ -212,6 +217,7 @@ graph LR
 
 | Date | Version | Author | Changes |
 |:-----|:--------|:-------|:--------|
+| 2026-03-27 | v1.4 | - | เพิ่มเอกสาร Testing ครบถ้วน: Strategy, Unit Test, Integration Test, Performance Test, Security Test |
 | 2026-03-27 | v1.3 | - | ปรับปรุงโครงสร้าง: เพิ่ม Quick Start, INDEX.md, CONTRIBUTING.md, แก้ไข file numbering |
 | 2026-01-29 | v1.2 | - | เพิ่มหมวด 07_GIT_WORKFLOW สำหรับมาตรฐาน Git |
 | 2026-01-29 | v1.1 | - | เพิ่มหมวด 00_ONBOARDING สำหรับสมาชิกใหม่ |
