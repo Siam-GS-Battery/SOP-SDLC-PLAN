@@ -11,6 +11,7 @@
 
 ---
 
+[Quick Start](QUICK_START.md) •
 [Onboarding](#-0-onboarding) •
 [Requirements](#-1-requirements-phase) •
 [Design](#-2-design-phase) •
@@ -18,7 +19,8 @@
 [Development](#-4-development-phase) •
 [Deploy](#-5-deploy-phase) •
 [Testing](#-6-testing-phase) •
-[Git Workflow](#-7-git-workflow)
+[Git Workflow](#-7-git-workflow) •
+[Contributing](CONTRIBUTING.md)
 
 ---
 
@@ -28,11 +30,35 @@
 
 This repository stores all documentation related to the **Kaizen Web Application** project, covering the full SDLC lifecycle — from requirements gathering to production delivery.
 
+> **เพิ่งเข้าทีม?** เริ่มที่ [Quick Start Guide](QUICK_START.md) เพื่อดูเอกสารที่เหมาะกับ Role ของคุณ
+
+### SDLC Progress
+
+```mermaid
+graph LR
+    A["0. Onboarding"] --> B["1. Requirements"]
+    B --> C["2. Design"]
+    C --> D["3. Database"]
+    D --> E["4. Development"]
+    E --> F["5. Deploy"]
+    F --> G["6. Testing"]
+
+    style A fill:#d1fae5,stroke:#059669,color:#000
+    style B fill:#d1fae5,stroke:#059669,color:#000
+    style C fill:#d1fae5,stroke:#059669,color:#000
+    style D fill:#d1fae5,stroke:#059669,color:#000
+    style E fill:#fef3c7,stroke:#d97706,color:#000
+    style F fill:#e0e7ff,stroke:#4f46e5,color:#000
+    style G fill:#e0e7ff,stroke:#4f46e5,color:#000
+```
+
+> 🟢 Completed &nbsp; 🟡 In Progress &nbsp; 🔵 Planned
+
 <br>
 
 ## 👋 0. ONBOARDING
 
-> *คู่มือสำหรับสมาชิกใหม่ในทีม — เริ่มต้นที่นี่!*
+> *คู่มือสำหรับสมาชิกใหม่ในทีม — เริ่มต้นที่นี่!* &nbsp; [INDEX](documentation/00_ONBOARDING/INDEX.md)
 
 | Document | Description |
 |:---------|:------------|
@@ -44,7 +70,7 @@ This repository stores all documentation related to the **Kaizen Web Application
 
 ## 🧩 1. REQUIREMENTS PHASE
 
-> *Define what to build and prioritize features*
+> *Define what to build and prioritize features* &nbsp; [INDEX](documentation/01_REQUIREMENTS/INDEX.md)
 
 | Document | Description |
 |:---------|:------------|
@@ -57,7 +83,7 @@ This repository stores all documentation related to the **Kaizen Web Application
 
 ## 🎨 2. DESIGN PHASE
 
-> *Create user experience flows and visual designs*
+> *Create user experience flows and visual designs* &nbsp; [INDEX](documentation/02_DESIGN/INDEX.md)
 
 | Document | Description |
 |:---------|:------------|
@@ -72,7 +98,7 @@ This repository stores all documentation related to the **Kaizen Web Application
 
 ## 🗄️ 3. DATABASE DESIGN
 
-> *Structure the data layer and relationships*
+> *Structure the data layer and relationships* &nbsp; [INDEX](documentation/03_DATABASE/INDEX.md)
 
 | Document | Description |
 |:---------|:------------|
@@ -84,25 +110,25 @@ This repository stores all documentation related to the **Kaizen Web Application
 
 ## 💻 4. DEVELOPMENT PHASE
 
-> *Build the application with best practices*
+> *Build the application with best practices* &nbsp; [INDEX](documentation/04_DEVELOPMENT/INDEX.md)
 
 | Document | Description |
 |:---------|:------------|
-| 🚀 [Project Initialization](documentation/04_DEVELOPMENT/5.1_Project_Initialization.md) | Project setup and initialization |
-| 📥 [Import Wireframes](documentation/04_DEVELOPMENT/5.2_Import_Wireframes.md) | Wireframe import documentation |
-| 🔍 [Frontend Analysis](documentation/04_DEVELOPMENT/5.3_Frontend_Analyze.md) | Frontend analysis documentation |
-| 🎬 [Generate Demo](documentation/04_DEVELOPMENT/5.4_Generate_Demo.md) | Demo generation guide |
-| 🗃️ [Database Design](documentation/04_DEVELOPMENT/5.5_Database_Design.md) | Database design documentation |
-| ⚡ [Backend Project](documentation/04_DEVELOPMENT/5.6_Backend_Project.md) | Backend project documentation |
-| 🔌 [API Development](documentation/04_DEVELOPMENT/5.7_API_Development.md) | API development documentation |
-| 🔗 [Frontend Integration](documentation/04_DEVELOPMENT/5.8_Frontend_Integration.md) | Frontend integration documentation |
+| 🚀 [Project Initialization](documentation/04_DEVELOPMENT/4.1_Project_Initialization.md) | Project setup and initialization |
+| 📥 [Import Wireframes](documentation/04_DEVELOPMENT/4.2_Import_Wireframes.md) | Wireframe import documentation |
+| 🔍 [Frontend Analysis](documentation/04_DEVELOPMENT/4.3_Frontend_Analyze.md) | Frontend analysis documentation |
+| 🎬 [Generate Demo](documentation/04_DEVELOPMENT/4.4_Generate_Demo.md) | Demo generation guide |
+| 🗃️ [Database Design](documentation/04_DEVELOPMENT/4.5_Database_Design.md) | Database design documentation |
+| ⚡ [Backend Project](documentation/04_DEVELOPMENT/4.6_Backend_Project.md) | Backend project documentation |
+| 🔌 [API Development](documentation/04_DEVELOPMENT/4.7_API_Development.md) | API development documentation |
+| 🔗 [Frontend Integration](documentation/04_DEVELOPMENT/4.8_Frontend_Integration.md) | Frontend integration documentation |
 | 📏 [Code Standard Guide](documentation/04_DEVELOPMENT/Code_Standard_Guide.md) | Coding standards and guidelines |
 
 <br>
 
 ## 🚀 5. DEPLOY PHASE
 
-> *Ship to production safely*
+> *Ship to production safely* &nbsp; [INDEX](documentation/05_DEPLOY/INDEX.md)
 
 | Document | Description |
 |:---------|:------------|
@@ -112,12 +138,13 @@ This repository stores all documentation related to the **Kaizen Web Application
 | 📝 [Deploy Steps](documentation/05_DEPLOY/5.4_Deploy_Steps.md) | Step-by-step deployment guide |
 | 🔎 [Post-Deploy Verification](documentation/05_DEPLOY/5.5_Post_Deploy_Verification.md) | Post-deployment verification |
 | 🔧 [Troubleshooting](documentation/05_DEPLOY/5.6_Troubleshooting.md) | Troubleshooting guide |
+| ☁️ [AWS Deploy Guide](documentation/05_DEPLOY/5.7_AWS_Deploy_Guide.md) | Deploy on AWS (EC2 + RDS + S3 + CloudFront + WAF) |
 
 <br>
 
 ## 🧪 6. TESTING PHASE
 
-> *Ensure quality through comprehensive testing*
+> *Ensure quality through comprehensive testing* &nbsp; [INDEX](documentation/06_TESTING/INDEX.md)
 
 | Document | Description |
 |:---------|:------------|
@@ -128,7 +155,7 @@ This repository stores all documentation related to the **Kaizen Web Application
 
 ## 🔀 7. GIT WORKFLOW
 
-> *มาตรฐานการใช้ Git และกระบวนการทำงานร่วมกัน*
+> *มาตรฐานการใช้ Git และกระบวนการทำงานร่วมกัน* &nbsp; [INDEX](documentation/07_GIT_WORKFLOW/INDEX.md)
 
 | Document | Description |
 |:---------|:------------|
@@ -145,17 +172,21 @@ This repository stores all documentation related to the **Kaizen Web Application
 
 ```
 📦 SOP-SDLC-PLAN
+ ┣ 📄 QUICK_START.md            → เริ่มต้นที่นี่! (role-based navigation)
+ ┣ 📄 CONTRIBUTING.md           → แนวทางการเพิ่ม/แก้ไขเอกสาร
+ ┣ 📄 README.md
  ┣ 📂 documentation
- ┃ ┣ 📂 00_ONBOARDING      → Onboarding documents for new members
- ┃ ┣ 📂 01_REQUIREMENTS    → Requirements phase documents
- ┃ ┣ 📂 02_DESIGN          → Design phase documents & images
- ┃ ┣ 📂 03_DATABASE        → Database design documents
- ┃ ┣ 📂 04_DEVELOPMENT     → Development phase documents
- ┃ ┣ 📂 05_DEPLOY          → Deployment documents
- ┃ ┣ 📂 06_TESTING         → Testing documents
- ┃ ┗ 📂 07_GIT_WORKFLOW    → Git workflow standards & guidelines
- ┗ 📄 README.md
+ ┃ ┣ 📂 00_ONBOARDING          → Onboarding documents for new members
+ ┃ ┣ 📂 01_REQUIREMENTS        → Requirements phase documents
+ ┃ ┣ 📂 02_DESIGN              → Design phase documents & images
+ ┃ ┣ 📂 03_DATABASE            → Database design documents
+ ┃ ┣ 📂 04_DEVELOPMENT         → Development phase documents
+ ┃ ┣ 📂 05_DEPLOY              → Deployment documents
+ ┃ ┣ 📂 06_TESTING             → Testing documents
+ ┃ ┗ 📂 07_GIT_WORKFLOW        → Git workflow standards & guidelines
 ```
+
+> แต่ละโฟลเดอร์มี `INDEX.md` สำหรับ navigation ภายใน phase นั้นๆ
 
 <br>
 
@@ -168,9 +199,10 @@ This repository stores all documentation related to the **Kaizen Web Application
 | 📍 **Location** | All documents must be stored under `/documentation/` folder |
 | 📝 **Versioning** | Each version update must be recorded in the Change Log below |
 | 🔗 **External Links** | FigJam / Figma / Asana links must be publicly viewable |
-| 📛 **Naming Convention** | `<phase>_<document_title>_<version>.<ext>` |
+| 📛 **Naming Convention** | `<phase>.<number>_<Document_Title>.md` |
+| 📖 **Contributing** | ดูแนวทางการเพิ่ม/แก้ไขเอกสารที่ [CONTRIBUTING.md](CONTRIBUTING.md) |
 
-> **Example:** `1.1_Raw_Requirement_List_v1.0.xlsx`
+> **Example:** `1.1_Raw_Requirement_List_MoSCoW.md`
 
 <br>
 
@@ -180,6 +212,7 @@ This repository stores all documentation related to the **Kaizen Web Application
 
 | Date | Version | Author | Changes |
 |:-----|:--------|:-------|:--------|
+| 2026-03-27 | v1.3 | - | ปรับปรุงโครงสร้าง: เพิ่ม Quick Start, INDEX.md, CONTRIBUTING.md, แก้ไข file numbering |
 | 2026-01-29 | v1.2 | - | เพิ่มหมวด 07_GIT_WORKFLOW สำหรับมาตรฐาน Git |
 | 2026-01-29 | v1.1 | - | เพิ่มหมวด 00_ONBOARDING สำหรับสมาชิกใหม่ |
 | 2025-12-16 | v1.0 | Fahfon | Initial document structure created |
