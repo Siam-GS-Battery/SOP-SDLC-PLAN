@@ -6,8 +6,8 @@
 
 | ลำดับ | เอกสาร | คำอธิบาย |
 |:-----:|:-------|:---------|
-| 2.5 | [Wireframe with Figma Make](2.5_Wireframe_with_Figma_Make.md) | สร้าง Wireframe ด้วย Figma Make (AI) พร้อมตัวอย่าง Prompt |
-| 2.6 | [UI Design with Figma Make](2.6_UI_Design_with_Figma_Make.md) | สร้าง UI Design พร้อม Brand Guideline และ Export ไป GitHub |
+| 2.1 | [Wireframe with Figma Make](2.1_Wireframe_with_Figma_Make.md) | สร้าง Wireframe ด้วย Figma Make (AI) พร้อมตัวอย่าง Prompt |
+| 2.2 | [UI Design with Figma Make](2.2_UI_Design_with_Figma_Make.md) | สร้าง UI Design พร้อม Brand Guideline และ Export ไป GitHub |
 
 ## ลำดับการอ่านแนะนำ
 

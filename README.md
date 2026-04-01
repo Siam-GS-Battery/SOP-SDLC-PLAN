@@ -192,13 +192,13 @@ graph LR
 </thead>
 <tbody>
 <tr>
-<td align="center"><code>2.5</code></td>
-<td><a href="documentation/02_DESIGN/2.5_Wireframe_with_Figma_Make.md"><strong>Wireframe with Figma Make</strong></a></td>
+<td align="center"><code>2.1</code></td>
+<td><a href="documentation/02_DESIGN/2.1_Wireframe_with_Figma_Make.md"><strong>Wireframe with Figma Make</strong></a></td>
 <td>สร้าง Wireframe ด้วย Figma Make (AI) พร้อมตัวอย่าง Prompt</td>
 </tr>
 <tr>
-<td align="center"><code>2.6</code></td>
-<td><a href="documentation/02_DESIGN/2.6_UI_Design_with_Figma_Make.md"><strong>UI Design with Figma Make</strong></a></td>
+<td align="center"><code>2.2</code></td>
+<td><a href="documentation/02_DESIGN/2.2_UI_Design_with_Figma_Make.md"><strong>UI Design with Figma Make</strong></a></td>
 <td>สร้าง UI Design พร้อม Brand Guideline และ Export ไป GitHub</td>
 </tr>
 </tbody>
