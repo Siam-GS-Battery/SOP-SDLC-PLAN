@@ -164,6 +164,11 @@ graph LR
 <td><a href="documentation/01_REQUIREMENTS/1.4_Roadmap_Timeline_Asana_Link.md"><strong>Roadmap & Timeline</strong></a></td>
 <td>แผนงานและ Timeline พร้อม Asana Integration</td>
 </tr>
+<tr>
+<td align="center"><code>1.5</code></td>
+<td><a href="documentation/01_REQUIREMENTS/1.5_Definition_of_Ready_Done.md"><strong>Definition of Ready & Done</strong></a></td>
+<td>DoR/DoD วิธีเขียน พร้อม Template และตัวอย่าง</td>
+</tr>
 </tbody>
 </table>
 
