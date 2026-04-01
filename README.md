@@ -164,6 +164,11 @@ graph LR
 <td><a href="documentation/01_REQUIREMENTS/1.4_Roadmap_Timeline_Asana_Link.md"><strong>Roadmap & Timeline</strong></a></td>
 <td>แผนงานและ Timeline พร้อม Asana Integration</td>
 </tr>
+<tr>
+<td align="center"><code>1.5</code></td>
+<td><a href="documentation/01_REQUIREMENTS/1.5_Definition_of_Ready_Done.md"><strong>Definition of Ready & Done</strong></a></td>
+<td>DoR/DoD วิธีเขียน พร้อม Template และตัวอย่าง</td>
+</tr>
 </tbody>
 </table>
 
@@ -179,7 +184,7 @@ graph LR
 
 ### 🎨 Chapter 2 — Design
 
-> *ออกแบบ UX Flow, Wireframe และ UI Design*
+> *สร้าง Wireframe และ UI Design ด้วย Figma Make (AI)*
 > &nbsp; [ดูทั้งหมด](documentation/02_DESIGN/INDEX.md)
 
 <table>
@@ -193,33 +198,13 @@ graph LR
 <tbody>
 <tr>
 <td align="center"><code>2.1</code></td>
-<td><a href="documentation/02_DESIGN/2.1_UX_Flow_Diagram_FigJam_Link.md"><strong>UX Flow Diagram</strong></a></td>
-<td>User Flow จาก FigJam</td>
+<td><a href="documentation/02_DESIGN/2.1_Wireframe_with_Figma_Make.md"><strong>Wireframe with Figma Make</strong></a></td>
+<td>สร้าง Wireframe ด้วย Figma Make (AI) พร้อมตัวอย่าง Prompt</td>
 </tr>
 <tr>
 <td align="center"><code>2.2</code></td>
-<td><a href="documentation/02_DESIGN/2.2_Wireframe_Screens_Figma_Link.md"><strong>Wireframe Screens</strong></a></td>
-<td>Wireframes แต่ละหน้าจอ</td>
-</tr>
-<tr>
-<td align="center"><code>2.3</code></td>
-<td><a href="documentation/02_DESIGN/2.3_Interactive_Prototype_Link.md"><strong>Interactive Prototype</strong></a></td>
-<td>Clickable Prototype สำหรับ UAT</td>
-</tr>
-<tr>
-<td align="center"><code>2.4</code></td>
-<td><a href="documentation/02_DESIGN/2.4_Technical_Stack.md"><strong>Technical Stack</strong></a></td>
-<td>React, Node.js, PostgreSQL, Supabase</td>
-</tr>
-<tr>
-<td align="center"><code>2.5</code></td>
-<td><a href="documentation/02_DESIGN/2.5_Wireframe_with_Figma_Make.md"><strong>Wireframe with Figma Make</strong></a></td>
-<td>สร้าง Wireframe ด้วย Figma Make (AI)</td>
-</tr>
-<tr>
-<td align="center"><code>2.6</code></td>
-<td><a href="documentation/02_DESIGN/2.6_UI_Design_with_Figma_Make.md"><strong>UI Design with Figma Make</strong></a></td>
-<td>สร้าง UI Design และ Export ไป GitHub</td>
+<td><a href="documentation/02_DESIGN/2.2_UI_Design_with_Figma_Make.md"><strong>UI Design with Figma Make</strong></a></td>
+<td>สร้าง UI Design พร้อม Brand Guideline และ Export ไป GitHub</td>
 </tr>
 </tbody>
 </table>
