@@ -1,0 +1,63 @@
+name: PR Approval Gate
+
+on:
+  issue_comment:
+    types: [created]
+
+env:
+  SENIOR_REVIEWER: "Pantira111"
+
+jobs:
+  check-approval:
+    name: Check Senior Approval
+    if: github.event.issue.pull_request
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      statuses: write
+    steps:
+      - name: Check if Senior commented APPROVED
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const seniorUser = process.env.SENIOR_REVIEWER;
+            const comment = context.payload.comment;
+            const prNumber = context.issue.number;
+
+            const isFromSenior = comment.user.login === seniorUser;
+            const isApproved = comment.body.toUpperCase().includes('APPROVED');
+
+            if (isFromSenior && isApproved) {
+              const pr = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: prNumber
+              });
+
+              await github.rest.repos.createCommitStatus({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                sha: pr.data.head.sha,
+                state: 'success',
+                context: 'Senior Approval',
+                description: `Approved by @${seniorUser}`
+              });
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: `✅ **Senior Approved** — PR นี้ได้รับอนุมัติจาก @${seniorUser} แล้ว สามารถ merge ได้`
+              });
+
+              console.log('PR approved by Senior');
+            } else if (!isFromSenior && isApproved) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: `⚠️ เฉพาะ @${seniorUser} (Senior) เท่านั้นที่สามารถ approve PR ได้`
+              });
+
+              console.log('APPROVED from non-senior user, ignored');
+            }
