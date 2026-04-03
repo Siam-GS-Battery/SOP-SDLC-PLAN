@@ -8,21 +8,38 @@ env:
   SENIOR_REVIEWER: "Pantira111"
 
 jobs:
+  # -----------------------------------------------------------
+  # Lint & Test — รันเฉพาะเมื่อมี package.json (โปรเจกต์ Node.js)
+  # ถ้าเป็น docs-only repo จะ skip อัตโนมัติ
+  # -----------------------------------------------------------
   lint:
     name: Lint & Type Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check if package.json exists
+        id: check
+        run: |
+          if [ -f package.json ]; then
+            echo "has_package=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_package=false" >> $GITHUB_OUTPUT
+            echo "No package.json found — skipping lint (docs-only repo)"
+          fi
+
       - uses: actions/setup-node@v4
+        if: steps.check.outputs.has_package == 'true'
         with:
           node-version: "18"
           cache: "npm"
 
       - name: Install dependencies
+        if: steps.check.outputs.has_package == 'true'
         run: npm ci
 
       - name: Run Lint
+        if: steps.check.outputs.has_package == 'true'
         run: npm run lint
 
   test:
@@ -32,17 +49,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check if package.json exists
+        id: check
+        run: |
+          if [ -f package.json ]; then
+            echo "has_package=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_package=false" >> $GITHUB_OUTPUT
+            echo "No package.json found — skipping tests (docs-only repo)"
+          fi
+
       - uses: actions/setup-node@v4
+        if: steps.check.outputs.has_package == 'true'
         with:
           node-version: "18"
           cache: "npm"
 
       - name: Install dependencies
+        if: steps.check.outputs.has_package == 'true'
         run: npm ci
 
       - name: Run Tests
+        if: steps.check.outputs.has_package == 'true'
         run: npm test
 
+  # -----------------------------------------------------------
+  # Auto-assign Senior เป็น Reviewer
+  # -----------------------------------------------------------
   assign-reviewer:
     name: Assign Senior Reviewer
     runs-on: ubuntu-latest
