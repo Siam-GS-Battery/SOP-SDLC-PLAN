@@ -12,14 +12,15 @@
 | 5.4 | [Deploy Steps](5.4_Deploy_Steps.md) | ขั้นตอนการ Deploy ทีละขั้น |
 | 5.5 | [Post-Deploy Verification](5.5_Post_Deploy_Verification.md) | การตรวจสอบหลัง Deploy |
 | 5.6 | [Troubleshooting](5.6_Troubleshooting.md) | การแก้ไขปัญหาที่พบบ่อย |
-| 5.7 | [AWS Deploy Guide](5.7_AWS_Deploy_Guide.md) | คู่มือ Deploy บน AWS (EC2 + RDS + S3 + CloudFront + WAF) |
+
+> สำหรับ Deploy บน AWS ดูที่ [Phase 8 — AWS](../08_AWS/INDEX.md)
 
 ## ลำดับการอ่านแนะนำ
 
 1. เริ่มจาก **Deploy Overview** เพื่อเข้าใจสถาปัตยกรรม
 2. ทำตาม **Pre-Deploy Checklist** ให้ครบ
 3. ตั้งค่า **Environment Variables**
-4. ทำตาม **Deploy Steps** (หรือ **AWS Deploy Guide** ถ้า deploy บน AWS)
+4. ทำตาม **Deploy Steps**
 5. ตรวจสอบด้วย **Post-Deploy Verification**
 6. หากมีปัญหา ดู **Troubleshooting**
 
