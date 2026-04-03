@@ -486,6 +486,11 @@ graph LR
 <td><a href="documentation/07_GIT_WORKFLOW/7.4_Code_Review_Guidelines.md"><strong>Code Review Guidelines</strong></a></td>
 <td>4 ระดับ Comment (MUST/SHOULD/NIT/LEARN), Senior Checklist</td>
 </tr>
+<tr>
+<td align="center"><code>7.5</code></td>
+<td><a href="documentation/07_GIT_WORKFLOW/7.5_GitHub_Actions_CI_Template.md"><strong>GitHub Actions CI Template</strong></a></td>
+<td>Template CI + Auto-assign Senior + Approval Gate (copy ไปใช้ได้เลย)</td>
+</tr>
 </tbody>
 </table>
 

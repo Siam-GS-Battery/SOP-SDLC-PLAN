@@ -10,6 +10,7 @@
 | 7.2 | [Commit Message Convention](7.2_Commit_Message_Convention.md) | มาตรฐานการเขียน Commit Message |
 | 7.3 | [Pull Request Process](7.3_Pull_Request_Process.md) | กระบวนการ Pull Request |
 | 7.4 | [Code Review Guidelines](7.4_Code_Review_Guidelines.md) | แนวทางการ Review Code |
+| 7.5 | [GitHub Actions CI Template](7.5_GitHub_Actions_CI_Template.md) | Template CI + Auto-assign + Approval Gate |
 
 ## ลำดับการอ่านแนะนำ
 
