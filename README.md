@@ -31,6 +31,7 @@
 <td align="center"><a href="#-chapter-5--deploy"><strong>Ch.5</strong><br>Deploy</a></td>
 <td align="center"><a href="#-chapter-6--testing"><strong>Ch.6</strong><br>Testing</a></td>
 <td align="center"><a href="#-chapter-7--git-workflow"><strong>Ch.7</strong><br>Git Workflow</a></td>
+<td align="center"><a href="#%EF%B8%8F-chapter-8--aws"><strong>Ch.8</strong><br>AWS</a></td>
 </tr>
 </table>
 
@@ -377,11 +378,6 @@ graph LR
 <td><a href="documentation/05_DEPLOY/5.6_Troubleshooting.md"><strong>Troubleshooting</strong></a></td>
 <td>แก้ไขปัญหาที่พบบ่อย</td>
 </tr>
-<tr>
-<td align="center"><code>5.7</code></td>
-<td><a href="documentation/05_DEPLOY/5.7_AWS_Deploy_Guide.md"><strong>AWS Deploy Guide</strong></a></td>
-<td>Deploy บน AWS (EC2 + RDS + S3 + CloudFront + WAF)</td>
-</tr>
 </tbody>
 </table>
 
@@ -498,6 +494,78 @@ graph LR
 
 ---
 
+<!-- ============================================ -->
+<!-- CHAPTER 8 -->
+<!-- ============================================ -->
+
+<img src="https://img.shields.io/badge/Chapter_8-AWS-f97316?style=for-the-badge&labelColor=fff7ed" alt="Chapter 8" />
+
+### ☁️ Chapter 8 — AWS
+
+> *คู่มือ Deploy บน AWS — EC2 + RDS + S3 + CloudFront + WAF (อ้างอิง KAIZEN App)*
+> &nbsp; [ดูทั้งหมด](documentation/08_AWS/INDEX.md)
+
+<table>
+<thead>
+<tr>
+<th width="80">📖</th>
+<th width="350">เอกสาร</th>
+<th>รายละเอียด</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>8.0</code></td>
+<td><a href="documentation/08_AWS/8.0_Overview_and_Prerequisites.md"><strong>ภาพรวมและ Prerequisites</strong></a></td>
+<td>สถาปัตยกรรม, สิ่งที่ต้องเตรียม, ค่าใช้จ่าย, Naming Convention</td>
+</tr>
+<tr>
+<td align="center"><code>8.1</code></td>
+<td><a href="documentation/08_AWS/8.1_VPC_and_Networking.md"><strong>VPC และเครือข่าย</strong></a></td>
+<td>สร้าง VPC, Subnets, Security Groups</td>
+</tr>
+<tr>
+<td align="center"><code>8.2</code></td>
+<td><a href="documentation/08_AWS/8.2_EC2_Instance.md"><strong>EC2 Instance</strong></a></td>
+<td>สร้างเซิร์ฟเวอร์, ติดตั้ง Node.js + Nginx + PM2</td>
+</tr>
+<tr>
+<td align="center"><code>8.3</code></td>
+<td><a href="documentation/08_AWS/8.3_RDS_Database.md"><strong>RDS Database</strong></a></td>
+<td>สร้าง PostgreSQL, Private Access, Encryption</td>
+</tr>
+<tr>
+<td align="center"><code>8.4</code></td>
+<td><a href="documentation/08_AWS/8.4_S3_Storage.md"><strong>S3 Storage</strong></a></td>
+<td>สร้าง Buckets, Policy, Blue-Green</td>
+</tr>
+<tr>
+<td align="center"><code>8.5</code></td>
+<td><a href="documentation/08_AWS/8.5_CloudFront_and_WAF.md"><strong>CloudFront และ WAF</strong></a></td>
+<td>CDN, SSL, Firewall Rules (OWASP, Rate Limiting)</td>
+</tr>
+<tr>
+<td align="center"><code>8.6</code></td>
+<td><a href="documentation/08_AWS/8.6_Security.md"><strong>Security</strong></a></td>
+<td>Secrets Manager, KMS, SSL/TLS, CloudWatch</td>
+</tr>
+<tr>
+<td align="center"><code>8.7</code></td>
+<td><a href="documentation/08_AWS/8.7_CICD_Pipeline.md"><strong>CI/CD Pipeline</strong></a></td>
+<td>GitHub Actions, SSM, Blue-Green Deployment</td>
+</tr>
+<tr>
+<td align="center"><code>8.8</code></td>
+<td><a href="documentation/08_AWS/8.8_Go_Live_Checklist.md"><strong>Go-Live Checklist</strong></a></td>
+<td>Checklist ก่อนเปิดให้ผู้ใช้จริง</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+---
+
 <br>
 
 ## 📁 Project Structure
@@ -515,7 +583,8 @@ graph LR
     ┣ 📂 04_DEVELOPMENT         → Ch.4  พัฒนาแอปพลิเคชัน
     ┣ 📂 05_DEPLOY              → Ch.5  นำขึ้น Production
     ┣ 📂 06_TESTING             → Ch.6  ทดสอบคุณภาพ
-    ┗ 📂 07_GIT_WORKFLOW        → Ch.7  มาตรฐาน Git
+    ┣ 📂 07_GIT_WORKFLOW        → Ch.7  มาตรฐาน Git
+    ┗ 📂 08_AWS                 → Ch.8  คู่มือ Deploy บน AWS
 ```
 
 > แต่ละ Chapter มี `INDEX.md` สำหรับ navigation ภายใน
