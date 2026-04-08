@@ -23,10 +23,6 @@
   <samp>Software Development Life Cycle Documentation</samp>
 </h3>
 
-<p>
-  <em>Kaizen Web Application &mdash; GS Battery</em>
-</p>
-
 <br>
 
 <!-- CTA BUTTON -->
@@ -331,7 +327,7 @@ graph LR
 
 ### ☁️ Chapter 8 — AWS
 
-> *คู่มือ Deploy บน AWS — EC2 + RDS + S3 + CloudFront + WAF (อ้างอิง KAIZEN App)*
+> *คู่มือ Deploy บน AWS — EC2 + RDS + S3 + CloudFront + WAF*
 > &nbsp; [📂 ดูทั้งหมด](documentation/08_AWS/INDEX.md)
 
 | # | เอกสาร | รายละเอียด |
@@ -414,7 +410,7 @@ graph LR
 
 <br><br>
 
-<sub>GS Battery &mdash; Kaizen Web Application &mdash; 2026</sub>
+<sub>GS Battery &mdash; 2026</sub>
 
 <br><br>
 
