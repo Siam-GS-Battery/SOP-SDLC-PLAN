@@ -35,13 +35,13 @@ AC (Acceptance Criteria)
 
 ## เอกสารเก่า (Archived)
 
-เอกสารต่อไปนี้ไม่ได้ใช้ในกระบวนการปัจจุบันแล้ว เก็บไว้สำหรับอ้างอิง:
+เอกสารต่อไปนี้ถูกลบแล้ว เนื่องจากไม่ได้ใช้ในกระบวนการปัจจุบัน:
 
 | เอกสาร | เหตุผล |
 |:-------|:-------|
-| [Frontend Analysis](4.3_Frontend_Analyze.md) | Figma Make สร้าง UI สำเร็จรูปแล้ว ไม่ต้องวิเคราะห์โครงสร้างเอง |
-| [Generate Demo](4.4_Generate_Demo.md) | Figma Make สร้าง UI พร้อม DataContext ไม่ต้องสร้าง mock data แยก |
-| [API Development](4.7_API_Development.md) | รวมเข้ากับ Backend Development (Claude Code สร้างทั้ง backend + API) |
+| ~~Frontend Analysis~~ | Figma Make สร้าง UI สำเร็จรูปแล้ว ไม่ต้องวิเคราะห์โครงสร้างเอง |
+| ~~Generate Demo~~ | Figma Make สร้าง UI พร้อม DataContext ไม่ต้องสร้าง mock data แยก |
+| ~~API Development~~ | รวมเข้ากับ Backend Development (Claude Code สร้างทั้ง backend + API) |
 
 ## Phase ก่อนหน้า / ถัดไป
 
