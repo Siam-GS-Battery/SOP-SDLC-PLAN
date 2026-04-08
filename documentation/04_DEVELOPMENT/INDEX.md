@@ -20,9 +20,9 @@ AC (Acceptance Criteria)
 | ⭐ | [Code Standard Guide](Code_Standard_Guide.md) | มาตรฐานการเขียนโค้ด (อ่านก่อนเริ่มงาน) |
 | 4.1 | [Project Initialization](4.1_Project_Initialization.md) | ตั้งค่า Repository และ Environment |
 | 4.2 | [Import UI from Figma Make](4.2_Import_Wireframes.md) | นำเข้า Code จาก Figma Make ที่สร้างจาก AC |
-| 4.3 | [Database from DataContext](4.5_Database_Design.md) | Claude อ่าน DataContext → สร้าง SQL Schema |
-| 4.4 | [Backend Development](4.6_Backend_Project.md) | สร้าง Backend API ด้วย Claude Code |
-| 4.5 | [Frontend Integration](4.8_Frontend_Integration.md) | Claude Code เชื่อม Frontend จาก Mockup ไป Backend จริง |
+| 4.3 | [Database from DataContext](4.3_Database_Design.md) | Claude อ่าน DataContext → สร้าง SQL Schema |
+| 4.4 | [Backend Development](4.4_Backend_Project.md) | สร้าง Backend API ด้วย Claude Code |
+| 4.5 | [Frontend Integration](4.5_Frontend_Integration.md) | Claude Code เชื่อม Frontend จาก Mockup ไป Backend จริง |
 
 ## ลำดับการทำงาน
 
@@ -32,16 +32,6 @@ AC (Acceptance Criteria)
 4. **Database from DataContext** — ให้ Claude อ่าน DataContext แล้วสร้าง SQL
 5. **Backend Development** — ใช้ Claude Code สร้าง Backend API
 6. **Frontend Integration** — ใช้ Claude Code เปลี่ยนจาก mockup data ไปเชื่อม backend จริง
-
-## เอกสารเก่า (Archived)
-
-เอกสารต่อไปนี้ถูกลบแล้ว เนื่องจากไม่ได้ใช้ในกระบวนการปัจจุบัน:
-
-| เอกสาร | เหตุผล |
-|:-------|:-------|
-| ~~Frontend Analysis~~ | Figma Make สร้าง UI สำเร็จรูปแล้ว ไม่ต้องวิเคราะห์โครงสร้างเอง |
-| ~~Generate Demo~~ | Figma Make สร้าง UI พร้อม DataContext ไม่ต้องสร้าง mock data แยก |
-| ~~API Development~~ | รวมเข้ากับ Backend Development (Claude Code สร้างทั้ง backend + API) |
 
 ## Phase ก่อนหน้า / ถัดไป
 

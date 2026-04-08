@@ -229,9 +229,9 @@ graph LR
 | ⭐ | [**Code Standard Guide**](documentation/04_DEVELOPMENT/Code_Standard_Guide.md) | มาตรฐานการเขียนโค้ด Naming, Structure, Best Practices |
 | `4.1` | [**Project Initialization**](documentation/04_DEVELOPMENT/4.1_Project_Initialization.md) | ตั้งค่า Repository และ Environment |
 | `4.2` | [**Import UI from Figma Make**](documentation/04_DEVELOPMENT/4.2_Import_Wireframes.md) | นำเข้า Code จาก Figma Make ที่สร้างจาก AC |
-| `4.3` | [**Database from DataContext**](documentation/04_DEVELOPMENT/4.5_Database_Design.md) | Claude อ่าน DataContext จาก Figma Make → สร้าง SQL Schema |
-| `4.4` | [**Backend Development**](documentation/04_DEVELOPMENT/4.6_Backend_Project.md) | สร้าง Backend API ด้วย Claude Code |
-| `4.5` | [**Frontend Integration**](documentation/04_DEVELOPMENT/4.8_Frontend_Integration.md) | Claude Code เชื่อม Frontend จาก Mockup ไป Backend จริง |
+| `4.3` | [**Database from DataContext**](documentation/04_DEVELOPMENT/4.3_Database_Design.md) | Claude อ่าน DataContext จาก Figma Make → สร้าง SQL Schema |
+| `4.4` | [**Backend Development**](documentation/04_DEVELOPMENT/4.4_Backend_Project.md) | สร้าง Backend API ด้วย Claude Code |
+| `4.5` | [**Frontend Integration**](documentation/04_DEVELOPMENT/4.5_Frontend_Integration.md) | Claude Code เชื่อม Frontend จาก Mockup ไป Backend จริง |
 
 <br>
 
