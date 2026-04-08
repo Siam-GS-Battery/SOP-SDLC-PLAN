@@ -221,20 +221,17 @@ graph LR
 
 ### 💻 Chapter 4 — Development
 
-> *พัฒนาแอปพลิเคชันตามมาตรฐาน*
+> *พัฒนาแอปพลิเคชันด้วย Figma Make + Claude Code*
 > &nbsp; [📂 ดูทั้งหมด](documentation/04_DEVELOPMENT/INDEX.md)
 
 | # | เอกสาร | รายละเอียด |
 |:---:|:---|:---|
 | ⭐ | [**Code Standard Guide**](documentation/04_DEVELOPMENT/Code_Standard_Guide.md) | มาตรฐานการเขียนโค้ด Naming, Structure, Best Practices |
-| `4.1` | [**Project Initialization**](documentation/04_DEVELOPMENT/4.1_Project_Initialization.md) | ตั้งค่าโปรเจกต์เริ่มต้น |
-| `4.2` | [**Import Wireframes**](documentation/04_DEVELOPMENT/4.2_Import_Wireframes.md) | นำเข้า Wireframes จาก Figma |
-| `4.3` | [**Frontend Analysis**](documentation/04_DEVELOPMENT/4.3_Frontend_Analyze.md) | วิเคราะห์โครงสร้าง Frontend |
-| `4.4` | [**Generate Demo**](documentation/04_DEVELOPMENT/4.4_Generate_Demo.md) | สร้าง Demo สำหรับทดสอบ |
-| `4.5` | [**Database Design**](documentation/04_DEVELOPMENT/4.5_Database_Design.md) | ออกแบบฐานข้อมูลในขั้น Development |
-| `4.6` | [**Backend Project**](documentation/04_DEVELOPMENT/4.6_Backend_Project.md) | พัฒนา Backend (Node.js / Express) |
-| `4.7` | [**API Development**](documentation/04_DEVELOPMENT/4.7_API_Development.md) | พัฒนา REST API |
-| `4.8` | [**Frontend Integration**](documentation/04_DEVELOPMENT/4.8_Frontend_Integration.md) | เชื่อมต่อ Frontend กับ Backend API |
+| `4.1` | [**Project Initialization**](documentation/04_DEVELOPMENT/4.1_Project_Initialization.md) | ตั้งค่า Repository และ Environment |
+| `4.2` | [**Import UI from Figma Make**](documentation/04_DEVELOPMENT/4.2_Import_Wireframes.md) | นำเข้า Code จาก Figma Make ที่สร้างจาก AC |
+| `4.3` | [**Database from DataContext**](documentation/04_DEVELOPMENT/4.5_Database_Design.md) | Claude อ่าน DataContext จาก Figma Make → สร้าง SQL Schema |
+| `4.4` | [**Backend Development**](documentation/04_DEVELOPMENT/4.6_Backend_Project.md) | สร้าง Backend API ด้วย Claude Code |
+| `4.5` | [**Frontend Integration**](documentation/04_DEVELOPMENT/4.8_Frontend_Integration.md) | Claude Code เชื่อม Frontend จาก Mockup ไป Backend จริง |
 
 <br>
 
