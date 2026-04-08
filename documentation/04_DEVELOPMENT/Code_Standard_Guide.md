@@ -505,7 +505,138 @@ async function getProductById(id: number): Promise<Product> {
 
 ---
 
-## 9. Security
+## 9. API Response Format Standard
+
+ทุก API endpoint ต้องตอบกลับในรูปแบบเดียวกัน เพื่อให้ Frontend จัดการ response ได้ง่าย
+
+### Success Response
+
+```typescript
+// Single item
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "name": "Product A",
+    "price": 500
+  }
+}
+
+// List with pagination
+{
+  "success": true,
+  "data": [
+    { "id": 1, "name": "Product A" },
+    { "id": 2, "name": "Product B" }
+  ],
+  "pagination": {
+    "page": 1,
+    "pageSize": 20,
+    "total": 58,
+    "totalPages": 3
+  }
+}
+
+// Action without return data
+{
+  "success": true,
+  "message": "Product deleted successfully"
+}
+```
+
+### Error Response
+
+```typescript
+// General error
+{
+  "success": false,
+  "message": "Product not found"
+}
+
+// Validation error (Zod)
+{
+  "success": false,
+  "message": "Validation failed",
+  "errors": [
+    { "field": "email", "message": "Invalid email format" },
+    { "field": "password", "message": "Must be at least 8 characters" }
+  ]
+}
+```
+
+### HTTP Status Codes ที่ใช้
+
+| Status | ใช้เมื่อ | ตัวอย่าง |
+|--------|---------|----------|
+| `200` | สำเร็จ (GET, PUT, PATCH, DELETE) | ดึงข้อมูล, อัปเดต, ลบ |
+| `201` | สร้างสำเร็จ (POST) | สร้าง user/product ใหม่ |
+| `400` | Request ไม่ถูกต้อง | Validation error, bad input |
+| `401` | ไม่ได้ login / token หมดอายุ | Missing or invalid token |
+| `403` | ไม่มีสิทธิ์เข้าถึง | User ไม่ใช่ admin |
+| `404` | ไม่พบข้อมูล | Product/User not found |
+| `409` | ข้อมูลซ้ำ | Email already exists |
+| `500` | Server error | Unexpected error |
+
+### TypeScript Types
+
+```typescript
+// types/api.types.ts
+interface ApiResponse<T> {
+  success: true;
+  data: T;
+  message?: string;
+  pagination?: Pagination;
+}
+
+interface ApiError {
+  success: false;
+  message: string;
+  errors?: FieldError[];
+}
+
+interface Pagination {
+  page: number;
+  pageSize: number;
+  total: number;
+  totalPages: number;
+}
+
+interface FieldError {
+  field: string;
+  message: string;
+}
+```
+
+### Helper Function (Backend)
+
+```typescript
+// utils/apiResponse.ts
+export function sendSuccess<T>(res: Response, data: T, status = 200) {
+  return res.status(status).json({ success: true, data });
+}
+
+export function sendCreated<T>(res: Response, data: T) {
+  return res.status(201).json({ success: true, data });
+}
+
+export function sendPaginated<T>(res: Response, data: T[], pagination: Pagination) {
+  return res.json({ success: true, data, pagination });
+}
+
+// ใช้ใน Controller
+async getAll(req: Request, res: Response, next: NextFunction) {
+  try {
+    const { data, pagination } = await productService.getAll(req.query);
+    sendPaginated(res, data, pagination);
+  } catch (error) {
+    next(error);
+  }
+}
+```
+
+---
+
+## 10. Security
 
 > **ข้อบังคับเคร่งครัด** — การละเมิดอาจทำให้เกิดช่องโหว่ด้านความปลอดภัย
 
@@ -571,7 +702,7 @@ const JWT_SECRET = 'my-secret-key-123';
 
 ---
 
-## 10. Performance
+## 11. Performance
 
 ### Frontend
 
@@ -609,7 +740,7 @@ async function getProducts(page = 1, pageSize = 20) {
 
 ---
 
-## 11. Tools & Extensions
+## 12. Tools & Extensions
 
 > ดูรายละเอียดการติดตั้งที่ [Development Setup](../00_ONBOARDING/0.2_Development_Setup.md)
 
@@ -698,3 +829,4 @@ module.exports = {
 | 1.0.0 | 15 ม.ค. 2025 | จัดทำเอกสารฉบับแรก |
 | 2.0.0 | 30 ม.ค. 2026 | ปรับรูปแบบเป็น SOP, เพิ่ม Quick Reference |
 | 2.1.0 | 8 เม.ย. 2026 | ปรับให้กระชับ ลดเนื้อหาซ้ำซ้อน ลิงก์ไปเอกสารเฉพาะทาง |
+| 2.2.0 | 8 เม.ย. 2026 | เพิ่ม API Response Format Standard (Section 9) |
