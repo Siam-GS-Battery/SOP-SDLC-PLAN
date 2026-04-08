@@ -1,37 +1,57 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/%F0%9F%93%9A-SOP--SDLC%20Documentation-1a1a2e?style=for-the-badge&labelColor=1a1a2e" alt="SOP-SDLC Documentation" />
-
-<br><br>
-
-<img src="https://img.shields.io/badge/version-v1.5-16213e?style=flat-square" />
-<img src="https://img.shields.io/badge/status-Active-0f3460?style=flat-square" />
-<img src="https://img.shields.io/badge/phases-8%20Chapters-533483?style=flat-square" />
-<img src="https://img.shields.io/badge/team-IT%20%26%20Data%20Mgmt-e94560?style=flat-square" />
-
-<br><br>
-
-<strong>คลังเอกสาร Software Development Life Cycle</strong>
+<!-- HERO BANNER -->
 <br>
-<em>Kaizen Web Application &mdash; GS Battery</em>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/%F0%9F%93%9A_SOP--SDLC-Documentation_Hub-0d1117?style=for-the-badge&labelColor=0d1117&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyTDIgNy4wMDVWMTdsMTAgNSAxMC01VjcuMDA1TDEyIDJ6Ii8+PC9zdmc+">
+  <img src="https://img.shields.io/badge/%F0%9F%93%9A_SOP--SDLC-Documentation_Hub-1a1a2e?style=for-the-badge&labelColor=1a1a2e" alt="SOP-SDLC Documentation Hub" height="45" />
+</picture>
 
 <br><br>
 
-<a href="QUICK_START.md"><img src="https://img.shields.io/badge/%E2%9A%A1_Quick_Start-เริ่มต้นที่นี่-e94560?style=for-the-badge" alt="Quick Start" /></a>
+<!-- PROJECT BADGES -->
+<a href="#-change-log"><img src="https://img.shields.io/badge/version-v1.5-6366f1?style=flat-square&logo=semver&logoColor=white" alt="Version" /></a>&nbsp;
+<img src="https://img.shields.io/badge/status-Active-10b981?style=flat-square&logo=statuspage&logoColor=white" alt="Status" />&nbsp;
+<img src="https://img.shields.io/badge/chapters-9_Chapters-8b5cf6?style=flat-square&logo=bookstack&logoColor=white" alt="Chapters" />&nbsp;
+<img src="https://img.shields.io/badge/team-IT_&_Data_Mgmt-ec4899?style=flat-square&logo=microsoft-teams&logoColor=white" alt="Team" />
 
 <br><br>
 
+<!-- TAGLINE -->
+<h3>
+  <samp>Software Development Life Cycle Documentation</samp>
+</h3>
+
+<p>
+  <em>Kaizen Web Application &mdash; GS Battery</em>
+</p>
+
+<br>
+
+<!-- CTA BUTTON -->
+<a href="QUICK_START.md">
+  <img src="https://img.shields.io/badge/%E2%9A%A1_QUICK_START-เริ่มต้นที่นี่-ec4899?style=for-the-badge&logoColor=white" alt="Quick Start" height="35" />
+</a>
+&nbsp;&nbsp;
+<a href="CONTRIBUTING.md">
+  <img src="https://img.shields.io/badge/%F0%9F%A4%9D_CONTRIBUTING-ร่วมพัฒนา-6366f1?style=for-the-badge&logoColor=white" alt="Contributing" height="35" />
+</a>
+
+<br><br>
+
+<!-- CHAPTER NAVIGATION -->
 <table>
 <tr>
-<td align="center"><a href="#-chapter-0--onboarding"><strong>Ch.0</strong><br>Onboarding</a></td>
-<td align="center"><a href="#-chapter-1--requirements"><strong>Ch.1</strong><br>Requirements</a></td>
-<td align="center"><a href="#-chapter-2--design"><strong>Ch.2</strong><br>Design</a></td>
-<td align="center"><a href="#%EF%B8%8F-chapter-3--database"><strong>Ch.3</strong><br>Database</a></td>
-<td align="center"><a href="#-chapter-4--development"><strong>Ch.4</strong><br>Development</a></td>
-<td align="center"><a href="#-chapter-5--deploy"><strong>Ch.5</strong><br>Deploy</a></td>
-<td align="center"><a href="#-chapter-6--testing"><strong>Ch.6</strong><br>Testing</a></td>
-<td align="center"><a href="#-chapter-7--git-workflow"><strong>Ch.7</strong><br>Git Workflow</a></td>
-<td align="center"><a href="#%EF%B8%8F-chapter-8--aws"><strong>Ch.8</strong><br>AWS</a></td>
+<td align="center" width="100"><a href="#-chapter-0--onboarding">📋<br><strong>Ch.0</strong><br><sub>Onboarding</sub></a></td>
+<td align="center" width="100"><a href="#-chapter-1--requirements">📝<br><strong>Ch.1</strong><br><sub>Requirements</sub></a></td>
+<td align="center" width="100"><a href="#-chapter-2--design">🎨<br><strong>Ch.2</strong><br><sub>Design</sub></a></td>
+<td align="center" width="100"><a href="#%EF%B8%8F-chapter-3--database">🗄️<br><strong>Ch.3</strong><br><sub>Database</sub></a></td>
+<td align="center" width="100"><a href="#-chapter-4--development">💻<br><strong>Ch.4</strong><br><sub>Development</sub></a></td>
+<td align="center" width="100"><a href="#-chapter-5--deploy">🚀<br><strong>Ch.5</strong><br><sub>Deploy</sub></a></td>
+<td align="center" width="100"><a href="#-chapter-6--testing">🧪<br><strong>Ch.6</strong><br><sub>Testing</sub></a></td>
+<td align="center" width="100"><a href="#-chapter-7--git-workflow">🔀<br><strong>Ch.7</strong><br><sub>Git</sub></a></td>
+<td align="center" width="100"><a href="#%EF%B8%8F-chapter-8--aws">☁️<br><strong>Ch.8</strong><br><sub>AWS</sub></a></td>
 </tr>
 </table>
 
@@ -39,17 +59,36 @@
 
 <br>
 
----
+<!-- TECH STACK -->
+<details>
+<summary><strong>&nbsp;🛠️ Tech Stack</strong></summary>
+<br>
+<p align="center">
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+<img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+<img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+<br>
+<img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" alt="AWS" />
+<img src="https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white" alt="Railway" />
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
+<img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions" />
+<img src="https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white" alt="Vitest" />
+</p>
+</details>
 
 <br>
 
+> [!TIP]
 > **เพิ่งเข้าทีม?** เริ่มที่ [Quick Start Guide](QUICK_START.md) เพื่อดูเอกสารที่เหมาะกับ Role ของคุณ
->
+
+> [!NOTE]
 > **อยากเพิ่ม/แก้ไขเอกสาร?** อ่าน [Contributing Guide](CONTRIBUTING.md)
 
 <br>
 
-## SDLC Journey
+## 🗺️ SDLC Journey
 
 ```mermaid
 graph LR
@@ -60,20 +99,20 @@ graph LR
     E --> F["🚀 5. Deploy"]
     F --> G["🧪 6. Testing"]
 
-    style A fill:#d1fae5,stroke:#059669,color:#000
-    style B fill:#d1fae5,stroke:#059669,color:#000
-    style C fill:#d1fae5,stroke:#059669,color:#000
-    style D fill:#d1fae5,stroke:#059669,color:#000
-    style E fill:#fef3c7,stroke:#d97706,color:#000
-    style F fill:#e0e7ff,stroke:#4f46e5,color:#000
-    style G fill:#e0e7ff,stroke:#4f46e5,color:#000
+    style A fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#000
+    style B fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#000
+    style C fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#000
+    style D fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#000
+    style E fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#000
+    style F fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#000
+    style G fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#000
 ```
 
 <table>
 <tr>
-<td>🟢 เสร็จสมบูรณ์</td>
-<td>🟡 กำลังดำเนินการ</td>
-<td>🔵 วางแผนไว้</td>
+<td>🟢 <strong>เสร็จสมบูรณ์</strong></td>
+<td>🟡 <strong>กำลังดำเนินการ</strong></td>
+<td>🔵 <strong>วางแผนไว้</strong></td>
 </tr>
 </table>
 
@@ -87,39 +126,20 @@ graph LR
 <!-- CHAPTER 0 -->
 <!-- ============================================ -->
 
+<table><tr><td>
 <img src="https://img.shields.io/badge/Chapter_0-ONBOARDING-059669?style=for-the-badge&labelColor=d1fae5" alt="Chapter 0" />
+</td></tr></table>
 
 ### 📋 Chapter 0 — Onboarding
 
 > *คู่มือสำหรับสมาชิกใหม่ในทีม — เริ่มต้นที่นี่!*
-> &nbsp; [ดูทั้งหมด](documentation/00_ONBOARDING/INDEX.md)
+> &nbsp; [📂 ดูทั้งหมด](documentation/00_ONBOARDING/INDEX.md)
 
-<table>
-<thead>
-<tr>
-<th width="80">📖</th>
-<th width="350">เอกสาร</th>
-<th>รายละเอียด</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><code>0.1</code></td>
-<td><a href="documentation/00_ONBOARDING/0.1_Welcome_Guide.md"><strong>Welcome Guide</strong></a></td>
-<td>ภาพรวมทีม วัฒนธรรม โครงสร้าง บทบาท Sr./Jr. ตารางงาน Team Rules</td>
-</tr>
-<tr>
-<td align="center"><code>0.2</code></td>
-<td><a href="documentation/00_ONBOARDING/0.2_Development_Setup.md"><strong>Development Setup</strong></a></td>
-<td>วิธีติดตั้ง Tools และ Environment สำหรับเริ่มงาน</td>
-</tr>
-<tr>
-<td align="center"><code>0.3</code></td>
-<td><a href="documentation/00_ONBOARDING/0.3_Access_Request_Checklist.md"><strong>Access Request Checklist</strong></a></td>
-<td>รายการ Access ที่ต้องขอก่อนเริ่มงาน</td>
-</tr>
-</tbody>
-</table>
+| # | เอกสาร | รายละเอียด |
+|:---:|:---|:---|
+| `0.1` | [**Welcome Guide**](documentation/00_ONBOARDING/0.1_Welcome_Guide.md) | ภาพรวมทีม วัฒนธรรม โครงสร้าง บทบาท Sr./Jr. ตารางงาน Team Rules |
+| `0.2` | [**Development Setup**](documentation/00_ONBOARDING/0.2_Development_Setup.md) | วิธีติดตั้ง Tools และ Environment สำหรับเริ่มงาน |
+| `0.3` | [**Access Request Checklist**](documentation/00_ONBOARDING/0.3_Access_Request_Checklist.md) | รายการ Access ที่ต้องขอก่อนเริ่มงาน |
 
 <br>
 
@@ -129,49 +149,22 @@ graph LR
 <!-- CHAPTER 1 -->
 <!-- ============================================ -->
 
+<table><tr><td>
 <img src="https://img.shields.io/badge/Chapter_1-REQUIREMENTS-0369a1?style=for-the-badge&labelColor=e0f2fe" alt="Chapter 1" />
+</td></tr></table>
 
 ### 📝 Chapter 1 — Requirements
 
 > *กำหนดสิ่งที่ต้องสร้างและจัดลำดับความสำคัญ*
-> &nbsp; [ดูทั้งหมด](documentation/01_REQUIREMENTS/INDEX.md)
+> &nbsp; [📂 ดูทั้งหมด](documentation/01_REQUIREMENTS/INDEX.md)
 
-<table>
-<thead>
-<tr>
-<th width="80">📖</th>
-<th width="350">เอกสาร</th>
-<th>รายละเอียด</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><code>1.1</code></td>
-<td><a href="documentation/01_REQUIREMENTS/1.1_Raw_Requirement_List_MoSCoW.md"><strong>Raw Requirement List (MoSCoW)</strong></a></td>
-<td>Requirements พร้อมจัดลำดับ Must / Should / Could / Won't</td>
-</tr>
-<tr>
-<td align="center"><code>1.2</code></td>
-<td><a href="documentation/01_REQUIREMENTS/1.2_User_Story_List.md"><strong>User Story List</strong></a></td>
-<td>User Stories แยกตาม Role และ Feature</td>
-</tr>
-<tr>
-<td align="center"><code>1.3</code></td>
-<td><a href="documentation/01_REQUIREMENTS/1.3_Acceptance_Criteria.md"><strong>Acceptance Criteria</strong></a></td>
-<td>เกณฑ์การรับงาน (Definition of Done) แต่ละ Story</td>
-</tr>
-<tr>
-<td align="center"><code>1.4</code></td>
-<td><a href="documentation/01_REQUIREMENTS/1.4_Roadmap_Timeline_Asana_Link.md"><strong>Roadmap & Timeline</strong></a></td>
-<td>แผนงานและ Timeline พร้อม Asana Integration</td>
-</tr>
-<tr>
-<td align="center"><code>1.5</code></td>
-<td><a href="documentation/01_REQUIREMENTS/1.5_Definition_of_Ready_Done.md"><strong>Definition of Ready & Done</strong></a></td>
-<td>DoR/DoD วิธีเขียน พร้อม Template และตัวอย่าง</td>
-</tr>
-</tbody>
-</table>
+| # | เอกสาร | รายละเอียด |
+|:---:|:---|:---|
+| `1.1` | [**Raw Requirement List (MoSCoW)**](documentation/01_REQUIREMENTS/1.1_Raw_Requirement_List_MoSCoW.md) | Requirements พร้อมจัดลำดับ Must / Should / Could / Won't |
+| `1.2` | [**User Story List**](documentation/01_REQUIREMENTS/1.2_User_Story_List.md) | User Stories แยกตาม Role และ Feature |
+| `1.3` | [**Acceptance Criteria**](documentation/01_REQUIREMENTS/1.3_Acceptance_Criteria.md) | เกณฑ์การรับงาน (Definition of Done) แต่ละ Story |
+| `1.4` | [**Roadmap & Timeline**](documentation/01_REQUIREMENTS/1.4_Roadmap_Timeline_Asana_Link.md) | แผนงานและ Timeline พร้อม Asana Integration |
+| `1.5` | [**Definition of Ready & Done**](documentation/01_REQUIREMENTS/1.5_Definition_of_Ready_Done.md) | DoR/DoD วิธีเขียน พร้อม Template และตัวอย่าง |
 
 <br>
 
@@ -181,34 +174,19 @@ graph LR
 <!-- CHAPTER 2 -->
 <!-- ============================================ -->
 
+<table><tr><td>
 <img src="https://img.shields.io/badge/Chapter_2-DESIGN-7c3aed?style=for-the-badge&labelColor=ede9fe" alt="Chapter 2" />
+</td></tr></table>
 
 ### 🎨 Chapter 2 — Design
 
 > *สร้าง Wireframe และ UI Design ด้วย Figma Make (AI)*
-> &nbsp; [ดูทั้งหมด](documentation/02_DESIGN/INDEX.md)
+> &nbsp; [📂 ดูทั้งหมด](documentation/02_DESIGN/INDEX.md)
 
-<table>
-<thead>
-<tr>
-<th width="80">📖</th>
-<th width="350">เอกสาร</th>
-<th>รายละเอียด</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><code>2.1</code></td>
-<td><a href="documentation/02_DESIGN/2.1_Wireframe_with_Figma_Make.md"><strong>Wireframe with Figma Make</strong></a></td>
-<td>สร้าง Wireframe ด้วย Figma Make (AI) พร้อมตัวอย่าง Prompt</td>
-</tr>
-<tr>
-<td align="center"><code>2.2</code></td>
-<td><a href="documentation/02_DESIGN/2.2_UI_Design_with_Figma_Make.md"><strong>UI Design with Figma Make</strong></a></td>
-<td>สร้าง UI Design พร้อม Brand Guideline และ Export ไป GitHub</td>
-</tr>
-</tbody>
-</table>
+| # | เอกสาร | รายละเอียด |
+|:---:|:---|:---|
+| `2.1` | [**Wireframe with Figma Make**](documentation/02_DESIGN/2.1_Wireframe_with_Figma_Make.md) | สร้าง Wireframe ด้วย Figma Make (AI) พร้อมตัวอย่าง Prompt |
+| `2.2` | [**UI Design with Figma Make**](documentation/02_DESIGN/2.2_UI_Design_with_Figma_Make.md) | สร้าง UI Design พร้อม Brand Guideline และ Export ไป GitHub |
 
 <br>
 
@@ -218,39 +196,20 @@ graph LR
 <!-- CHAPTER 3 -->
 <!-- ============================================ -->
 
+<table><tr><td>
 <img src="https://img.shields.io/badge/Chapter_3-DATABASE-b45309?style=for-the-badge&labelColor=fef3c7" alt="Chapter 3" />
+</td></tr></table>
 
 ### 🗄️ Chapter 3 — Database
 
 > *ออกแบบโครงสร้างฐานข้อมูลและความสัมพันธ์*
-> &nbsp; [ดูทั้งหมด](documentation/03_DATABASE/INDEX.md)
+> &nbsp; [📂 ดูทั้งหมด](documentation/03_DATABASE/INDEX.md)
 
-<table>
-<thead>
-<tr>
-<th width="80">📖</th>
-<th width="350">เอกสาร</th>
-<th>รายละเอียด</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><code>3.1</code></td>
-<td><a href="documentation/03_DATABASE/3.1_ERD_Diagram.md"><strong>ERD Diagram</strong></a></td>
-<td>Entity Relationship Diagram</td>
-</tr>
-<tr>
-<td align="center"><code>3.2</code></td>
-<td><a href="documentation/03_DATABASE/3.2_Database_Schema_Document.md"><strong>Database Schema</strong></a></td>
-<td>รายละเอียด Tables, Relations, Enums, Indexes</td>
-</tr>
-<tr>
-<td align="center"><code>3.3</code></td>
-<td><a href="documentation/03_DATABASE/3.3_Database_Migration_from_Figma_DataContext.md"><strong>Database Migration</strong></a></td>
-<td>Migration จาก Figma DataContext ไป Supabase</td>
-</tr>
-</tbody>
-</table>
+| # | เอกสาร | รายละเอียด |
+|:---:|:---|:---|
+| `3.1` | [**ERD Diagram**](documentation/03_DATABASE/3.1_ERD_Diagram.md) | Entity Relationship Diagram |
+| `3.2` | [**Database Schema**](documentation/03_DATABASE/3.2_Database_Schema_Document.md) | รายละเอียด Tables, Relations, Enums, Indexes |
+| `3.3` | [**Database Migration**](documentation/03_DATABASE/3.3_Database_Migration_from_Figma_DataContext.md) | Migration จาก Figma DataContext ไป Supabase |
 
 <br>
 
@@ -260,69 +219,26 @@ graph LR
 <!-- CHAPTER 4 -->
 <!-- ============================================ -->
 
+<table><tr><td>
 <img src="https://img.shields.io/badge/Chapter_4-DEVELOPMENT-dc2626?style=for-the-badge&labelColor=fee2e2" alt="Chapter 4" />
+</td></tr></table>
 
 ### 💻 Chapter 4 — Development
 
 > *พัฒนาแอปพลิเคชันตามมาตรฐาน*
-> &nbsp; [ดูทั้งหมด](documentation/04_DEVELOPMENT/INDEX.md)
+> &nbsp; [📂 ดูทั้งหมด](documentation/04_DEVELOPMENT/INDEX.md)
 
-<table>
-<thead>
-<tr>
-<th width="80">📖</th>
-<th width="350">เอกสาร</th>
-<th>รายละเอียด</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">⭐</td>
-<td><a href="documentation/04_DEVELOPMENT/Code_Standard_Guide.md"><strong>Code Standard Guide</strong></a></td>
-<td>มาตรฐานการเขียนโค้ด Naming, Structure, Best Practices</td>
-</tr>
-<tr>
-<td align="center"><code>4.1</code></td>
-<td><a href="documentation/04_DEVELOPMENT/4.1_Project_Initialization.md"><strong>Project Initialization</strong></a></td>
-<td>ตั้งค่าโปรเจกต์เริ่มต้น</td>
-</tr>
-<tr>
-<td align="center"><code>4.2</code></td>
-<td><a href="documentation/04_DEVELOPMENT/4.2_Import_Wireframes.md"><strong>Import Wireframes</strong></a></td>
-<td>นำเข้า Wireframes จาก Figma</td>
-</tr>
-<tr>
-<td align="center"><code>4.3</code></td>
-<td><a href="documentation/04_DEVELOPMENT/4.3_Frontend_Analyze.md"><strong>Frontend Analysis</strong></a></td>
-<td>วิเคราะห์โครงสร้าง Frontend</td>
-</tr>
-<tr>
-<td align="center"><code>4.4</code></td>
-<td><a href="documentation/04_DEVELOPMENT/4.4_Generate_Demo.md"><strong>Generate Demo</strong></a></td>
-<td>สร้าง Demo สำหรับทดสอบ</td>
-</tr>
-<tr>
-<td align="center"><code>4.5</code></td>
-<td><a href="documentation/04_DEVELOPMENT/4.5_Database_Design.md"><strong>Database Design</strong></a></td>
-<td>ออกแบบฐานข้อมูลในขั้น Development</td>
-</tr>
-<tr>
-<td align="center"><code>4.6</code></td>
-<td><a href="documentation/04_DEVELOPMENT/4.6_Backend_Project.md"><strong>Backend Project</strong></a></td>
-<td>พัฒนา Backend (Node.js / Express)</td>
-</tr>
-<tr>
-<td align="center"><code>4.7</code></td>
-<td><a href="documentation/04_DEVELOPMENT/4.7_API_Development.md"><strong>API Development</strong></a></td>
-<td>พัฒนา REST API</td>
-</tr>
-<tr>
-<td align="center"><code>4.8</code></td>
-<td><a href="documentation/04_DEVELOPMENT/4.8_Frontend_Integration.md"><strong>Frontend Integration</strong></a></td>
-<td>เชื่อมต่อ Frontend กับ Backend API</td>
-</tr>
-</tbody>
-</table>
+| # | เอกสาร | รายละเอียด |
+|:---:|:---|:---|
+| ⭐ | [**Code Standard Guide**](documentation/04_DEVELOPMENT/Code_Standard_Guide.md) | มาตรฐานการเขียนโค้ด Naming, Structure, Best Practices |
+| `4.1` | [**Project Initialization**](documentation/04_DEVELOPMENT/4.1_Project_Initialization.md) | ตั้งค่าโปรเจกต์เริ่มต้น |
+| `4.2` | [**Import Wireframes**](documentation/04_DEVELOPMENT/4.2_Import_Wireframes.md) | นำเข้า Wireframes จาก Figma |
+| `4.3` | [**Frontend Analysis**](documentation/04_DEVELOPMENT/4.3_Frontend_Analyze.md) | วิเคราะห์โครงสร้าง Frontend |
+| `4.4` | [**Generate Demo**](documentation/04_DEVELOPMENT/4.4_Generate_Demo.md) | สร้าง Demo สำหรับทดสอบ |
+| `4.5` | [**Database Design**](documentation/04_DEVELOPMENT/4.5_Database_Design.md) | ออกแบบฐานข้อมูลในขั้น Development |
+| `4.6` | [**Backend Project**](documentation/04_DEVELOPMENT/4.6_Backend_Project.md) | พัฒนา Backend (Node.js / Express) |
+| `4.7` | [**API Development**](documentation/04_DEVELOPMENT/4.7_API_Development.md) | พัฒนา REST API |
+| `4.8` | [**Frontend Integration**](documentation/04_DEVELOPMENT/4.8_Frontend_Integration.md) | เชื่อมต่อ Frontend กับ Backend API |
 
 <br>
 
@@ -332,54 +248,23 @@ graph LR
 <!-- CHAPTER 5 -->
 <!-- ============================================ -->
 
+<table><tr><td>
 <img src="https://img.shields.io/badge/Chapter_5-DEPLOY-0891b2?style=for-the-badge&labelColor=cffafe" alt="Chapter 5" />
+</td></tr></table>
 
 ### 🚀 Chapter 5 — Deploy
 
 > *นำแอปขึ้น Production อย่างปลอดภัย*
-> &nbsp; [ดูทั้งหมด](documentation/05_DEPLOY/INDEX.md)
+> &nbsp; [📂 ดูทั้งหมด](documentation/05_DEPLOY/INDEX.md)
 
-<table>
-<thead>
-<tr>
-<th width="80">📖</th>
-<th width="350">เอกสาร</th>
-<th>รายละเอียด</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><code>5.1</code></td>
-<td><a href="documentation/05_DEPLOY/5.1_Deploy_Overview.md"><strong>Deploy Overview</strong></a></td>
-<td>ภาพรวมสถาปัตยกรรมและ Platform (Railway)</td>
-</tr>
-<tr>
-<td align="center"><code>5.2</code></td>
-<td><a href="documentation/05_DEPLOY/5.2_Pre_Deploy_Checklist.md"><strong>Pre-Deploy Checklist</strong></a></td>
-<td>เช็คลิสต์ก่อน Deploy</td>
-</tr>
-<tr>
-<td align="center"><code>5.3</code></td>
-<td><a href="documentation/05_DEPLOY/5.3_Environment_Variables.md"><strong>Environment Variables</strong></a></td>
-<td>ตั้งค่า Environment Variables</td>
-</tr>
-<tr>
-<td align="center"><code>5.4</code></td>
-<td><a href="documentation/05_DEPLOY/5.4_Deploy_Steps.md"><strong>Deploy Steps</strong></a></td>
-<td>ขั้นตอนการ Deploy ทีละขั้น</td>
-</tr>
-<tr>
-<td align="center"><code>5.5</code></td>
-<td><a href="documentation/05_DEPLOY/5.5_Post_Deploy_Verification.md"><strong>Post-Deploy Verification</strong></a></td>
-<td>ตรวจสอบหลัง Deploy</td>
-</tr>
-<tr>
-<td align="center"><code>5.6</code></td>
-<td><a href="documentation/05_DEPLOY/5.6_Troubleshooting.md"><strong>Troubleshooting</strong></a></td>
-<td>แก้ไขปัญหาที่พบบ่อย</td>
-</tr>
-</tbody>
-</table>
+| # | เอกสาร | รายละเอียด |
+|:---:|:---|:---|
+| `5.1` | [**Deploy Overview**](documentation/05_DEPLOY/5.1_Deploy_Overview.md) | ภาพรวมสถาปัตยกรรมและ Platform (Railway) |
+| `5.2` | [**Pre-Deploy Checklist**](documentation/05_DEPLOY/5.2_Pre_Deploy_Checklist.md) | เช็คลิสต์ก่อน Deploy |
+| `5.3` | [**Environment Variables**](documentation/05_DEPLOY/5.3_Environment_Variables.md) | ตั้งค่า Environment Variables |
+| `5.4` | [**Deploy Steps**](documentation/05_DEPLOY/5.4_Deploy_Steps.md) | ขั้นตอนการ Deploy ทีละขั้น |
+| `5.5` | [**Post-Deploy Verification**](documentation/05_DEPLOY/5.5_Post_Deploy_Verification.md) | ตรวจสอบหลัง Deploy |
+| `5.6` | [**Troubleshooting**](documentation/05_DEPLOY/5.6_Troubleshooting.md) | แก้ไขปัญหาที่พบบ่อย |
 
 <br>
 
@@ -389,54 +274,23 @@ graph LR
 <!-- CHAPTER 6 -->
 <!-- ============================================ -->
 
+<table><tr><td>
 <img src="https://img.shields.io/badge/Chapter_6-TESTING-15803d?style=for-the-badge&labelColor=dcfce7" alt="Chapter 6" />
+</td></tr></table>
 
 ### 🧪 Chapter 6 — Testing
 
 > *ตรวจสอบคุณภาพด้วยการทดสอบที่ครอบคลุม*
-> &nbsp; [ดูทั้งหมด](documentation/06_TESTING/INDEX.md)
+> &nbsp; [📂 ดูทั้งหมด](documentation/06_TESTING/INDEX.md)
 
-<table>
-<thead>
-<tr>
-<th width="80">📖</th>
-<th width="350">เอกสาร</th>
-<th>รายละเอียด</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><code>6.1</code></td>
-<td><a href="documentation/06_TESTING/6.1_Testing_Strategy_Overview.md"><strong>Testing Strategy Overview</strong></a></td>
-<td>ภาพรวมกลยุทธ์การทดสอบ, Testing Pyramid</td>
-</tr>
-<tr>
-<td align="center"><code>6.2</code></td>
-<td><a href="documentation/06_TESTING/6.2_Unit_Test_Guide.md"><strong>Unit Test Guide</strong></a></td>
-<td>Unit Test สำหรับ React + Node.js ด้วย Vitest</td>
-</tr>
-<tr>
-<td align="center"><code>6.3</code></td>
-<td><a href="documentation/06_TESTING/6.3_Integration_Test_Guide.md"><strong>Integration Test Guide</strong></a></td>
-<td>API Integration Test ด้วย Supertest</td>
-</tr>
-<tr>
-<td align="center"><code>6.4</code></td>
-<td><a href="documentation/06_TESTING/6.4_Performance_Test_Guide.md"><strong>Performance Test Guide</strong></a></td>
-<td>Load / Stress / Spike Test ด้วย k6</td>
-</tr>
-<tr>
-<td align="center"><code>6.5</code></td>
-<td><a href="documentation/06_TESTING/6.5_Security_Test_Guide.md"><strong>Security Test Guide</strong></a></td>
-<td>Security Test ตาม OWASP Top 10</td>
-</tr>
-<tr>
-<td align="center"><code>UAT</code></td>
-<td><a href="documentation/06_TESTING/UAT_Scenario_Template.md"><strong>UAT Scenario Template</strong></a></td>
-<td>Template สำหรับ UAT Scenario</td>
-</tr>
-</tbody>
-</table>
+| # | เอกสาร | รายละเอียด |
+|:---:|:---|:---|
+| `6.1` | [**Testing Strategy Overview**](documentation/06_TESTING/6.1_Testing_Strategy_Overview.md) | ภาพรวมกลยุทธ์การทดสอบ, Testing Pyramid |
+| `6.2` | [**Unit Test Guide**](documentation/06_TESTING/6.2_Unit_Test_Guide.md) | Unit Test สำหรับ React + Node.js ด้วย Vitest |
+| `6.3` | [**Integration Test Guide**](documentation/06_TESTING/6.3_Integration_Test_Guide.md) | API Integration Test ด้วย Supertest |
+| `6.4` | [**Performance Test Guide**](documentation/06_TESTING/6.4_Performance_Test_Guide.md) | Load / Stress / Spike Test ด้วย k6 |
+| `6.5` | [**Security Test Guide**](documentation/06_TESTING/6.5_Security_Test_Guide.md) | Security Test ตาม OWASP Top 10 |
+| `UAT` | [**UAT Scenario Template**](documentation/06_TESTING/UAT_Scenario_Template.md) | Template สำหรับ UAT Scenario |
 
 <br>
 
@@ -446,49 +300,22 @@ graph LR
 <!-- CHAPTER 7 -->
 <!-- ============================================ -->
 
+<table><tr><td>
 <img src="https://img.shields.io/badge/Chapter_7-GIT_WORKFLOW-6d28d9?style=for-the-badge&labelColor=f3e8ff" alt="Chapter 7" />
+</td></tr></table>
 
 ### 🔀 Chapter 7 — Git Workflow
 
 > *มาตรฐาน Git และกระบวนการทำงานร่วมกัน*
-> &nbsp; [ดูทั้งหมด](documentation/07_GIT_WORKFLOW/INDEX.md)
+> &nbsp; [📂 ดูทั้งหมด](documentation/07_GIT_WORKFLOW/INDEX.md)
 
-<table>
-<thead>
-<tr>
-<th width="80">📖</th>
-<th width="350">เอกสาร</th>
-<th>รายละเอียด</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><code>7.1</code></td>
-<td><a href="documentation/07_GIT_WORKFLOW/7.1_Branching_Strategy.md"><strong>Branching Strategy</strong></a></td>
-<td>กลยุทธ์ Branch, Daily Flow, Asana Task ID Naming</td>
-</tr>
-<tr>
-<td align="center"><code>7.2</code></td>
-<td><a href="documentation/07_GIT_WORKFLOW/7.2_Commit_Message_Convention.md"><strong>Commit Message Convention</strong></a></td>
-<td>Conventional Commits: <code>type(scope): subject</code></td>
-</tr>
-<tr>
-<td align="center"><code>7.3</code></td>
-<td><a href="documentation/07_GIT_WORKFLOW/7.3_Pull_Request_Process.md"><strong>Pull Request Process</strong></a></td>
-<td>PR Workflow, Checklist, Template, ข้อห้าม</td>
-</tr>
-<tr>
-<td align="center"><code>7.4</code></td>
-<td><a href="documentation/07_GIT_WORKFLOW/7.4_Code_Review_Guidelines.md"><strong>Code Review Guidelines</strong></a></td>
-<td>4 ระดับ Comment (MUST/SHOULD/NIT/LEARN), Senior Checklist</td>
-</tr>
-<tr>
-<td align="center"><code>7.5</code></td>
-<td><a href="documentation/07_GIT_WORKFLOW/7.5_GitHub_Actions_CI_Template.md"><strong>GitHub Actions CI Template</strong></a></td>
-<td>Template CI + Auto-assign Senior + Approval Gate (copy ไปใช้ได้เลย)</td>
-</tr>
-</tbody>
-</table>
+| # | เอกสาร | รายละเอียด |
+|:---:|:---|:---|
+| `7.1` | [**Branching Strategy**](documentation/07_GIT_WORKFLOW/7.1_Branching_Strategy.md) | กลยุทธ์ Branch, Daily Flow, Asana Task ID Naming |
+| `7.2` | [**Commit Message Convention**](documentation/07_GIT_WORKFLOW/7.2_Commit_Message_Convention.md) | Conventional Commits: `type(scope): subject` |
+| `7.3` | [**Pull Request Process**](documentation/07_GIT_WORKFLOW/7.3_Pull_Request_Process.md) | PR Workflow, Checklist, Template, ข้อห้าม |
+| `7.4` | [**Code Review Guidelines**](documentation/07_GIT_WORKFLOW/7.4_Code_Review_Guidelines.md) | 4 ระดับ Comment (MUST/SHOULD/NIT/LEARN), Senior Checklist |
+| `7.5` | [**GitHub Actions CI Template**](documentation/07_GIT_WORKFLOW/7.5_GitHub_Actions_CI_Template.md) | Template CI + Auto-assign Senior + Approval Gate |
 
 <br>
 
@@ -498,69 +325,26 @@ graph LR
 <!-- CHAPTER 8 -->
 <!-- ============================================ -->
 
+<table><tr><td>
 <img src="https://img.shields.io/badge/Chapter_8-AWS-f97316?style=for-the-badge&labelColor=fff7ed" alt="Chapter 8" />
+</td></tr></table>
 
 ### ☁️ Chapter 8 — AWS
 
 > *คู่มือ Deploy บน AWS — EC2 + RDS + S3 + CloudFront + WAF (อ้างอิง KAIZEN App)*
-> &nbsp; [ดูทั้งหมด](documentation/08_AWS/INDEX.md)
+> &nbsp; [📂 ดูทั้งหมด](documentation/08_AWS/INDEX.md)
 
-<table>
-<thead>
-<tr>
-<th width="80">📖</th>
-<th width="350">เอกสาร</th>
-<th>รายละเอียด</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><code>8.0</code></td>
-<td><a href="documentation/08_AWS/8.0_Overview_and_Prerequisites.md"><strong>ภาพรวมและ Prerequisites</strong></a></td>
-<td>สถาปัตยกรรม, สิ่งที่ต้องเตรียม, ค่าใช้จ่าย, Naming Convention</td>
-</tr>
-<tr>
-<td align="center"><code>8.1</code></td>
-<td><a href="documentation/08_AWS/8.1_VPC_and_Networking.md"><strong>VPC และเครือข่าย</strong></a></td>
-<td>สร้าง VPC, Subnets, Security Groups</td>
-</tr>
-<tr>
-<td align="center"><code>8.2</code></td>
-<td><a href="documentation/08_AWS/8.2_EC2_Instance.md"><strong>EC2 Instance</strong></a></td>
-<td>สร้างเซิร์ฟเวอร์, ติดตั้ง Node.js + Nginx + PM2</td>
-</tr>
-<tr>
-<td align="center"><code>8.3</code></td>
-<td><a href="documentation/08_AWS/8.3_RDS_Database.md"><strong>RDS Database</strong></a></td>
-<td>สร้าง PostgreSQL, Private Access, Encryption</td>
-</tr>
-<tr>
-<td align="center"><code>8.4</code></td>
-<td><a href="documentation/08_AWS/8.4_S3_Storage.md"><strong>S3 Storage</strong></a></td>
-<td>สร้าง Buckets, Policy, Blue-Green</td>
-</tr>
-<tr>
-<td align="center"><code>8.5</code></td>
-<td><a href="documentation/08_AWS/8.5_CloudFront_and_WAF.md"><strong>CloudFront และ WAF</strong></a></td>
-<td>CDN, SSL, Firewall Rules (OWASP, Rate Limiting)</td>
-</tr>
-<tr>
-<td align="center"><code>8.6</code></td>
-<td><a href="documentation/08_AWS/8.6_Security.md"><strong>Security</strong></a></td>
-<td>Secrets Manager, KMS, SSL/TLS, CloudWatch</td>
-</tr>
-<tr>
-<td align="center"><code>8.7</code></td>
-<td><a href="documentation/08_AWS/8.7_CICD_Pipeline.md"><strong>CI/CD Pipeline</strong></a></td>
-<td>GitHub Actions, SSM, Blue-Green Deployment</td>
-</tr>
-<tr>
-<td align="center"><code>8.8</code></td>
-<td><a href="documentation/08_AWS/8.8_Go_Live_Checklist.md"><strong>Go-Live Checklist</strong></a></td>
-<td>Checklist ก่อนเปิดให้ผู้ใช้จริง</td>
-</tr>
-</tbody>
-</table>
+| # | เอกสาร | รายละเอียด |
+|:---:|:---|:---|
+| `8.0` | [**ภาพรวมและ Prerequisites**](documentation/08_AWS/8.0_Overview_and_Prerequisites.md) | สถาปัตยกรรม, สิ่งที่ต้องเตรียม, ค่าใช้จ่าย, Naming Convention |
+| `8.1` | [**VPC และเครือข่าย**](documentation/08_AWS/8.1_VPC_and_Networking.md) | สร้าง VPC, Subnets, Security Groups |
+| `8.2` | [**EC2 Instance**](documentation/08_AWS/8.2_EC2_Instance.md) | สร้างเซิร์ฟเวอร์, ติดตั้ง Node.js + Nginx + PM2 |
+| `8.3` | [**RDS Database**](documentation/08_AWS/8.3_RDS_Database.md) | สร้าง PostgreSQL, Private Access, Encryption |
+| `8.4` | [**S3 Storage**](documentation/08_AWS/8.4_S3_Storage.md) | สร้าง Buckets, Policy, Blue-Green |
+| `8.5` | [**CloudFront และ WAF**](documentation/08_AWS/8.5_CloudFront_and_WAF.md) | CDN, SSL, Firewall Rules (OWASP, Rate Limiting) |
+| `8.6` | [**Security**](documentation/08_AWS/8.6_Security.md) | Secrets Manager, KMS, SSL/TLS, CloudWatch |
+| `8.7` | [**CI/CD Pipeline**](documentation/08_AWS/8.7_CICD_Pipeline.md) | GitHub Actions, SSM, Blue-Green Deployment |
+| `8.8` | [**Go-Live Checklist**](documentation/08_AWS/8.8_Go_Live_Checklist.md) | Checklist ก่อนเปิดให้ผู้ใช้จริง |
 
 <br>
 
@@ -626,10 +410,12 @@ graph LR
 
 <br>
 
-<img src="https://img.shields.io/badge/Made_with_%E2%9D%A4%EF%B8%8F_by-IT_%26_Data_Management_Team-1a1a2e?style=for-the-badge" alt="Made by IT & Data Management Team" />
+<img src="https://img.shields.io/badge/Made_with_%E2%9D%A4%EF%B8%8F_by-IT_&_Data_Management_Team-1a1a2e?style=for-the-badge" alt="Made by IT & Data Management Team" />
 
 <br><br>
 
 <sub>GS Battery &mdash; Kaizen Web Application &mdash; 2026</sub>
+
+<br><br>
 
 </div>
