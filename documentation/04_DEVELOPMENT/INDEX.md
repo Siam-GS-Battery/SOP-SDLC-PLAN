@@ -19,6 +19,7 @@ AC (Acceptance Criteria)
 |:-----:|:-------|:---------|
 | ⭐ | [Code Standard Guide](Code_Standard_Guide.md) | มาตรฐานการเขียนโค้ด (อ่านก่อนเริ่มงาน) |
 | 4.1 | [Project Initialization](4.1_Project_Initialization.md) | ตั้งค่า Repository และ Environment |
+| 4.1.1 | [Dependencies Checklist](4.1.1_Dependencies_Checklist.md) | รายการ dependency แบบแบ่ง Tier ตามชนิดแอป + Security Checklist |
 | 4.2 | [Import UI from Figma Make](4.2_Import_Wireframes.md) | นำเข้า Code จาก Figma Make ที่สร้างจาก AC |
 | 4.3 | [Database from DataContext](4.3_Database_Design.md) | Claude อ่าน DataContext → สร้าง SQL Schema |
 | 4.4 | [Backend Development](4.4_Backend_Project.md) | สร้าง Backend API ด้วย Claude Code |
