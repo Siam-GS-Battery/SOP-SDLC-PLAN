@@ -1,0 +1,26 @@
+{
+  "name": "@siam-gs-battery/sop-sdlc-plan",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Monorepo root for SOP-SDLC documentation and internal NPM packages",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siam-gs-battery/sop-sdlc-plan.git"
+  },
+  "license": "UNLICENSED",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "echo \"No root lint configured — each workspace has its own\" && exit 0",
+    "test": "echo \"No root tests configured — each workspace has its own\" && exit 0",
+    "version:patch": "npm version patch --workspaces --include-workspace-root=false",
+    "version:minor": "npm version minor --workspaces --include-workspace-root=false",
+    "version:major": "npm version major --workspaces --include-workspace-root=false",
+    "publish:all": "npm publish --workspaces --access restricted"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

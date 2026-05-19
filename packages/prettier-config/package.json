@@ -1,0 +1,28 @@
+{
+  "name": "@siam-gs-battery/prettier-config",
+  "version": "0.1.0",
+  "description": "Shared Prettier config for GS Battery projects",
+  "keywords": [
+    "prettier",
+    "prettierconfig",
+    "gs-battery"
+  ],
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siam-gs-battery/sop-sdlc-plan.git",
+    "directory": "packages/prettier-config"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "prettier": "^3.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  }
+}

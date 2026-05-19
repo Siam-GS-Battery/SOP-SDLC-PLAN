@@ -1,0 +1,42 @@
+{
+  "name": "@siam-gs-battery/eslint-config",
+  "version": "0.1.0",
+  "description": "Shared ESLint config for GS Battery projects (base / react / node presets)",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "gs-battery"
+  ],
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siam-gs-battery/sop-sdlc-plan.git",
+    "directory": "packages/eslint-config"
+  },
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./react": "./react.js",
+    "./node": "./node.js"
+  },
+  "files": [
+    "index.js",
+    "react.js",
+    "node.js",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  }
+}

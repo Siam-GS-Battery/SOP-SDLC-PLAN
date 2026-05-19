@@ -1,0 +1,26 @@
+{
+  "name": "@siam-gs-battery/tsconfig",
+  "version": "0.1.0",
+  "description": "Shared TypeScript base configs for GS Battery projects (base / react / node)",
+  "keywords": [
+    "tsconfig",
+    "typescript",
+    "gs-battery"
+  ],
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siam-gs-battery/sop-sdlc-plan.git",
+    "directory": "packages/tsconfig"
+  },
+  "files": [
+    "base.json",
+    "react.json",
+    "node.json",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  }
+}
