@@ -46,9 +46,7 @@
 
 | ลำดับ | เอกสาร | สิ่งที่จะได้ |
 |:-----:|:-------|:------------|
-| 1 | [Wireframe with Figma Make](documentation/02_DESIGN/2.1_Wireframe_with_Figma_Make.md) | ใช้ AI ช่วยสร้าง Wireframe |
-| 2 | [UI Design with Figma Make](documentation/02_DESIGN/2.2_UI_Design_with_Figma_Make.md) | สร้าง UI Design + Export |
-| 3 | [Design System Template](documentation/02_DESIGN/2.3_Design_System_Template.md) | กำหนด Design System |
+| 1 | [Design System Template](documentation/02_DESIGN/2.3_Design_System_Template.md) | กำหนด Design System |
 
 ---
 

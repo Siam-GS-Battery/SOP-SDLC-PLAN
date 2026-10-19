@@ -68,7 +68,6 @@
 <br>
 <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" alt="AWS" />
 <img src="https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white" alt="Railway" />
-<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
 <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions" />
 <img src="https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white" alt="Vitest" />
 </p>
@@ -176,13 +175,12 @@ graph LR
 
 ### 🎨 Chapter 2 — Design
 
-> *สร้าง Wireframe และ UI Design ด้วย Figma Make (AI)*
+> *สร้าง Design System แล้วให้ Claude สร้าง UI จาก Design System*
 > &nbsp; [📂 ดูทั้งหมด](documentation/02_DESIGN/INDEX.md)
 
 | # | เอกสาร | รายละเอียด |
 |:---:|:---|:---|
-| `2.1` | [**Wireframe with Figma Make**](documentation/02_DESIGN/2.1_Wireframe_with_Figma_Make.md) | สร้าง Wireframe ด้วย Figma Make (AI) พร้อมตัวอย่าง Prompt |
-| `2.2` | [**UI Design with Figma Make**](documentation/02_DESIGN/2.2_UI_Design_with_Figma_Make.md) | สร้าง UI Design พร้อม Brand Guideline และ Export ไป GitHub |
+| `2.3` | [**Design System Template**](documentation/02_DESIGN/2.3_Design_System_Template.md) | กำหนด Design System (Tokens, Components) เพื่อให้ Claude สร้าง UI |
 
 <br>
 
@@ -205,7 +203,7 @@ graph LR
 |:---:|:---|:---|
 | `3.1` | [**ERD Diagram**](documentation/03_DATABASE/3.1_ERD_Diagram.md) | Entity Relationship Diagram |
 | `3.2` | [**Database Schema**](documentation/03_DATABASE/3.2_Database_Schema_Document.md) | รายละเอียด Tables, Relations, Enums, Indexes |
-| `3.3` | [**Database Migration**](documentation/03_DATABASE/3.3_Database_Migration_from_Figma_DataContext.md) | Migration จาก Figma DataContext ไป Supabase |
+| `3.3` | [**Database Migration**](documentation/03_DATABASE/3.3_Database_Migration_from_DataContext.md) | Migration จาก DataContext (จาก UI ที่ Claude สร้าง) ไป Supabase |
 
 <br>
 
@@ -221,7 +219,7 @@ graph LR
 
 ### 💻 Chapter 4 — Development
 
-> *พัฒนาแอปพลิเคชันด้วย Figma Make + Claude Code*
+> *พัฒนาแอปพลิเคชันด้วย Claude Code*
 > &nbsp; [📂 ดูทั้งหมด](documentation/04_DEVELOPMENT/INDEX.md)
 
 | # | เอกสาร | รายละเอียด |
@@ -229,8 +227,8 @@ graph LR
 | ⭐ | [**Code Standard Guide**](documentation/04_DEVELOPMENT/Code_Standard_Guide.md) | มาตรฐานการเขียนโค้ด Naming, Structure, Best Practices |
 | `4.1` | [**Project Initialization**](documentation/04_DEVELOPMENT/4.1_Project_Initialization.md) | ตั้งค่า Repository และ Environment |
 | `4.1.1` | [**Dependencies Checklist**](documentation/04_DEVELOPMENT/4.1.1_Dependencies_Checklist.md) | รายการ dependency แบบแบ่ง Tier ตามชนิดแอป + Security Checklist |
-| `4.2` | [**Import UI from Figma Make**](documentation/04_DEVELOPMENT/4.2_Import_Wireframes.md) | นำเข้า Code จาก Figma Make ที่สร้างจาก AC |
-| `4.3` | [**Database from DataContext**](documentation/04_DEVELOPMENT/4.3_Database_Design.md) | Claude อ่าน DataContext จาก Figma Make → สร้าง SQL Schema |
+| `4.2` | [**Generate UI with Claude**](documentation/04_DEVELOPMENT/4.2_Import_Wireframes.md) | ให้ Claude สร้าง UI Code จาก Design System และ AC |
+| `4.3` | [**Database from DataContext**](documentation/04_DEVELOPMENT/4.3_Database_Design.md) | Claude อ่าน DataContext จาก UI ที่ Claude สร้าง → สร้าง SQL Schema |
 | `4.4` | [**Backend Development**](documentation/04_DEVELOPMENT/4.4_Backend_Project.md) | สร้าง Backend API ด้วย Claude Code |
 | `4.5` | [**Frontend Integration**](documentation/04_DEVELOPMENT/4.5_Frontend_Integration.md) | Claude Code เชื่อม Frontend จาก Mockup ไป Backend จริง |
 
@@ -378,7 +376,7 @@ graph LR
 | **Location** | เอกสารทั้งหมดต้องอยู่ใน `/documentation/` |
 | **Naming** | `<phase>.<number>_<Document_Title>.md` |
 | **Versioning** | ทุกการเปลี่ยนแปลงต้องบันทึกใน Change Log |
-| **Links** | Figma / FigJam / Asana ต้องเปิดดูได้ |
+| **Links** | Asana / Design System ต้องเปิดดูได้ |
 | **Contributing** | อ่านแนวทางที่ [CONTRIBUTING.md](CONTRIBUTING.md) |
 
 <br>
