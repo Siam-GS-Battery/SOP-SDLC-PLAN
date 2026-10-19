@@ -46,11 +46,9 @@
 
 | ลำดับ | เอกสาร | สิ่งที่จะได้ |
 |:-----:|:-------|:------------|
-| 1 | [UX Flow Diagram](documentation/02_DESIGN/2.1_UX_Flow_Diagram_FigJam_Link.md) | สร้าง User Flow |
-| 2 | [Wireframe Screens](documentation/02_DESIGN/2.2_Wireframe_Screens_Figma_Link.md) | สร้าง Wireframes |
-| 3 | [Wireframe with Figma Make](documentation/02_DESIGN/2.5_Wireframe_with_Figma_Make.md) | ใช้ AI ช่วยสร้าง Wireframe |
-| 4 | [UI Design with Figma Make](documentation/02_DESIGN/2.6_UI_Design_with_Figma_Make.md) | สร้าง UI Design + Export |
-| 5 | [Interactive Prototype](documentation/02_DESIGN/2.3_Interactive_Prototype_Link.md) | สร้าง Prototype สำหรับทดสอบ |
+| 1 | [Wireframe with Figma Make](documentation/02_DESIGN/2.1_Wireframe_with_Figma_Make.md) | ใช้ AI ช่วยสร้าง Wireframe |
+| 2 | [UI Design with Figma Make](documentation/02_DESIGN/2.2_UI_Design_with_Figma_Make.md) | สร้าง UI Design + Export |
+| 3 | [Design System Template](documentation/02_DESIGN/2.3_Design_System_Template.md) | กำหนด Design System |
 
 ---
 
@@ -60,13 +58,12 @@
 
 | ลำดับ | เอกสาร | สิ่งที่จะได้ |
 |:-----:|:-------|:------------|
-| 1 | [Technical Stack](documentation/02_DESIGN/2.4_Technical_Stack.md) | เข้าใจ Tech Stack ของโปรเจค |
+| 1 | [Dependencies Checklist](documentation/04_DEVELOPMENT/4.1.1_Dependencies_Checklist.md) | เข้าใจ Tech Stack ของโปรเจค |
 | 2 | [Project Initialization](documentation/04_DEVELOPMENT/4.1_Project_Initialization.md) | เริ่มต้นโปรเจค |
-| 3 | [Database Design](documentation/04_DEVELOPMENT/4.5_Database_Design.md) | ออกแบบ Database |
-| 4 | [Backend Project](documentation/04_DEVELOPMENT/4.6_Backend_Project.md) | พัฒนา Backend |
-| 5 | [API Development](documentation/04_DEVELOPMENT/4.7_API_Development.md) | พัฒนา API |
-| 6 | [Frontend Integration](documentation/04_DEVELOPMENT/4.8_Frontend_Integration.md) | เชื่อมต่อ Frontend กับ Backend |
-| 7 | [Code Standard Guide](documentation/04_DEVELOPMENT/Code_Standard_Guide.md) | มาตรฐานการเขียนโค้ด |
+| 3 | [Database Design](documentation/04_DEVELOPMENT/4.3_Database_Design.md) | ออกแบบ Database |
+| 4 | [Backend Project](documentation/04_DEVELOPMENT/4.4_Backend_Project.md) | พัฒนา Backend และ API |
+| 5 | [Frontend Integration](documentation/04_DEVELOPMENT/4.5_Frontend_Integration.md) | เชื่อมต่อ Frontend กับ Backend |
+| 6 | [Code Standard Guide](documentation/04_DEVELOPMENT/Code_Standard_Guide.md) | มาตรฐานการเขียนโค้ด |
 
 ---
 
@@ -80,9 +77,10 @@
 | 2 | [Pre-Deploy Checklist](documentation/05_DEPLOY/5.2_Pre_Deploy_Checklist.md) | เช็คลิสต์ก่อน Deploy |
 | 3 | [Environment Variables](documentation/05_DEPLOY/5.3_Environment_Variables.md) | ตั้งค่า Environment |
 | 4 | [Deploy Steps](documentation/05_DEPLOY/5.4_Deploy_Steps.md) | ขั้นตอนการ Deploy |
-| 5 | [AWS Deploy Guide](documentation/05_DEPLOY/5.7_AWS_Deploy_Guide.md) | Deploy บน AWS |
+| 5 | [AWS Deploy Guide](documentation/08_AWS/INDEX.md) | Deploy บน AWS |
 | 6 | [Post-Deploy Verification](documentation/05_DEPLOY/5.5_Post_Deploy_Verification.md) | ตรวจสอบหลัง Deploy |
 | 7 | [Troubleshooting](documentation/05_DEPLOY/5.6_Troubleshooting.md) | แก้ปัญหาที่พบบ่อย |
+| 8 | [Continuous Monitoring](documentation/05_DEPLOY/5.7_Continuous_Monitoring.md) | เฝ้าระวังต่อเนื่องหลัง Go-Live |
 
 ---
 

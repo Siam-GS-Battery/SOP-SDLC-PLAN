@@ -11,7 +11,7 @@
 <br><br>
 
 <!-- PROJECT BADGES -->
-<a href="#-change-log"><img src="https://img.shields.io/badge/version-v1.5-6366f1?style=flat-square&logo=semver&logoColor=white" alt="Version" /></a>&nbsp;
+<a href="#-change-log"><img src="https://img.shields.io/badge/version-v1.6-6366f1?style=flat-square&logo=semver&logoColor=white" alt="Version" /></a>&nbsp;
 <img src="https://img.shields.io/badge/status-Active-10b981?style=flat-square&logo=statuspage&logoColor=white" alt="Status" />&nbsp;
 <img src="https://img.shields.io/badge/chapters-9_Chapters-8b5cf6?style=flat-square&logo=bookstack&logoColor=white" alt="Chapters" />&nbsp;
 <img src="https://img.shields.io/badge/team-IT_&_Data_Mgmt-ec4899?style=flat-square&logo=microsoft-teams&logoColor=white" alt="Team" />
@@ -92,8 +92,8 @@ graph LR
     B --> C["🎨 2. Design"]
     C --> D["🗄️ 3. Database"]
     D --> E["💻 4. Development"]
-    E --> F["🚀 5. Deploy"]
-    F --> G["🧪 6. Testing"]
+    E --> G["🧪 6. Testing"]
+    G --> F["🚀 5. Deploy"]
 
     style A fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#000
     style B fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#000
@@ -389,7 +389,8 @@ graph LR
 
 | Date | Version | Changes |
 |:-----|:--------|:--------|
-| 2026-04-01 | **v1.5** | เพิ่มข้อมูล Team Structure, Code Review 4 ระดับ, Golden Rule, Team Rules, Work Flow, Standard Doc |
+| 2026-10-19 | **v1.6** | แก้ลิงก์ .md ที่เสียและลบลิงก์ไปเอกสาร Design ที่ไม่มีอยู่จริง; ปรับตาราง Design ใน QUICK_START ให้ตรงไฟล์จริง; แก้ชื่อไฟล์ตัวอย่างใน CONTRIBUTING; 0.1 FAQ เวลา Review ภายใน 24 ชม.; แก้ flow ใน README เป็น Testing → Deploy; เพิ่มสคริปต์ตรวจลิงก์ `scripts/check_md_links.py`; รวม Performance Release Gate ที่ 6.1 (API P95 < 500 ms, Page load < 3 s) และให้ 5.5 อ้างอิง (ค่าอื่นใน 5.5 เป็นค่าสังเกตหลัง deploy); CI เพิ่ม coverage โค้ดใหม่ ≥ 70% และ `npm audit` ระดับ critical; เพิ่ม 5.7 Continuous Monitoring (ค่าที่เสนอระบุเป็น ค่าเสนอ) |
+| 2026-04-01 | v1.5 | เพิ่มข้อมูล Team Structure, Code Review 4 ระดับ, Golden Rule, Team Rules, Work Flow, Standard Doc |
 | 2026-03-27 | v1.4 | เพิ่มเอกสาร Testing ครบถ้วน: Strategy, Unit, Integration, Performance, Security |
 | 2026-03-27 | v1.3 | ปรับปรุงโครงสร้าง: เพิ่ม Quick Start, INDEX.md, CONTRIBUTING.md |
 | 2026-01-29 | v1.2 | เพิ่มหมวด 07_GIT_WORKFLOW สำหรับมาตรฐาน Git |

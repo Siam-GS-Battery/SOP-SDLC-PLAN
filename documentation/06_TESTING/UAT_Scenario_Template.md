@@ -238,8 +238,8 @@ User Acceptance Test คือกระบวนการทดสอบระ�
 ## เอกสารอ้างอิง
 
 1. **Acceptance Criteria Documentation**: [1.3_Acceptance_Criteria.md](../01_REQUIREMENTS/1.3_Acceptance_Criteria.md)
-2. **User Stories**: [1.2_User_Stories.md](../01_REQUIREMENTS/1.2_User_Stories.md)
-3. **Functional Requirements**: [1.1_Functional_Requirements.md](../01_REQUIREMENTS/1.1_Functional_Requirements.md)
+2. **User Stories**: [1.2_User_Story_List.md](../01_REQUIREMENTS/1.2_User_Story_List.md)
+3. **Functional Requirements**: [1.1_Raw_Requirement_List_MoSCoW.md](../01_REQUIREMENTS/1.1_Raw_Requirement_List_MoSCoW.md)
 
 ---
 
