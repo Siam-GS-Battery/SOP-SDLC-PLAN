@@ -13,6 +13,7 @@
 | 5.5 | [Post-Deploy Verification](5.5_Post_Deploy_Verification.md) | การตรวจสอบหลัง Deploy |
 | 5.6 | [Troubleshooting](5.6_Troubleshooting.md) | การแก้ไขปัญหาที่พบบ่อย |
 | 5.7 | [Continuous Monitoring](5.7_Continuous_Monitoring.md) | การเฝ้าระวังต่อเนื่องหลัง Go-Live |
+| 5.8 | [Grafana Monitoring Setup](5.8_Grafana_Monitoring_Setup.md) | ตั้งค่า Grafana รวม Monitoring และ Quality metrics ทุกโปรเจกต์ |
 
 > สำหรับ Deploy บน AWS ดูที่ [Phase 8 — AWS](../08_AWS/INDEX.md)
 

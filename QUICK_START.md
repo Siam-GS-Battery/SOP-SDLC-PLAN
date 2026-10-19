@@ -79,6 +79,7 @@
 | 6 | [Post-Deploy Verification](documentation/05_DEPLOY/5.5_Post_Deploy_Verification.md) | ตรวจสอบหลัง Deploy |
 | 7 | [Troubleshooting](documentation/05_DEPLOY/5.6_Troubleshooting.md) | แก้ปัญหาที่พบบ่อย |
 | 8 | [Continuous Monitoring](documentation/05_DEPLOY/5.7_Continuous_Monitoring.md) | เฝ้าระวังต่อเนื่องหลัง Go-Live |
+| 9 | [Grafana Monitoring Setup](documentation/05_DEPLOY/5.8_Grafana_Monitoring_Setup.md) | ตั้งค่า Grafana รวม Monitoring ทุกโปรเจกต์ |
 
 ---
 

@@ -1,0 +1,16 @@
+# Grafana alerting provisioning — contact point + notification policy (SOP 5.7)
+apiVersion: 1
+contactPoints:
+  - orgId: 1
+    name: email-pantira
+    receivers:
+      - uid: email-pantira
+        type: email
+        settings:
+          addresses: "<PANTIRA_EMAIL>"   # แทนที่ด้วยอีเมลจริงตอน deploy (ห้าม commit)
+          singleEmail: false
+policies:
+  - orgId: 1
+    receiver: email-pantira
+    group_by: [alertname, project]
+    repeat_interval: 4h

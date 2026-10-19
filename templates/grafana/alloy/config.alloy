@@ -1,0 +1,26 @@
+// Grafana Alloy — scrape app /metrics -> Grafana Cloud (SOP 5.7)
+// Install (EC2, Ubuntu): ติดตั้ง Alloy ตาม https://grafana.com/docs/alloy/latest/set-up/install/linux/
+//   1) sudo cp config.alloy /etc/alloy/config.alloy
+//   2) ตั้ง env ใน /etc/default/alloy: GRAFANA_CLOUD_PROM_URL, GRAFANA_CLOUD_PROM_USER,
+//      GRAFANA_CLOUD_PROM_API_KEY, PROJECT_NAME, APP_PORT (ห้าม commit ค่าจริง)
+//   3) sudo systemctl enable --now alloy
+
+prometheus.scrape "app" {
+  targets = [{
+    "__address__" = "localhost:" + coalesce(sys.env("APP_PORT"), "3000"),
+    "project"     = sys.env("PROJECT_NAME"),
+  }]
+  metrics_path    = "/metrics"
+  scrape_interval = "30s"
+  forward_to      = [prometheus.remote_write.grafana_cloud.receiver]
+}
+
+prometheus.remote_write "grafana_cloud" {
+  endpoint {
+    url = sys.env("GRAFANA_CLOUD_PROM_URL")
+    basic_auth {
+      username = sys.env("GRAFANA_CLOUD_PROM_USER")
+      password = sys.env("GRAFANA_CLOUD_PROM_API_KEY")
+    }
+  }
+}

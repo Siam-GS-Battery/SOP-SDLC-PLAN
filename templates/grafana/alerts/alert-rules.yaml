@@ -1,0 +1,155 @@
+# Grafana alert rules provisioning (SOP 5.7)
+# เปลี่ยน datasourceUid `grafanacloud-prom` ให้ตรงกับ Prometheus datasource ของ stack
+#
+# [Informational — ใช้ใน dashboard ไม่ใช่ alert]
+# Availability รายเดือนเฉพาะเวลาทำการ 07:30-16:30 จ-ศ (Asia/Bangkok = 00:30-09:30 UTC), เป้า >= 99.5%
+#   avg_over_time(
+#     (probe_success
+#       and on() (hour() * 60 + minute() >= 30 and hour() * 60 + minute() < 570)
+#       and on() (day_of_week() >= 1 and day_of_week() <= 5)
+#     )[30d:1m]
+#   )
+# (570 = 9.5 ชม. UTC; ปรับ [30d:1m] ให้เป็นช่วงเดือนที่ต้องการ)
+apiVersion: 1
+groups:
+  - orgId: 1
+    name: sop-monitoring
+    folder: SOP Monitoring
+    interval: 1m
+    rules:
+      - uid: sop-health-down
+        title: HealthCheckDown
+        condition: C
+        for: 3m   # ~ล้มเหลว 3 ครั้งติดกัน (check ทุก 1 นาที)
+        noDataState: Alerting
+        execErrState: Error
+        data:
+          - refId: A
+            relativeTimeRange: {from: 600, to: 0}
+            datasourceUid: grafanacloud-prom
+            model: {refId: A, expr: 'min by (project) (probe_success)', instant: true}
+          - refId: B
+            datasourceUid: __expr__
+            model: {refId: B, type: reduce, expression: A, reducer: last}
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              conditions: [{evaluator: {type: lt, params: [1]}}]
+        labels: {severity: critical}
+        annotations:
+          summary: "ระบบ {{ $labels.project }} ไม่ตอบสนอง Health Check ต่อเนื่อง 3 นาที"
+
+      - uid: sop-error-warning
+        title: HighErrorRateWarning
+        condition: C
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        data:
+          - refId: A
+            relativeTimeRange: {from: 600, to: 0}
+            datasourceUid: grafanacloud-prom
+            model:
+              refId: A
+              instant: true
+              expr: 'sum by (project) (rate(http_server_request_duration_seconds_count{status=~"5.."}[5m])) / sum by (project) (rate(http_server_request_duration_seconds_count[5m]))'
+          - refId: B
+            datasourceUid: __expr__
+            model: {refId: B, type: reduce, expression: A, reducer: last}
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              conditions: [{evaluator: {type: gt, params: [0.01]}}]
+        labels: {severity: warning}
+        annotations:
+          summary: "{{ $labels.project }} มีอัตรา 5xx เกิน 1% ในช่วง 5 นาที"
+
+      - uid: sop-error-critical
+        title: HighErrorRateCritical
+        condition: C
+        for: 5m
+        noDataState: OK
+        execErrState: Error
+        data:
+          - refId: A
+            relativeTimeRange: {from: 600, to: 0}
+            datasourceUid: grafanacloud-prom
+            model:
+              refId: A
+              instant: true
+              expr: 'sum by (project) (rate(http_server_request_duration_seconds_count{status=~"5.."}[5m])) / sum by (project) (rate(http_server_request_duration_seconds_count[5m]))'
+          - refId: B
+            datasourceUid: __expr__
+            model: {refId: B, type: reduce, expression: A, reducer: last}
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              conditions: [{evaluator: {type: gt, params: [0.05]}}]
+        labels: {severity: critical}
+        annotations:
+          summary: "{{ $labels.project }} มีอัตรา 5xx เกิน 5% ในช่วง 5 นาที (วิกฤต)"
+
+      - uid: sop-latency-p95
+        title: HighLatencyP95
+        condition: C
+        for: 10m
+        noDataState: OK
+        execErrState: Error
+        data:
+          - refId: A
+            relativeTimeRange: {from: 600, to: 0}
+            datasourceUid: grafanacloud-prom
+            model:
+              refId: A
+              instant: true
+              expr: 'histogram_quantile(0.95, sum by (project, le) (rate(http_server_request_duration_seconds_bucket[5m])))'
+          - refId: B
+            datasourceUid: __expr__
+            model: {refId: B, type: reduce, expression: A, reducer: last}
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              conditions: [{evaluator: {type: gt, params: [0.5]}}]
+        labels: {severity: warning}
+        annotations:
+          summary: "{{ $labels.project }} latency P95 เกิน 500 ms ต่อเนื่อง 10 นาที"
+
+      - uid: sop-job-failed
+        title: BackgroundJobFailed
+        condition: C
+        for: 0s
+        noDataState: OK
+        execErrState: Error
+        data:
+          - refId: A
+            relativeTimeRange: {from: 600, to: 0}
+            datasourceUid: grafanacloud-prom
+            model:
+              refId: A
+              instant: true
+              expr: 'sum by (project, job) (increase(job_failures_total[5m]))'
+          - refId: B
+            datasourceUid: __expr__
+            model: {refId: B, type: reduce, expression: A, reducer: last}
+          - refId: C
+            datasourceUid: __expr__
+            model:
+              refId: C
+              type: threshold
+              expression: B
+              conditions: [{evaluator: {type: gt, params: [0]}}]
+        labels: {severity: critical}
+        annotations:
+          summary: "งานเบื้องหลัง {{ $labels.job }} ของ {{ $labels.project }} ล้มเหลว (หลัง retry)"
