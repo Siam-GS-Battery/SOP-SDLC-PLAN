@@ -387,7 +387,7 @@ graph LR
 
 | Date | Version | Changes |
 |:-----|:--------|:--------|
-| 2026-10-19 | **v1.6** | แก้ลิงก์ .md ที่เสียและลบลิงก์ไปเอกสาร Design ที่ไม่มีอยู่จริง; ปรับตาราง Design ใน QUICK_START ให้ตรงไฟล์จริง; แก้ชื่อไฟล์ตัวอย่างใน CONTRIBUTING; 0.1 FAQ เวลา Review ภายใน 24 ชม.; แก้ flow ใน README เป็น Testing → Deploy; เพิ่มสคริปต์ตรวจลิงก์ `scripts/check_md_links.py`; รวม Performance Release Gate ที่ 6.1 (API P95 < 500 ms, Page load < 3 s) และให้ 5.5 อ้างอิง (ค่าอื่นใน 5.5 เป็นค่าสังเกตหลัง deploy); CI เพิ่ม coverage โค้ดใหม่ ≥ 70% และ `npm audit` ระดับ critical; เพิ่ม 5.7 Continuous Monitoring (ค่าที่เสนอระบุเป็น ค่าเสนอ) |
+| 2026-10-19 | **v1.6** | แก้ลิงก์ .md ที่เสียและลบลิงก์ไปเอกสาร Design ที่ไม่มีอยู่จริง; ปรับตาราง Design ใน QUICK_START ให้ตรงไฟล์จริง; แก้ชื่อไฟล์ตัวอย่างใน CONTRIBUTING; 0.1 FAQ เวลา Review ภายใน 24 ชม.; แก้ flow ใน README เป็น Testing → Deploy; เพิ่มสคริปต์ตรวจลิงก์ `scripts/check_md_links.py`; รวม Performance Release Gate ที่ 6.1 (API P95 < 500 ms, Page load < 3 s) และให้ 5.5 อ้างอิง (ค่าอื่นใน 5.5 เป็นค่าสังเกตหลัง deploy); CI เพิ่ม coverage โค้ดใหม่ ≥ 70% และ `npm audit` ระดับ critical; เพิ่ม 5.7 Continuous Monitoring (ต่อมากำหนดค่าตามแนวปฏิบัติสากลเป็น SLO baseline) |
 | 2026-04-01 | v1.5 | เพิ่มข้อมูล Team Structure, Code Review 4 ระดับ, Golden Rule, Team Rules, Work Flow, Standard Doc |
 | 2026-03-27 | v1.4 | เพิ่มเอกสาร Testing ครบถ้วน: Strategy, Unit, Integration, Performance, Security |
 | 2026-03-27 | v1.3 | ปรับปรุงโครงสร้าง: เพิ่ม Quick Start, INDEX.md, CONTRIBUTING.md |
