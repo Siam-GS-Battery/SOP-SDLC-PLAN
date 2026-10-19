@@ -1,20 +1,17 @@
 # Phase 2: Design
 
-> สร้าง Wireframe และ UI Design ด้วย Figma Make (AI)
+> กำหนด Design System และให้ Claude ออกแบบ UI จาก Design System (ไม่ใช้ Figma)
 
 ## เอกสารในหมวดนี้
 
 | ลำดับ | เอกสาร | คำอธิบาย |
 |:-----:|:-------|:---------|
-| 2.1 | [Wireframe with Figma Make](2.1_Wireframe_with_Figma_Make.md) | สร้าง Wireframe ด้วย Figma Make (AI) พร้อมตัวอย่าง Prompt |
-| 2.2 | [UI Design with Figma Make](2.2_UI_Design_with_Figma_Make.md) | สร้าง UI Design พร้อม Brand Guideline และ Export ไป GitHub |
-| 2.3 | [Design System Template](2.3_Design_System_Template.md) | Template ระบบ Design (Design Tokens: สี, Typography, Spacing, Components) สำหรับใช้อ้างอิง |
+| 2.3 | [Design System Template](2.3_Design_System_Template.md) | Template ระบบ Design (Design Tokens: สี, Typography, Spacing, Components) พร้อมวิธีใช้ Design System ให้ Claude ออกแบบ UI (Workflow, Prompt, Checklist) |
 
 ## ลำดับการอ่านแนะนำ
 
-1. เริ่มจาก **Wireframe with Figma Make** เพื่อสร้าง Wireframe ทีละหน้า
-2. ทำ **UI Design with Figma Make** ใส่สี, Font, Brand Guideline แล้ว Export
-3. ใช้ **Design System Template** เป็นแม่แบบกำหนด Design Tokens (สี, Font, Component)
+1. ใช้ **Design System Template** กำหนด Design Tokens ของโปรเจกต์ (สี, Font, Spacing, Component)
+2. อ่านหัวข้อ **การใช้ Design System ออกแบบ UI ด้วย Claude** เพื่อให้ Claude สร้างหน้าจอ แล้ว Review/Iterate/Approve และ Commit เข้า Repo
 
 ## Phase ก่อนหน้า / ถัดไป
 

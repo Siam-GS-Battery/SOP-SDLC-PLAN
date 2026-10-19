@@ -34,7 +34,7 @@ documentation/
 |:------|:-----------------|
 | 00_ONBOARDING | `0.1_Welcome_Guide.md` |
 | 01_REQUIREMENTS | `1.1_Raw_Requirement_List_MoSCoW.md` |
-| 02_DESIGN | `2.1_UX_Flow_Diagram_FigJam_Link.md` |
+| 02_DESIGN | `2.3_Design_System_Template.md` |
 | 03_DATABASE | `3.1_ERD_Diagram.md` |
 | 04_DEVELOPMENT | `4.1_Project_Initialization.md` |
 | 05_DEPLOY | `5.1_Deploy_Overview.md` |
@@ -147,7 +147,7 @@ git push origin docs/<ticket-id>-<short-description>
 ### รูปภาพ
 
 - เก็บรูปภาพไว้ในโฟลเดอร์ `img/` ภายใน phase เดียวกัน
-- ตัวอย่าง: `documentation/02_DESIGN/img/HomePage.png`
+- ตัวอย่าง: `documentation/<folder>/img/<name>.png`
 - ใช้ relative paths ในการอ้างอิง
 
 ---

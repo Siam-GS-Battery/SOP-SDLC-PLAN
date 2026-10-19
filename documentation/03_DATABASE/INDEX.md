@@ -8,7 +8,7 @@
 |:-----:|:-------|:---------|
 | 3.1 | [ERD Diagram](3.1_ERD_Diagram.md) | Entity Relationship Diagram |
 | 3.2 | [Database Schema](3.2_Database_Schema_Document.md) | Schema รายละเอียด (tables, relations, enums, indexes) |
-| 3.3 | [Database Migration from Figma](3.3_Database_Migration_from_Figma_DataContext.md) | Migration จาก Figma DataContext ไปยัง Supabase |
+| 3.3 | [Database Migration from DataContext](3.3_Database_Migration_from_DataContext.md) | Migration จาก DataContext (UI code) ไปยัง Supabase |
 
 ## ลำดับการอ่านแนะนำ
 
