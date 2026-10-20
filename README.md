@@ -158,7 +158,7 @@ graph LR
 | `1.1` | [**Raw Requirement List (MoSCoW)**](documentation/01_REQUIREMENTS/1.1_Raw_Requirement_List_MoSCoW.md) | Requirements พร้อมจัดลำดับ Must / Should / Could / Won't |
 | `1.2` | [**User Story List**](documentation/01_REQUIREMENTS/1.2_User_Story_List.md) | User Stories แยกตาม Role และ Feature |
 | `1.3` | [**Acceptance Criteria**](documentation/01_REQUIREMENTS/1.3_Acceptance_Criteria.md) | เกณฑ์การรับงาน (Definition of Done) แต่ละ Story |
-| `1.4` | [**Roadmap & Timeline**](documentation/01_REQUIREMENTS/1.4_Roadmap_Timeline_Asana_Link.md) | แผนงานและ Timeline พร้อม Asana Integration |
+| `1.4` | [**Roadmap & Timeline**](documentation/01_REQUIREMENTS/1.4_Roadmap_Timeline.md) | แผนงานและ Timeline |
 | `1.5` | [**Definition of Ready & Done**](documentation/01_REQUIREMENTS/1.5_Definition_of_Ready_Done.md) | DoR/DoD วิธีเขียน พร้อม Template และตัวอย่าง |
 
 <br>
@@ -303,7 +303,7 @@ graph LR
 
 | # | เอกสาร | รายละเอียด |
 |:---:|:---|:---|
-| `7.1` | [**Branching Strategy**](documentation/07_GIT_WORKFLOW/7.1_Branching_Strategy.md) | กลยุทธ์ Branch, Daily Flow, Asana Task ID Naming |
+| `7.1` | [**Branching Strategy**](documentation/07_GIT_WORKFLOW/7.1_Branching_Strategy.md) | กลยุทธ์ Branch, Daily Flow, Branch Naming |
 | `7.2` | [**Commit Message Convention**](documentation/07_GIT_WORKFLOW/7.2_Commit_Message_Convention.md) | Conventional Commits: `type(scope): subject` |
 | `7.3` | [**Pull Request Process**](documentation/07_GIT_WORKFLOW/7.3_Pull_Request_Process.md) | PR Workflow, Checklist, Template, ข้อห้าม |
 | `7.4` | [**Code Review Guidelines**](documentation/07_GIT_WORKFLOW/7.4_Code_Review_Guidelines.md) | 4 ระดับ Comment (MUST/SHOULD/NIT/LEARN), Senior Checklist |
@@ -376,7 +376,7 @@ graph LR
 | **Location** | เอกสารทั้งหมดต้องอยู่ใน `/documentation/` |
 | **Naming** | `<phase>.<number>_<Document_Title>.md` |
 | **Versioning** | ทุกการเปลี่ยนแปลงต้องบันทึกใน Change Log |
-| **Links** | Asana / Design System ต้องเปิดดูได้ |
+| **Links** | Design System ต้องเปิดดูได้ |
 | **Contributing** | อ่านแนวทางที่ [CONTRIBUTING.md](CONTRIBUTING.md) |
 
 <br>

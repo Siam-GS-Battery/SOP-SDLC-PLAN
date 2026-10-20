@@ -35,7 +35,7 @@
 | 1 | [Raw Requirement List (MoSCoW)](documentation/01_REQUIREMENTS/1.1_Raw_Requirement_List_MoSCoW.md) | จัดลำดับความสำคัญของ Requirements |
 | 2 | [User Story List](documentation/01_REQUIREMENTS/1.2_User_Story_List.md) | เขียน User Stories |
 | 3 | [Acceptance Criteria](documentation/01_REQUIREMENTS/1.3_Acceptance_Criteria.md) | กำหนดเกณฑ์การรับงาน |
-| 4 | [Roadmap & Timeline](documentation/01_REQUIREMENTS/1.4_Roadmap_Timeline_Asana_Link.md) | แผนงานและ Timeline |
+| 4 | [Roadmap & Timeline](documentation/01_REQUIREMENTS/1.4_Roadmap_Timeline.md) | แผนงานและ Timeline |
 | 5 | [UAT Scenario Template](documentation/06_TESTING/UAT_Scenario_Template.md) | เตรียม Test สำหรับ UAT |
 
 ---

@@ -9,7 +9,7 @@
 | 1.1 | [Raw Requirement List (MoSCoW)](1.1_Raw_Requirement_List_MoSCoW.md) | Requirements พร้อม MoSCoW prioritization |
 | 1.2 | [User Story List](1.2_User_Story_List.md) | User stories แยกตาม role และ feature |
 | 1.3 | [Acceptance Criteria](1.3_Acceptance_Criteria.md) | เกณฑ์การรับงานของแต่ละ story |
-| 1.4 | [Roadmap & Timeline](1.4_Roadmap_Timeline_Asana_Link.md) | แผนงานและ Timeline พร้อมลิงก์ Asana |
+| 1.4 | [Roadmap & Timeline](1.4_Roadmap_Timeline.md) | แผนงานและ Timeline |
 | 1.5 | [Definition of Ready & Done](1.5_Definition_of_Ready_Done.md) | DoR/DoD วิธีเขียน พร้อม Template และตัวอย่าง |
 
 ## ลำดับการอ่านแนะนำ
