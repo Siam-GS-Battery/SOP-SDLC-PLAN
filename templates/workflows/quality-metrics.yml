@@ -1,0 +1,140 @@
+# Reusable workflow: push CI quality metrics to Supabase (read by Grafana Cloud).
+#
+# Usage in an app repo (.github/workflows/metrics.yml):
+#
+#   jobs:
+#     quality-metrics:
+#       uses: Siam-GS-Battery/SOP-SDLC-PLAN/.github/workflows/quality-metrics.yml@main
+#       with: { project: my-app }
+#       secrets: { SUPABASE_URL: ${{ secrets.SUPABASE_URL }}, SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }} }
+#
+# NOTE: this file must live in a repo's .github/workflows/ (this repo, or an org-level
+# .github repo) to be callable. The calling repo needs access: same org; for private
+# repos enable Actions access in the source repo (Settings > Actions > General > Access).
+
+name: Quality Metrics
+
+on:
+  workflow_call:
+    inputs:
+      project:
+        type: string
+        required: true
+    secrets:
+      SUPABASE_URL:
+        required: true
+      SUPABASE_SERVICE_KEY:
+        required: true
+
+jobs:
+  metrics:
+    name: Collect & Push Quality Metrics
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check if package.json exists
+        id: check
+        run: |
+          if [ -f package.json ]; then
+            echo "has_package=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_package=false" >> $GITHUB_OUTPUT
+            echo "No package.json found — skipping metrics (docs-only repo)"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.check.outputs.has_package == 'true'
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        if: steps.check.outputs.has_package == 'true'
+        run: npm ci
+
+      - name: Run tests with coverage
+        id: tests
+        if: steps.check.outputs.has_package == 'true'
+        continue-on-error: true
+        run: npm test -- --coverage --coverageReporters=lcov --coverageReporters=json-summary
+
+      - name: Compute line coverage
+        id: cov
+        if: steps.check.outputs.has_package == 'true'
+        run: |
+          pct=""
+          if [ -f coverage/coverage-summary.json ]; then
+            pct=$(jq -r '.total.lines.pct // empty' coverage/coverage-summary.json)
+          elif [ -f coverage/lcov.info ]; then
+            pct=$(awk -F: '/^LF:/{lf+=$2} /^LH:/{lh+=$2} END{if(lf>0) printf "%.2f", lh*100/lf}' coverage/lcov.info)
+          fi
+          echo "pct=${pct}" >> $GITHUB_OUTPUT
+
+      - name: Compute new-code coverage (PR only)
+        id: newcov
+        if: steps.check.outputs.has_package == 'true' && github.event_name == 'pull_request'
+        continue-on-error: true
+        run: |
+          pip install diff-cover
+          diff-cover coverage/lcov.info \
+            --compare-branch=origin/${{ github.base_ref }} \
+            --json-report diff-cover.json
+          pct=$(jq -r '.total_percent_covered // empty' diff-cover.json)
+          echo "pct=${pct}" >> $GITHUB_OUTPUT
+
+      - name: Count audit vulnerabilities
+        id: audit
+        if: steps.check.outputs.has_package == 'true'
+        run: |
+          npm audit --json > audit.json || true
+          echo "critical=$(jq -r '.metadata.vulnerabilities.critical // 0' audit.json)" >> $GITHUB_OUTPUT
+          echo "high=$(jq -r '.metadata.vulnerabilities.high // 0' audit.json)" >> $GITHUB_OUTPUT
+
+      - name: Push metrics to Supabase
+        if: steps.check.outputs.has_package == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          PROJECT: ${{ inputs.project }}
+          REPO: ${{ github.repository }}
+          REF: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
+          RUN_ID: ${{ github.run_id }}
+          TESTS_OUTCOME: ${{ steps.tests.outcome }}
+          COV_PCT: ${{ steps.cov.outputs.pct }}
+          NEWCOV_PCT: ${{ steps.newcov.outputs.pct }}
+          AUDIT_CRITICAL: ${{ steps.audit.outputs.critical }}
+          AUDIT_HIGH: ${{ steps.audit.outputs.high }}
+        run: |
+          [ "$TESTS_OUTCOME" = "success" ] && passed=1 || passed=0
+          jq -n \
+            --arg project "$PROJECT" --arg repo "$REPO" --arg ref "$REF" \
+            --arg sha "$SHA" --arg run_id "$RUN_ID" \
+            --arg passed "$passed" --arg cov "$COV_PCT" --arg newcov "$NEWCOV_PCT" \
+            --arg crit "$AUDIT_CRITICAL" --arg high "$AUDIT_HIGH" '
+            [
+              {metric: "tests_passed",    value: $passed},
+              {metric: "coverage_lines_pct",    value: $cov},
+              {metric: "new_code_coverage_pct", value: $newcov},
+              {metric: "audit_critical",  value: $crit},
+              {metric: "audit_high",      value: $high}
+            ]
+            | map(select(.value != ""))
+            | map({project: $project, repo: $repo, ref: $ref, sha: $sha, run_id: $run_id,
+                   metric: .metric, value: (.value | tonumber)})
+          ' > rows.json
+          curl --fail -sS -X POST "${SUPABASE_URL}/rest/v1/quality_metrics" \
+            -H "apikey: ${SUPABASE_SERVICE_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_SERVICE_KEY}" \
+            -H "Content-Type: application/json" \
+            -H "Prefer: return=minimal" \
+            --data @rows.json
+
+      - name: Fail if tests failed
+        if: steps.check.outputs.has_package == 'true' && steps.tests.outcome == 'failure'
+        run: |
+          echo "Tests failed — metrics were reported, failing job to reflect CI status"
+          exit 1
