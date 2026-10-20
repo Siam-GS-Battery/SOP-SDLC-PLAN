@@ -10,6 +10,8 @@ prometheus.scrape "app" {
     "__address__" = "localhost:" + coalesce(sys.env("APP_PORT"), "3000"),
     "project"     = sys.env("PROJECT_NAME"),
   }]
+  // app's own job label (background jobs) must not be renamed to exported_job
+  honor_labels    = true
   metrics_path    = "/metrics"
   scrape_interval = "30s"
   forward_to      = [prometheus.remote_write.grafana_cloud.receiver]

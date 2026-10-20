@@ -467,7 +467,7 @@
             "type": "prometheus",
             "uid": "${ds_prom}"
           },
-          "expr": "sum by (job) (increase(job_runs_total{project=~\"$project\"}[$__interval]))",
+          "expr": "sum by (job) (increase(job_runs_total{project=~\"$project\"}[$__rate_interval]))",
           "instant": false,
           "range": true,
           "legendFormat": "{{job}}"
@@ -510,7 +510,7 @@
             "type": "prometheus",
             "uid": "${ds_prom}"
           },
-          "expr": "sum by (job) (increase(job_failures_total{project=~\"$project\"}[$__interval]))",
+          "expr": "sum by (job) (increase(job_failures_total{project=~\"$project\"}[$__rate_interval]))",
           "instant": false,
           "range": true,
           "legendFormat": "{{job}}"
