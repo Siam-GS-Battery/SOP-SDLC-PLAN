@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **เอกสาร** | SDLC-CHECKLIST.md |
-| **เวอร์ชัน** | 3.4 |
+| **เวอร์ชัน** | 3.5 |
 | **วันที่จัดทำ** | 2026-08-18 |
 | **ผู้จัดทำ (Owner)** | Pantira S. |
 | **ทีม/ขอบเขต** | Siam GS Battery — ทีม dev · โปรเจกต์นำร่อง: **GS Carbooking** |
@@ -22,6 +22,7 @@
 | 3.2 | 2026-10-20 | Pantira S. | CR-01/CR-02 ตรวจผู้ merge ต้องเป็น Senior, CR-07 รวม status check "Senior Approval" (pr-approval-gate.yml) ตาม SOP 7.3/7.5 |
 | 3.3 | 2026-10-20 | Pantira S. | รองรับ Senior คนเดียว: Senior merge PR ตัวเองได้ผ่าน gate "Senior Approval" (required approvals = 0) — ปรับ BR-05, CR-01, CR-02, CR-03, CR-07; แก้ชื่อ job ใน CR-07 ให้ตรงกับ ci.yml จริง |
 | 3.4 | 2026-10-20 | Pantira S. | ปรับให้ตรง SOP: BR-02 รองรับ docs/ และจุดในชื่อ release, CR-03 เพิ่ม Related Issues, CR-07 แก้อ้างอิงหัวข้อ + หมายเหตุ Dependency Audit, REL-07 อ้างขั้นตอนย้อน migration ใน 5.5 |
+| 3.5 | 2026-10-20 | Pantira S. | ปรับเกณฑ์ coverage ตาม SOP: TS-08 new code ≥ 70% → ≥ 80% (ยกเว้น PR < 20 บรรทัด), coverage ทั้งโปรเจกต์ FE 70% / BE 80% เป็นเป้าหมายระยะยาว |
 
 ---
 
@@ -43,7 +44,7 @@
 - **เมื่อไรต้องมี PR**: การเปลี่ยนแปลงทุกครั้งควรผ่าน PR จาก branch ย่อยเข้า `develop` (ตาม flow ในข้อ 1) — โดย gate `Senior Approval` ผ่านเมื่อ author เป็น Senior (merge เอง โดย CI เขียว + PR template กรอกครบ + ติ๊ก self-review checklist) หรือมี review Approved จาก Senior ที่ไม่ใช่ author (ข้อยกเว้นชั่วคราวสำหรับทีมที่มี Senior คนเดียว) แต่ยังไม่มีการบังคับด้วย branch protection rule จริงบน GitHub (ยังไม่บังคับใช้ — ดู checklist)
 - **จำนวนผู้อนุมัติขั้นต่ำ**: กำหนด required approving reviews = 0 และบังคับการอนุมัติผ่าน status check `Senior Approval` แทน (ยังไม่ได้ตั้งค่าจริงบน GitHub) (ยังไม่บังคับใช้ — ดู checklist)
 - **สิ่งที่ reviewer ต้องตรวจ**: ยังไม่มี code review checklist ที่เป็นลายลักษณ์อักษร (เลื่อนออกจาก checklist ตั้งแต่ v3.0) — ควรครอบคลุมอย่างน้อย: ตรง requirement, ไม่กระทบ RLS/authorization (`SECURITY.md`), มีเทสต์ครอบคลุม, ผ่าน CI, ไม่มี secret หลุดใน diff
-- **PR description**: ยังไม่มี PR template (`.github/PULL_REQUEST_TEMPLATE.md`) บังคับหัวข้อที่ต้องกรอก (ยังไม่บังคับใช้ — ดู checklist)
+- **PR description**: มี PR template ที่ `.github/PULL_REQUEST_TEMPLATE.md` คัดลอกมาจาก 7.3 §Description Template บังคับหัวข้อที่ต้องกรอก
 - **CODEOWNERS**: ยังไม่มีไฟล์ `.github/CODEOWNERS` กำหนดผู้รับผิดชอบ path เฉพาะทาง (เลื่อนออกจาก checklist ตั้งแต่ v3.0)
 - **กฎการ merge**: ยังไม่มีการบังคับ "ต้องผ่าน CI ทุก job ก่อน merge" ผ่าน branch protection (แม้ CI workflow จะรันจริงทุก PR ตามข้อ 3) (ยังไม่บังคับใช้ — ดู checklist)
 
@@ -132,7 +133,7 @@
 | TS-02 | Frontend มี unit test จริง | `frontend` มีไฟล์เทสต์ (Vitest) และรันผ่านด้วย `npm test --prefix frontend` | repo | | | |
 | TS-03 | มี E2E test ครอบคลุม flow หลัก | `frontend/tests/e2e/` มี spec ครอบคลุม booking, auth, route-guard และรันผ่านด้วย `npm run test:e2e --prefix frontend` | repo | | | |
 | TS-04 | CI ผ่านครบทุก job บน `develop` และ `main` | workflow run ล่าสุดของ `ci.yml` บน `develop` และ `main` ทั้ง 4 job สถานะ success: `backend-typecheck`, `backend-test`, `frontend-test`, `frontend-build` — แนบลิงก์ run | CI run | | | |
-| TS-08 | มี coverage threshold และ CI วัด coverage | ตั้ง `coverage.thresholds` ใน vitest.config.ts ทั้งสองฝั่ง และ ci.yml เรียก `npm run test:coverage` — ยอมรับ threshold ระดับ baseline ปัจจุบันเป็นค่าชั่วคราว (interim, กันไม่ให้ลดลง) โดย **เป้าหมายตาม SOP: new code ≥ 70% (Advisory 1–2 sprint แรก แล้วเป็น Required), Frontend ≥ 70% / Backend ≥ 80%** | repo | | | อ้างอิง SOP: 06_TESTING/6.1_Testing_Strategy_Overview.md §Test Coverage เป้าหมาย / §Quality Gates; 07_GIT_WORKFLOW/7.3_Pull_Request_Process.md §Merge Rule |
+| TS-08 | มี coverage threshold และ CI วัด coverage | ตั้ง `coverage.thresholds` ใน vitest.config.ts ทั้งสองฝั่ง และ ci.yml เรียก `npm run test:coverage` — ยอมรับ threshold ระดับ baseline ปัจจุบันเป็นค่าชั่วคราว (interim, กันไม่ให้ลดลง) โดย **เป้าหมายตาม SOP: new code ≥ 80% (Advisory 1–2 sprint แรก แล้วเป็น Required; PR ที่แก้โค้ดน้อยกว่า 20 บรรทัดไม่รวม test/docs ได้รับยกเว้น) ส่วน Frontend ≥ 70% / Backend ≥ 80% ทั้งโปรเจกต์เป็นเป้าหมายระยะยาว ไม่ใช่เงื่อนไขบล็อก merge** | repo | | | อ้างอิง SOP: 06_TESTING/6.1_Testing_Strategy_Overview.md §Test Coverage เป้าหมาย / §Quality Gates; 07_GIT_WORKFLOW/7.3_Pull_Request_Process.md §Merge Rule |
 | TS-09 | E2E รันใน CI ตามรอบที่กำหนด | มี job ใน `.github/workflows/` ที่รัน `npm run test:e2e` บน PR เข้า `main` หรือตามตารางเวลา nightly (ไม่ต้องรันทุก PR) | repo | | | |
 
 ## 4. Documentation Standard
